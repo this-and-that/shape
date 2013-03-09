@@ -1,0 +1,317 @@
+/**
+ *	Zine.css
+ *
+ *	Ken Frederick
+ *	ken.frederick@gmx.de
+ *
+ *	http://cargocollective.com/kenfrederick/
+ *	http://kenfrederick.blogspot.com/
+ *
+ */
+
+
+
+/* ------------------------------------------------------------------------
+ * Typography
+ * ------------------------------------------------------------------------ */
+
+/*
+ *	body copy size
+ */
+p {
+	font-weight: bold;
+
+	hyphens:auto;
+	-webkit-hyphens:auto;
+	-webkit-hyphenate-character: "\2010";
+	-webkit-hyphenate-limit-after: 1;
+	-webkit-hyphenate-limit-before: 3;
+	-webkit-hyphenate-lines: 10;
+}
+p.center {
+	text-align: center;
+}
+
+/* red */
+p.red {
+	color: #e93415;
+}
+p.red.center {
+	text-align: center;
+}
+
+/* blue */
+p.blue {
+	color: #1925d2;
+}
+p.blue.center {
+	text-align: center;
+}
+
+/* yellow */
+p.yellow {
+	color: #faeb00;
+}
+p.yellow.center {
+	text-align: center;
+}
+
+
+.one {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #0CC;
+}
+.two {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    background: #f3f;
+}
+​
+
+
+
+
+/*
+ *	title size
+ */
+h1 {
+	font-size: 51px;
+	line-height: 51px;
+}
+h1.center {
+	text-align: center;
+}
+
+/* red */
+h1.red {
+	color: #e93415;
+}
+h1.red.center {
+	text-align: center;
+}
+
+/* blue */
+h1.blue {
+	color: #1925d2;
+}
+h1.blue.center {
+	text-align: center;
+}
+
+/* yellow */
+h1.yellow {
+	color: #faeb00;
+}
+h1.yellow.center {
+	text-align: center;
+}
+
+
+
+/* ------------------------------------------------------------------------
+ * Structure
+ * ------------------------------------------------------------------------ */
+#wrapper {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#wrapper td,tr {
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+/* 
+ *
+ *	columns
+ *
+ */
+.column2 {
+	-webkit-column-count: 2;
+	-webkit-column-gap: 12px;
+	column-count: 2;
+	column-gap: 12px;
+}
+.column3 {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 12px;
+	column-count: 3;
+	column-gap: 12px;
+}
+
+
+/* 
+ *
+ *	CSS for auto page flow
+ *
+ */
+#content {
+	width: 20048px; /* 1024 x	 20 = 20048 */
+	height: 0px;
+}
+
+
+/*
+ *	article
+ *	holder for pages
+ */
+#article {
+	position: absolute;
+	overflow: hidden;
+
+	-webkit-user-select: none;
+	user-select: none;
+}
+#article page:nth-child(2n) {
+	/* sets background of every second page */
+/*	background-color: #eee;*/
+}
+
+
+/*
+ *	pages
+ *	holder for individual page(s)
+ *	Style each 'page' to be the same size and
+ *	join together into a long horizontal strip.
+ *	
+ *	Use display: table on the page wrapper to
+ *	get rid of whitespace between the inline-blocks.
+ */
+#pages { 
+	display: table
+}
+#pages page { 
+	display: inline-block;
+	vertical-align: top;
+}
+#pages page div {
+	padding: 0px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+
+/*
+ *	individual page
+ */
+.page { 
+}
+.page.red {
+	background-color: #e93415;
+}
+.page.blue {
+	background-color: #1925d2;
+}
+.page.yellow {
+	background-color: #faeb00;
+}
+.page.centered {
+/*	background:url('../images/shape/+.png') center center no-repeat;	*/
+	margin: 0 auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+
+
+/* ------------------------------------------------------------------------
+ * Media queries
+ * ------------------------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+/*@media only screen and (max-device-width : 768px) and (orientation : portrait) {*/
+	/* Rules only for iPad - Portrait */
+	p.vertical-center {
+		text-align: center;
+		vertical-align: bottom;
+	}
+
+
+	#article {
+		position: absolute;
+		overflow: hidden;
+
+		width: 768px;
+		height: 1024px;
+
+		min-width: 768px;
+		min-height: 1024px;
+
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	#pages page { 
+		width: 768px;
+		height: 1024px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.page { 
+		width: 768px;
+		height: 1024px;
+	}
+	.page.centered {
+		background-size: 612px;
+	}
+
+
+}
+
+@media screen and (min-width: 1024px) {
+/* @media only screen and (max-device-width : 1024px) and (orientation : landscape) { */
+	/* Rules only for iPad - Landscape */
+	p.vertical-center {
+		text-align: center;
+		vertical-align: bottom;
+	}
+
+
+	#article {
+		position: absolute;
+		overflow: hidden;
+
+		width: 1024px;
+		height: 768px;
+
+		min-width: 768px;
+		min-height: 1024px;
+
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	#article.cover img.central {
+		display: none;
+	}
+	#article.cover .footer {
+		margin-top: 240px;
+	}
+
+	#pages page { 
+		width: 1024px;
+		height: 768px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.page { 
+		width: 1024px;
+		height: 768px;
+	}
+	.page.centered {
+		background-size: 868px;
+	}
+
+}
+
+
