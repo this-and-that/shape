@@ -147,16 +147,12 @@
 //
 //	core properties
 //
-@type-family: 'BasicCommercialW01-Bold';
-@type-family-sans: 'BasicCommercialW01-Bold';
+@type-base-family: 'BasicCommercialW01-Roma';
+@type-base-family-bold: 'BasicCommercialW01-Bold';
 @type-base-weight: regular;
 @type-base-size: 15;
 @type-base-line-height: 18; //3;
 @measure: @type-base-size * @type-base-line-height;
-
-// the serif boolean var can be redeclared from another stylesheet.
-// However, the var must be placed after your @import "typeplate.scss";
-@serif-boolean: true;
 
 
 
@@ -187,11 +183,8 @@
 //
 //	base definition
 //
-.base-type (@type-base-weight, @type-base-line-height, @type-base-size, @type-family, @serif-boolean: true) when (@serif-boolean = true) {
+.base-type (@type-base-weight, @type-base-line-height, @type-base-size, @type-family) {
 	font: @type-base-weight ~"@{type-base-size}%/@{type-base-line-height}" @type-family;
-}
-.base-type (@type-base-weight, @type-base-line-height, @type-base-size, @type-family, @serif-boolean: true) when not (@serif-boolean = true) {
-	font: @type-base-weight ~"@{type-base-size}%/@{type-base-line-height}" @type-family-sans;
 }
 
 
@@ -205,7 +198,7 @@
 
 // Allows for our ampersand element to differ
 // font-family from the ampersand unicode font-family.
-@amp-font-family: 'BasicCommercialW01-Bold';
+@amp-font-family: @type-base-family;
 
 
 .ampersand (@amp-font-family) {
@@ -383,7 +376,7 @@
  *	globals
  */
 html {
-	.base-type(@type-base-weight, @type-base-line-height, @type-base-size, @type-family, @serif-boolean);
+	.base-type(@type-base-weight, @type-base-line-height, @type-base-size, @type-family);
 	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 }
@@ -430,7 +423,7 @@ h1 {
 	/*
 	 *	Display
 	 */	
-	font-family: 'BasicCommercialW01-Bold';
+	font-family: @type-base-family-bold;
 	font-size: @beta;
 	line-height: @beta;
 	.hN;
@@ -439,13 +432,13 @@ h2 {
 	/*
 	 *	Title
 	 */	
-	font-family: 'BasicCommercialW01-Bold';
+	font-family: @type-base-family-bold;
 	font-size: @gamma;
 	line-height: @gamma;
 	.hN;
 }
 h3 {
-	font-family: 'BasicCommercialW01-Bold';
+	font-family: @type-base-family-bold;
 	font-size: @delta;
 	line-height: @delta + 3;
 	.hN;
@@ -454,7 +447,7 @@ h4 {
 	/*
 	 *	Body Copy
 	 */
-	font-family: 'BasicCommercialW01-Bold';
+	font-family: @type-base-family-bold;
 	font-size: @epsilon;
 	line-height: @epsilon + 3;
 	.hN;
@@ -463,7 +456,7 @@ h5 {
 	/*
 	 *	Caption
 	 */
-	font-family: 'BasicCommercialW01-Roma';
+	font-family: @type-base-family;
 	font-size: @zeta;
 	line-height: @zeta + 3;
 	.hN;

@@ -34,6 +34,9 @@ Thumbs.db
 # Folders #
 ###########
 _prev/
+js/_unused/
+css/_unused/
+images/debug/
 # too big for now
 video/
 # not until legality is sorted
