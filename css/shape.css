@@ -64,7 +64,7 @@
   font-family: 'blokk-neue';
 }
 .ampersand-placeholder {
-  font-family: 'BasicCommercialW01-Bold';
+  font-family: 'akzidenz-grotesk';
 }
 /*
  *	<ul class="stats-tabs">
@@ -78,7 +78,7 @@
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
-  border-right: 0.125rem solid #1e140f;
+  border-right: 0.125rem solid rgba(30, 20, 15, 0.27);
 }
 .stats-tabs li:last-child {
   margin: 0;
@@ -95,6 +95,17 @@
   margin: 0.125rem 0 0 0;
   font-size: 0.875rem;
   font-weight: normal;
+}
+.ellipsis {
+  /*width: 200px;*/
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*text-overflow: clip|ellipsis|string;*/
+
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
 }
 .inherit-wrap {
   word-wrap: auto;
@@ -120,7 +131,7 @@
  *	globals
  */
 html {
-  font: regular 15%/18 'BasicCommercialW01';
+  font: regular 15%/18 'akzidenz-grotesk-bold';
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
@@ -143,7 +154,7 @@ h1 {
   /*
 	 *	Display
 	 */
-  font-family: 'BasicCommercialW01-Bold';
+  font-family: 'akzidenz-grotesk-bold';
   font-size: 72;
   line-height: 72;
   text-rendering: optimizeLegibility;
@@ -155,7 +166,7 @@ h2 {
   /*
 	 *	Title
 	 */
-  font-family: 'BasicCommercialW01-Bold';
+  font-family: 'akzidenz-grotesk-bold';
   font-size: 54;
   line-height: 54;
   text-rendering: optimizeLegibility;
@@ -164,7 +175,7 @@ h2 {
   position: relative;
 }
 h3 {
-  font-family: 'BasicCommercialW01-Bold';
+  font-family: 'akzidenz-grotesk-bold';
   font-size: 33;
   line-height: 36;
   text-rendering: optimizeLegibility;
@@ -177,7 +188,7 @@ h4 {
 	 *	Body Copy
 	 */
 
-  font-family: 'BasicCommercialW01-Bold';
+  font-family: 'akzidenz-grotesk-bold';
   font-size: 15;
   line-height: 18;
   text-rendering: optimizeLegibility;
@@ -190,7 +201,7 @@ h5 {
 	 *	Caption
 	 */
 
-  font-family: 'BasicCommercialW01-Roma';
+  font-family: 'akzidenz-grotesk';
   font-size: 11;
   line-height: 14;
   text-rendering: optimizeLegibility;
@@ -277,11 +288,97 @@ a:hover {
   content: "\8212";
   z-index: 1000;
 }
-.caption .black {
-  color: #1e140f;
+.caption.black {
+  color: rgba(30, 20, 15, 0.27);
 }
-.caption .white {
+.caption.white {
   color: #fae100;
+}
+p.center,
+h1.center,
+h2.center,
+h3.center,
+h4.center,
+h5.center,
+h6.center,
+div.center {
+  text-align: center;
+}
+.page.center,
+.pages.center,
+.article.center {
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+/* black */
+div.black,
+.page.black,
+.pages.black,
+.article.black {
+  background-color: #1e140f;
+}
+/* black-light-gray */
+div.black-light-gray,
+.page.black-light-gray,
+.pages.black-light-gray,
+.article.black-light-gray {
+  background-color: rgba(30, 20, 15, 0.1);
+}
+/* black-dark-gray */
+div.black-dark-gray,
+.page.black-dark-gray,
+.pages.black-dark-gray,
+.article.black-dark-gray {
+  background-color: rgba(30, 20, 15, 0.27);
+}
+/* red */
+p.shaping,
+h1.shaping,
+h2.shaping,
+h3.shaping,
+h4.shaping,
+h5.shaping,
+h6.shaping {
+  color: #e93415;
+}
+div.shaping,
+.page.shaping,
+.pages.shaping,
+.article.shaping {
+  background-color: #e93415;
+}
+/* yellow */
+p.shaper,
+h1.shaper,
+h2.shaper,
+h3.shaper,
+h4.shaper,
+h5.shaper,
+h6.shaper {
+  color: #fae100;
+}
+div.shaper,
+.page.shaper,
+.pages.shaper,
+.article.shaper {
+  background-color: #fae100;
+}
+/* blue */
+p.shape,
+h1.shape,
+h2.shape,
+h3.shape,
+h4.shape,
+h5.shape,
+h6.shape {
+  color: #1925d2;
+}
+div.shape,
+.page.shape,
+.pages.shape,
+.article.shape {
+  background-color: #1925d2;
 }
 p.baseline-grid56,
 div.baseline-grid56 {
@@ -511,78 +608,6 @@ p.baseline-grid0,
 div.baseline-grid0 {
   margin-top: 12 px;
 }
-p.center,
-h1.center,
-h2.center,
-h3.center,
-h4.center,
-h5.center,
-h6.center,
-div.center {
-  text-align: center;
-}
-.page.center,
-.pages.center,
-.article.center {
-  text-align: center;
-  margin: 0 auto;
-  vertical-align: middle;
-}
-/* black */
-div.black,
-.page.black,
-.pages.black,
-.article.black {
-  background-color: #1e140f;
-}
-/* red */
-p.shaping,
-h1.shaping,
-h2.shaping,
-h3.shaping,
-h4.shaping,
-h5.shaping,
-h6.shaping {
-  color: #e93415;
-}
-div.shaping,
-.page.shaping,
-.pages.shaping,
-.article.shaping {
-  background-color: #e93415;
-}
-/* yellow */
-p.shaper,
-h1.shaper,
-h2.shaper,
-h3.shaper,
-h4.shaper,
-h5.shaper,
-h6.shaper {
-  color: #fae100;
-}
-div.shaper,
-.page.shaper,
-.pages.shaper,
-.article.shaper {
-  background-color: #fae100;
-}
-/* blue */
-p.shape,
-h1.shape,
-h2.shape,
-h3.shape,
-h4.shape,
-h5.shape,
-h6.shape {
-  color: #1925d2;
-}
-div.shape,
-.page.shape,
-.pages.shape,
-.article.shape {
-  background-color: #1925d2;
-}
 p.layer1,
 h1.layer1,
 h2.layer1,
@@ -682,6 +707,16 @@ div.layer6,
  */
 #rasterImages {
   visibility: hidden;
+}
+/*
+ *	slideshow
+ *	http://ryanflorence.com/jquery-slideshow/
+ */
+.slideshow {
+  width: 768px;
+  height: 1024px;
+  padding: 0px;
+  float: left;
 }
 /*	------------------------------------------------------------------------
  *

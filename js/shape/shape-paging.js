@@ -30,6 +30,23 @@
 // get the document
 var doc = document;
 
+
+/*
+ *	Article
+ */
+//
+// TODO: move to shape-core.js
+//
+// global holders for the various parts of an article
+// generic to be reused by all articles
+var title = [];
+var author = [];
+var intro = [];
+var main = [];
+var interview = [];
+var captions = [];
+
+
 /*
  *	Pagination
  */
@@ -63,6 +80,7 @@ $(document).ready(function() {
 	resize();
 	$(window).bind('resize', resize);
 
+
 	// top listens to touchevents
 	top = doc.getElementById('touchTarget');
 
@@ -74,9 +92,63 @@ $(document).ready(function() {
 		'opacity': 1.0
 	});
 
+
+	// load article
+	// filename is defined in HTML
+	loadArticle();
 });
 
+
+
 // ------------------------------------------------------------------------
+// methods
+// ------------------------------------------------------------------------
+/*
+ *	Article
+ */
+function loadArticle() {
+	console.log( 'loadArticle()' );
+	//
+	// load article json
+	//
+	if( filename != undefined ) {
+		console.log( 'getJSON( ' + filename + ' )' );
+		$.getJSON('copy/'+filename, function(data) {
+			// info block
+			title = data.article.info.title;
+			author = data.article.info.author;
+			// introduction paragraphs
+			intro = data.article.intro.text;
+			// content
+			main = data.article.main.text;
+			interview = data.article.interview.text;
+			// captions
+			captions = data.article.captions.text;
+
+			jsonToHtml(title, 'title');
+			jsonToHtml(author, 'author');
+			jsonToHtml(intro, 'intro');
+			jsonToHtml(main, 'main');
+			jsonToHtml(interview, 'interview');
+			jsonToHtml(captions, 'captions');
+		});
+	}
+};
+
+function jsonToHtml(arr, idName) {
+	var i = 0;
+	for(i=0; i<arr.length; i++) {
+		var id = '#'+idName+(i).toString();
+		$( id ).html( arr[i] );
+	}
+};
+
+
+
+// ------------------------------------------------------------------------
+/*
+ *	Pagination
+ */
 function resize() {
 	// var screenWidth = doc.documentElement.clientWidth;
 	// // console.log('resize  '  + screenWidth);

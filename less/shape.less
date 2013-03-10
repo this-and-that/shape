@@ -31,7 +31,7 @@
 
 //	------------------------------------------------------------------------
 //
-//	Begin This & That Globals
+//	Begin This & That Global Properties
 //
 //	------------------------------------------------------------------------
 
@@ -39,14 +39,14 @@
 //	Colors
 //	------------------------------------------------------------------------
 @white:				rgb(255, 255, 255);		// #ffffff
-@white-light-gray: 	@white + rgba(0,0,0, 0.90);
-@white-dark-gray:	@white + rgba(0,0,0, 0.83);
+@white-light-gray: 	fade(@white, 90%);
+@white-dark-gray:	fade(@white, 83%);
 
 @black:				rgb( 30,  20,  15);		// #1e140f
-@black-light-gray: 	@black + rgba(0,0,0, 0.10);		// #f5f5eb
-@black-dark-gray:	@black + rgba(0,0,0, 0.27);		// #cdcdc3
+@black-light-gray: 	fade(@black, 10%);		// #f5f5eb
+@black-dark-gray:	fade(@black, 27%);		// #cdcdc3
 
-@link:				rgb( 10, 190, 240);		// #0abef0 */
+@link:				rgb( 10, 190, 240);		// #0abef0
 
 @shaping:			rgb(233,  52,  21);		// #e93415; // red 
 @shaper:			rgb(250, 225,   0);		// #fae100; // yellow
@@ -135,6 +135,9 @@
 
 
 
+
+
+
 // 
 //	TODO: @import "shape-typeplate.less";
 //
@@ -147,8 +150,8 @@
 //
 //	core properties
 //
-@type-base-family: 'BasicCommercialW01-Roma';
-@type-base-family-bold: 'BasicCommercialW01-Bold';
+@type-base-family: 'akzidenz-grotesk'; //'BasicCommercialW01-Roma';
+@type-base-family-bold: 'akzidenz-grotesk-bold'; //'BasicCommercialW01-Bold';
 @type-base-weight: regular;
 @type-base-size: 15;
 @type-base-line-height: 18; //3;
@@ -183,8 +186,8 @@
 //
 //	base definition
 //
-.base-type (@type-base-weight, @type-base-line-height, @type-base-size, @type-family) {
-	font: @type-base-weight ~"@{type-base-size}%/@{type-base-line-height}" @type-family;
+.base-type (@type-base-weight, @type-base-line-height, @type-base-size, @type-base-family) {
+	font: @type-base-weight ~"@{type-base-size}%/@{type-base-line-height}" @type-base-family;
 }
 
 
@@ -286,6 +289,21 @@
 
 
 //
+//	ellipsis
+//
+.ellipsis {
+	/*width: 200px;*/
+	white-space: nowrap;  
+	overflow: hidden;  
+	text-overflow: ellipsis;  
+	/*text-overflow: clip|ellipsis|string;*/
+	-o-text-overflow: ellipsis;  
+	-ms-text-overflow: ellipsis;
+}
+
+
+
+//
 //	smallcaps
 //
 //	http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
@@ -331,7 +349,7 @@
 //
 //	Use the following Sass @include with any selector you feel necessary.
 //
-//	@include dropcap(@float: left, @type-size: 4em, @type-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent);
+//	@include dropcap(@float: left, @type-size: 4em, @type-base-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent);
 //
 //	Extend this object into your custom stylesheet.
 //
@@ -340,13 +358,13 @@
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why not just make that separately in your declaration.
-.dropcap (@float: left, @type-size: 4em, @type-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent) {
+.dropcap (@float: left, @type-size: 4em, @type-base-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent) {
 	&:first-letter {
 		float: @float;
 		margin: @margin;
 		padding: @padding;
 		font-size: @type-size;
-		font-family: @type-family;
+		font-family: @type-base-family;
 		line-height: @lineHeight;
 		text-indent: @text-indent;
 		background: @bg;
@@ -376,7 +394,7 @@
  *	globals
  */
 html {
-	.base-type(@type-base-weight, @type-base-line-height, @type-base-size, @type-family);
+	.base-type(@type-base-weight, @type-base-line-height, @type-base-size, @type-base-family-bold);
 	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 }
@@ -519,6 +537,9 @@ div {
 
 
 
+//
+//	iframe
+//
 iframe {
 	margin: 0;
 	padding: 0;
@@ -539,6 +560,9 @@ a:hover {
   color: @link;
   text-decoration: underline;
 }
+
+
+
 
 
 
@@ -617,39 +641,13 @@ a:hover {
 	content: "\8212";
 	z-index: @layer6;
 
-	.black {
+	&.black {
 		color: @black-dark-gray;
 	}
-	.white {
+	&.white {
 		color: @shaper; //white-dark-gray;
 	}
 }
-
-
-//
-//	vertical grid
-//	not sure where to start
-//
-//	http://blog.thehippo.de/2012/04/programming/do-a-loop-with-less-css/
-//
-@baseline-divs: 1024 / @type-base-line-height;
-@iterations: 56; //~`parseInt( '@{@baseline-divs}' )`;
-
-.baseline-gridLoop (@index) when (@index > -1) {
-	@margin-top: 12;
-
-	(~".baseline-grid@{index}") {
-		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
-		p&, div& {
-			margin-top: ((@index*@type-base-line-height)+@margin-top)px;
-			// position: relative;
-		}
-	}
-	.baseline-gridLoop(@index - 1);
-}
-.baseline-gridLoop (-1) {
-}
-.baseline-gridLoop (@iterations);
 
 
 
@@ -676,6 +674,18 @@ a:hover {
 .black {
 	div&, .page&, .pages&, .article& {
 		background-color: @black;
+	}
+}
+/* black-light-gray */
+.black-light-gray {
+	div&, .page&, .pages&, .article& {
+		background-color: @black-light-gray;
+	}
+}
+/* black-dark-gray */
+.black-dark-gray {
+	div&, .page&, .pages&, .article& {
+		background-color: @black-dark-gray;
 	}
 }
 /* red */
@@ -709,7 +719,31 @@ a:hover {
 
 
 //
-//	layered
+//	vertical grid
+//
+//	http://blog.thehippo.de/2012/04/programming/do-a-loop-with-less-css/
+//
+@baseline-divs: 1024 / @type-base-line-height;
+@iterations: 56; //~`parseInt( '@{@baseline-divs}' )`;
+
+.baseline-gridLoop (@index) when (@index > -1) {
+	@margin-top: 12;
+
+	(~".baseline-grid@{index}") {
+		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
+		p&, div& {
+			margin-top: ((@index*@type-base-line-height)+@margin-top)px;
+		}
+	}
+	.baseline-gridLoop(@index - 1);
+}
+.baseline-gridLoop (-1) {}
+.baseline-gridLoop (@iterations);
+
+
+
+//
+//	layers
 //
 .layer1 {
 	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
@@ -741,6 +775,9 @@ a:hover {
 		z-index: @layer6;
 	}
 }
+
+
+
 
 
 
@@ -780,6 +817,22 @@ a:hover {
 #rasterImages {
 	visibility: hidden;
 }
+
+
+/*
+ *	slideshow
+ *	http://ryanflorence.com/jquery-slideshow/
+ */
+.slideshow {
+	width: 768px;
+	height: 1024px;
+
+	padding: 0px;
+	float: left;
+}
+
+
+
 
 
 

@@ -67,6 +67,10 @@ $(function() {
 	};
 });
 
+
+
+// ------------------------------------------------------------------------
+// methods
 // ------------------------------------------------------------------------
 //
 //	TODO: tweak orientation settings to procure correct angle
@@ -119,7 +123,7 @@ function adjustPages() {
 			});
 		});	
 	}
-	console.log( $('.page') );
+	// console.log( $('.page') );
 
 
 	// adjust page(s) css
@@ -127,7 +131,7 @@ function adjustPages() {
 		'width': pagesNum*w,
 		'height': h
 	});
-	console.log( $('.pages') );
+	// console.log( $('.pages') );
 
 
 	// adjust article css
@@ -135,7 +139,7 @@ function adjustPages() {
 		'width': pagesNum*w,
 		'height': h
 	});
-	console.log( $('.article') );
+	// console.log( $('.article') );
 
 };
 
