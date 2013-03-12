@@ -64,7 +64,7 @@
   font-family: 'blokk-neue';
 }
 .ampersand-placeholder {
-  font-family: 'akzidenz-grotesk';
+  font-family: Arial;
 }
 /*
  *	<ul class="stats-tabs">
@@ -78,7 +78,7 @@
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
-  border-right: 0.125rem solid rgba(30, 20, 15, 0.27);
+  border-right: 0.125rem solid rgba(30, 20, 15, 0.45);
 }
 .stats-tabs li:last-child {
   margin: 0;
@@ -131,7 +131,7 @@
  *	globals
  */
 html {
-  font: regular 15%/18 'akzidenz-grotesk-bold';
+  font: regular 15%/18 Arial;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
@@ -154,7 +154,7 @@ h1 {
   /*
 	 *	Display
 	 */
-  font-family: 'akzidenz-grotesk-bold';
+  font-family: Arial;
   font-size: 72;
   line-height: 72;
   text-rendering: optimizeLegibility;
@@ -166,7 +166,7 @@ h2 {
   /*
 	 *	Title
 	 */
-  font-family: 'akzidenz-grotesk-bold';
+  font-family: Arial;
   font-size: 54;
   line-height: 54;
   text-rendering: optimizeLegibility;
@@ -175,7 +175,7 @@ h2 {
   position: relative;
 }
 h3 {
-  font-family: 'akzidenz-grotesk-bold';
+  font-family: Arial;
   font-size: 33;
   line-height: 36;
   text-rendering: optimizeLegibility;
@@ -188,7 +188,7 @@ h4 {
 	 *	Body Copy
 	 */
 
-  font-family: 'akzidenz-grotesk-bold';
+  font-family: Arial;
   font-size: 15;
   line-height: 18;
   text-rendering: optimizeLegibility;
@@ -201,9 +201,9 @@ h5 {
 	 *	Caption
 	 */
 
-  font-family: 'akzidenz-grotesk';
+  font-family: Arial;
   font-size: 11;
-  line-height: 14;
+  line-height: 11;
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -292,11 +292,14 @@ ul.caption {
   list-style: inside none;
 }
 ul.caption li:before {
-  content: "— ";
+  content: "—";
 }
 ul.caption li {
-  text-indent: -1.3em;
-  margin-left: 1.3em;
+  text-indent: -0.8em;
+}
+ul.caption li span {
+  position: relative;
+  left: 36px;
 }
 p.center,
 h1.center,
@@ -355,13 +358,13 @@ h3.white-light-gray,
 h4.white-light-gray,
 h5.white-light-gray,
 h6.white-light-gray {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.45);
 }
 div.white-light-gray,
 .page.white-light-gray,
 .pages.white-light-gray,
 .article.white-light-gray {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.45);
 }
 /* white-dark-gray */
 p.white-dark-gray,
@@ -410,13 +413,13 @@ h3.black-dark-gray,
 h4.black-dark-gray,
 h5.black-dark-gray,
 h6.black-dark-gray {
-  color: rgba(30, 20, 15, 0.27);
+  color: rgba(30, 20, 15, 0.45);
 }
 div.black-dark-gray,
 .page.black-dark-gray,
 .pages.black-dark-gray,
 .article.black-dark-gray {
-  background-color: rgba(30, 20, 15, 0.27);
+  background-color: rgba(30, 20, 15, 0.45);
 }
 /* red */
 p.shaping,
@@ -468,231 +471,231 @@ div.shape,
 }
 p.baseline-grid56,
 div.baseline-grid56 {
-  top: 1020 px;
+  margin-top: 1020 px;
 }
 p.baseline-grid55,
 div.baseline-grid55 {
-  top: 1002 px;
+  margin-top: 1002 px;
 }
 p.baseline-grid54,
 div.baseline-grid54 {
-  top: 984 px;
+  margin-top: 984 px;
 }
 p.baseline-grid53,
 div.baseline-grid53 {
-  top: 966 px;
+  margin-top: 966 px;
 }
 p.baseline-grid52,
 div.baseline-grid52 {
-  top: 948 px;
+  margin-top: 948 px;
 }
 p.baseline-grid51,
 div.baseline-grid51 {
-  top: 930 px;
+  margin-top: 930 px;
 }
 p.baseline-grid50,
 div.baseline-grid50 {
-  top: 912 px;
+  margin-top: 912 px;
 }
 p.baseline-grid49,
 div.baseline-grid49 {
-  top: 894 px;
+  margin-top: 894 px;
 }
 p.baseline-grid48,
 div.baseline-grid48 {
-  top: 876 px;
+  margin-top: 876 px;
 }
 p.baseline-grid47,
 div.baseline-grid47 {
-  top: 858 px;
+  margin-top: 858 px;
 }
 p.baseline-grid46,
 div.baseline-grid46 {
-  top: 840 px;
+  margin-top: 840 px;
 }
 p.baseline-grid45,
 div.baseline-grid45 {
-  top: 822 px;
+  margin-top: 822 px;
 }
 p.baseline-grid44,
 div.baseline-grid44 {
-  top: 804 px;
+  margin-top: 804 px;
 }
 p.baseline-grid43,
 div.baseline-grid43 {
-  top: 786 px;
+  margin-top: 786 px;
 }
 p.baseline-grid42,
 div.baseline-grid42 {
-  top: 768 px;
+  margin-top: 768 px;
 }
 p.baseline-grid41,
 div.baseline-grid41 {
-  top: 750 px;
+  margin-top: 750 px;
 }
 p.baseline-grid40,
 div.baseline-grid40 {
-  top: 732 px;
+  margin-top: 732 px;
 }
 p.baseline-grid39,
 div.baseline-grid39 {
-  top: 714 px;
+  margin-top: 714 px;
 }
 p.baseline-grid38,
 div.baseline-grid38 {
-  top: 696 px;
+  margin-top: 696 px;
 }
 p.baseline-grid37,
 div.baseline-grid37 {
-  top: 678 px;
+  margin-top: 678 px;
 }
 p.baseline-grid36,
 div.baseline-grid36 {
-  top: 660 px;
+  margin-top: 660 px;
 }
 p.baseline-grid35,
 div.baseline-grid35 {
-  top: 642 px;
+  margin-top: 642 px;
 }
 p.baseline-grid34,
 div.baseline-grid34 {
-  top: 624 px;
+  margin-top: 624 px;
 }
 p.baseline-grid33,
 div.baseline-grid33 {
-  top: 606 px;
+  margin-top: 606 px;
 }
 p.baseline-grid32,
 div.baseline-grid32 {
-  top: 588 px;
+  margin-top: 588 px;
 }
 p.baseline-grid31,
 div.baseline-grid31 {
-  top: 570 px;
+  margin-top: 570 px;
 }
 p.baseline-grid30,
 div.baseline-grid30 {
-  top: 552 px;
+  margin-top: 552 px;
 }
 p.baseline-grid29,
 div.baseline-grid29 {
-  top: 534 px;
+  margin-top: 534 px;
 }
 p.baseline-grid28,
 div.baseline-grid28 {
-  top: 516 px;
+  margin-top: 516 px;
 }
 p.baseline-grid27,
 div.baseline-grid27 {
-  top: 498 px;
+  margin-top: 498 px;
 }
 p.baseline-grid26,
 div.baseline-grid26 {
-  top: 480 px;
+  margin-top: 480 px;
 }
 p.baseline-grid25,
 div.baseline-grid25 {
-  top: 462 px;
+  margin-top: 462 px;
 }
 p.baseline-grid24,
 div.baseline-grid24 {
-  top: 444 px;
+  margin-top: 444 px;
 }
 p.baseline-grid23,
 div.baseline-grid23 {
-  top: 426 px;
+  margin-top: 426 px;
 }
 p.baseline-grid22,
 div.baseline-grid22 {
-  top: 408 px;
+  margin-top: 408 px;
 }
 p.baseline-grid21,
 div.baseline-grid21 {
-  top: 390 px;
+  margin-top: 390 px;
 }
 p.baseline-grid20,
 div.baseline-grid20 {
-  top: 372 px;
+  margin-top: 372 px;
 }
 p.baseline-grid19,
 div.baseline-grid19 {
-  top: 354 px;
+  margin-top: 354 px;
 }
 p.baseline-grid18,
 div.baseline-grid18 {
-  top: 336 px;
+  margin-top: 336 px;
 }
 p.baseline-grid17,
 div.baseline-grid17 {
-  top: 318 px;
+  margin-top: 318 px;
 }
 p.baseline-grid16,
 div.baseline-grid16 {
-  top: 300 px;
+  margin-top: 300 px;
 }
 p.baseline-grid15,
 div.baseline-grid15 {
-  top: 282 px;
+  margin-top: 282 px;
 }
 p.baseline-grid14,
 div.baseline-grid14 {
-  top: 264 px;
+  margin-top: 264 px;
 }
 p.baseline-grid13,
 div.baseline-grid13 {
-  top: 246 px;
+  margin-top: 246 px;
 }
 p.baseline-grid12,
 div.baseline-grid12 {
-  top: 228 px;
+  margin-top: 228 px;
 }
 p.baseline-grid11,
 div.baseline-grid11 {
-  top: 210 px;
+  margin-top: 210 px;
 }
 p.baseline-grid10,
 div.baseline-grid10 {
-  top: 192 px;
+  margin-top: 192 px;
 }
 p.baseline-grid9,
 div.baseline-grid9 {
-  top: 174 px;
+  margin-top: 174 px;
 }
 p.baseline-grid8,
 div.baseline-grid8 {
-  top: 156 px;
+  margin-top: 156 px;
 }
 p.baseline-grid7,
 div.baseline-grid7 {
-  top: 138 px;
+  margin-top: 138 px;
 }
 p.baseline-grid6,
 div.baseline-grid6 {
-  top: 120 px;
+  margin-top: 120 px;
 }
 p.baseline-grid5,
 div.baseline-grid5 {
-  top: 102 px;
+  margin-top: 102 px;
 }
 p.baseline-grid4,
 div.baseline-grid4 {
-  top: 84 px;
+  margin-top: 84 px;
 }
 p.baseline-grid3,
 div.baseline-grid3 {
-  top: 66 px;
+  margin-top: 66 px;
 }
 p.baseline-grid2,
 div.baseline-grid2 {
-  top: 48 px;
+  margin-top: 48 px;
 }
 p.baseline-grid1,
 div.baseline-grid1 {
-  top: 30 px;
+  margin-top: 30 px;
 }
 p.baseline-grid0,
 div.baseline-grid0 {
-  top: 12 px;
+  margin-top: 12 px;
 }
 p.layer1,
 h1.layer1,

@@ -39,12 +39,12 @@
 //	Colors
 //	------------------------------------------------------------------------
 @white:				rgb(255, 255, 255);		// #ffffff
-@white-light-gray: 	fade(@white, 90%);
+@white-light-gray: 	fade(@white, 45%);
 @white-dark-gray:	fade(@white, 83%);
 
 @black:				rgb( 30,  20,  15);		// #1e140f
 @black-light-gray: 	fade(@black, 10%);		// #f5f5eb
-@black-dark-gray:	fade(@black, 27%);		// #cdcdc3
+@black-dark-gray:	fade(@black, 45%);		// #cdcdc3
 
 @link:				rgb( 10, 190, 240);		// #0abef0
 
@@ -150,8 +150,8 @@
 //
 //	core properties
 //
-@type-base-family: 'akzidenz-grotesk'; //'BasicCommercialW01-Roma';
-@type-base-family-bold: 'akzidenz-grotesk-bold'; //'BasicCommercialW01-Bold';
+@type-base-family: Arial; //'akzidenz-grotesk'; //'BasicCommercialW01-Roma';
+@type-base-family-bold: Arial; //'akzidenz-grotesk-bold'; //'BasicCommercialW01-Bold';
 @type-base-weight: regular;
 @type-base-size: 15;
 @type-base-line-height: 18; //3;
@@ -476,7 +476,7 @@ h5 {
 	 */
 	font-family: @type-base-family;
 	font-size: @zeta;
-	line-height: @zeta + 3;
+	line-height: @zeta; // + 1;
 	.hN;
 }
 h6 {
@@ -649,13 +649,18 @@ a:hover {
 		list-style: inside none;
 
 		& li:before {
-			content: "— ";
+			content: "—";
 		}
 
 		& li {
 			// may need to be adjusted based on typeface
-			text-indent: -1.3em;
-			margin-left: 1.3em;
+			text-indent: -0.8em;
+			// margin-left: 36px;
+		}
+
+		& li span { 
+			position: relative;
+			left: 36px;
 		}
 	}
 
@@ -799,8 +804,8 @@ a:hover {
 	(~".baseline-grid@{index}") {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
 		p&, div& {
-			// margin-top: ((@index*@type-base-line-height)+@margin-top)px;
-			top: ((@index*@type-base-line-height)+@margin-top)px;
+			margin-top: ((@index*@type-base-line-height)+@margin-top)px;
+			// top: ((@index*@type-base-line-height)+@margin-top)px;
 		}
 	}
 	.baseline-gridLoop(@index - 1);

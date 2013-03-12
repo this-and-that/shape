@@ -320,11 +320,11 @@ function jsonToHtml(arr, idName) {
 		if( idName == 'captions' ) {
 			// handle captions a bit diffrently
 			// they are treated like lists
-			$( id ).html( '<ul class="caption"><li>' + arr[i].title + '</li><li>' + arr[i].body + '</li></ul>' );
+			$( id ).html( '<h5><ul class="caption"><li><span>' + arr[i].title + '</span></li><li><span>' + arr[i].body + '</span></li></ul></h5>' );
 		}
 		else {
 			// everything else
-			$( id ).html( arr[i] );
+			$( id ).html( '<h4>' + arr[i] + '</h4>' );
 		}
 	}
 };
