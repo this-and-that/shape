@@ -1,0 +1,192 @@
+<!-- 
+  -	This & That
+  - No. 1
+  -	Shape
+  -
+  -	Debug
+  -	768 x 1024 iPad
+  -
+  -
+  -	Ken Frederick
+  -	ken.frederick@gmx.de
+  -
+  -	http://cargocollective.com/kenfrederick/
+  -	http://kenfrederick.blogspot.com/
+  -
+  -
+  -->
+
+<!-- DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" -->
+<html lang="en">
+	<head>
+		<!-- META -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		 
+
+
+		<!-- MOBILE -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+
+
+		<link rel="shortcut icon" type="image/x-icon" href="images/stillen_favicon.ico" />
+
+
+		<!-- iOS DEVICE ICON -->
+ 		<link rel="apple-touch-icon-precomposed" href="images/iphone_icon.png" />
+		<link rel="apple-touch-icon-precomposed" size="114x114" href="images/iphone_icon@2.png" />
+
+		<!-- iOS DEVICE STARTUP IMAGES -->
+		<!-- iPhone/iPod Touch Portrait  -->
+		<link rel="apple-touch-startup-image" href="images/iphone_startup.png" media="screen and (max-device-width: 320px)" />
+		<link rel="apple-touch-startup-image" href="images/iphone_startup@2.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+
+		<!-- iPad -->
+ 		<link rel="apple-touch-startup-image" href="images/ipad_startup_landscape.png" sizes="1024x748" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+		<link rel="apple-touch-startup-image" href="images/ipad_startup_portrait.png" sizes="768x1004" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/>
+
+		<!-- iPad (Retina) -->
+ 		<link rel="apple-touch-startup-image" href="images/ipad_startup_landscape@2.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" />
+		<link rel="apple-touch-startup-image" href="images/ipad_startup_portrait@2.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" />
+
+		
+
+		<title>Eike K&ouml;nig Der Kinder K&uuml;mmerer</title>
+		
+		
+
+		<!-- JavaScript -->
+		<!-- LOAD LIBRARIES -->
+		<script type="text/javascript" src="js/jquery/jquery.1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery.lettering.js"></script> <!-- use with http://www.kernjs.com/ -->
+		<script type="text/javascript" src="js/jquery/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery.rf.slideshow.js"></script>
+
+		<script type="text/javascript" src="js/shape/shape-core.js"></script>
+
+		<!-- LOAD EXTERNAL JAVASCRIPT(S) -->
+		<!-- // <script type="text/javascript" src="http://fast.fonts.com/jsapi/f592b871-c6dc-4fac-a6f3-e752edff2e77.js"></script> -->
+
+		<!-- LOAD PAPERJS SCRIPT(S) -->
+		<!-- // <script type="text/javascript" src="js/paper/paper-nightly.js"></script> -->
+		<!-- // <script type="text/javascript" src="js/frederickk/paper-implement.js"></script> -->
+		<!-- // <script type="text/javascript" src="js/frederickk/frederickkPaper.js"></script> -->
+		<!-- // <script type="text/javascript" src="scripts/eike-koenig-illustration.js"></script> -->
+
+		<script>
+			// source file for the article content
+			// var filename = 'interview_eike_koenig.json';
+
+			$(document).ready(function() {
+				//
+				// slideshow
+				// manage page-by-page slideshows
+				//
+				// page 11
+				//
+				$('#slideshow11').slideshow( 'stop' );
+
+				//
+				// page 13
+				//
+				$('#slideshow13').slideshow( 'stop' );
+			});
+
+		</script>
+
+
+
+		<!-- CSS -->
+		<!-- LOAD ADDITIONAL CSS sTYLESHEETS -->
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="css/shape.css" rel="stylesheet" type="text/css" />
+
+		<style>
+			/* i know this is bad form but... */
+			#coverImage {
+				-webkit-mask-position:	96px 300px;
+				/*-webkit-mask-size:		100%;  really? this is relative to window size? not shape size? */
+				-webkit-mask-size:		576px 576px;
+				-webkit-mask-repeat:	no-repeat;
+			}
+
+
+
+			h4 { 
+				z-index: 1000; 
+				/*position: relative; */
+			}
+
+			p {  
+				/*position: relative; */
+				/*z-index: 1; */
+				/*background-color: #FFCCCC;*/
+			} 
+
+		</style>
+
+
+		
+		<meta http-equiv="x-dns-prefetch-control" content="off"/>
+	</head>
+	<body>
+
+		<div class="page">
+			<div class="container">
+
+				<div class"span4 offset4">
+					<h4>Header Z-Index = 2</h4>
+				</div>
+
+				<div class"span1 offset1">
+					<p>You probably can't read this part, so I will fill it in with useless text for 
+					the time being.  This paragraph has a z-index of 1, which is less than
+					the header.  As you can see, the header has been moved down, using positioning, and is
+					now resting on top of this paragraph.  If we had not defined the z-index, by default the paragraph
+					would have been on top of the header because it appears later in our HTML code.</p>
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<!-- ARTICLE CONTENT BEGIN -->
+		<div class="page">
+			<div style="position: relative;">
+				<div class="span4 offset4 baseline-grid46 layer3" style="position: relative;">
+					boom 001
+				</div>
+				<img src="images/interview_eike_koenig/368258855_1439c06d92_o.jpg" class="layer1" />
+			</div>
+			<div style="position: relative;">
+				<div class="span4 offset4 baseline-grid46 layer3">
+					boom 002
+				</div>
+				<img src="images/interview_eike_koenig/2057777773_f2d4f3e14e_o.jpg" class="layer1" />
+			</div>
+			<div style="position: relative;">
+				<div class="span4 offset4 baseline-grid46 layer3">
+					boom 003
+				</div>
+				<img src="images/interview_eike_koenig/3526203251_37abe5cb2a_o.jpg" class="layer1" />
+			</div>
+			<div style="position: relative;">
+				<div class="span4 offset4 baseline-grid46 layer3">
+					boom 004
+				</div>
+				<video src="video/interview_eike_koenig/hort_in_argentina_640x576.mp4" border="0" width="576" controls></video>
+			</div>
+		</div>
+
+
+
+		<!-- TOUCH TARGET -->
+		<div id="touchTarget">&nbsp;</div>
+
+
+		
+	</body>
+</html>

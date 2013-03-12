@@ -509,7 +509,7 @@ div {
 		// -moz-border-radius: 50%;
 		// -ms-border-radius: 50%;
 
-		-webkit-mask-image:	url('../images/shape/circle.svg');
+		-webkit-mask-image:	url('../assets/shape/circle.svg');
 		// -webkit-transform:	scale(0.5, 0.5);
 		// -webkit-transform:	rotate(45deg);
 		z-index: @layer6;
@@ -524,7 +524,7 @@ div {
 		background-position: center center; 
 		background-color: @black;
 
-		-webkit-mask-image:	url('../images/shape/right-triangle.svg');
+		-webkit-mask-image:	url('../assets/shape/right-triangle.svg');
 		// -webkit-transform:	scale(0.5, 0.5);
 		// -webkit-transform:	rotate(45deg);
 		z-index: @layer6;
@@ -638,15 +638,27 @@ a:hover {
 //	holder for image captions
 //
 .caption {
-	content: "\8212";
-	z-index: @layer6;
 
-	&.black {
-		color: @black-dark-gray;
+	p& {
+		// not sure why this doesn't work
+		position: absolute;
+		z-index: @layer6;
 	}
-	&.white {
-		color: @shaper; //white-dark-gray;
+
+	ul& {
+		list-style: inside none;
+
+		& li:before {
+			content: "— ";
+		}
+
+		& li {
+			// may need to be adjusted based on typeface
+			text-indent: -1.3em;
+			margin-left: 1.3em;
+		}
 	}
+
 }
 
 
@@ -655,7 +667,7 @@ a:hover {
 //	centered
 //
 .center {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, div&, img& {
 		text-align: center;
 	}
 	.page&, .pages&, .article& {
@@ -665,11 +677,59 @@ a:hover {
 	}
 }
 
+//
+//	http://www.vanseodesign.com/css/vertical-centering/
+//
+.center-center {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+		// top: 50%;
+		// margin-top: -0px; // should be 50% target height
+		// position: absolute;
+
+		top: 50%;
+		position: absolute; 
+
+		// width: 100%;
+		// height: 100%;
+		// background-repeat: no-repeat;
+		// background-position:center;
+	}
+}
 
 
 //
 //	colored
 //
+/* white */
+.white {
+	p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @white;
+	}
+	div&, .page&, .pages&, .article& {
+		background-color: @white;
+	}
+}
+
+/* white-light-gray */
+.white-light-gray {
+	p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @white-light-gray;
+	}
+	div&, .page&, .pages&, .article& {
+		background-color: @white-light-gray;
+	}
+}
+/* white-dark-gray */
+.white-dark-gray {
+	p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @white-dark-gray;
+	}
+	div&, .page&, .pages&, .article& {
+		background-color: @white-dark-gray;
+	}
+}
+
+
 /* black */
 .black {
 	div&, .page&, .pages&, .article& {
@@ -678,16 +738,23 @@ a:hover {
 }
 /* black-light-gray */
 .black-light-gray {
+	p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @black-light-gray;
+	}
 	div&, .page&, .pages&, .article& {
 		background-color: @black-light-gray;
 	}
 }
 /* black-dark-gray */
 .black-dark-gray {
+	p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @black-dark-gray;
+	}
 	div&, .page&, .pages&, .article& {
 		background-color: @black-dark-gray;
 	}
 }
+
 /* red */
 .shaping {
 	p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -732,7 +799,8 @@ a:hover {
 	(~".baseline-grid@{index}") {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
 		p&, div& {
-			margin-top: ((@index*@type-base-line-height)+@margin-top)px;
+			// margin-top: ((@index*@type-base-line-height)+@margin-top)px;
+			top: ((@index*@type-base-line-height)+@margin-top)px;
 		}
 	}
 	.baseline-gridLoop(@index - 1);
@@ -746,32 +814,38 @@ a:hover {
 //	layers
 //
 .layer1 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer1;
 	}
 }
 .layer2 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer2;
 	}
 }
 .layer3 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer3;
 	}
 }
 .layer4 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer4;
 	}
 }
 .layer5 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer5;
 	}
 }
 .layer6 {
-	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, .page&, .pages&, .article& {
+	p&, h1&, h2&, h3&, h4&, h5&, h6&, img&, div&, img&, video&, .page&, .pages&, .article& {
+		position: absolute;
 		z-index: @layer6;
 	}
 }
@@ -802,11 +876,11 @@ a:hover {
 //	Canvas
 //
 #canvas {
+	width: 100%;
 	height: 100%;
+	top: 0px;
 	left: 0px;
 	// position: fixed;
-	top: 0px;
-	width: 100%;
 	z-index: @layer5;
 }
 
@@ -819,18 +893,38 @@ a:hover {
 }
 
 
-/*
- *	slideshow
- *	http://ryanflorence.com/jquery-slideshow/
- */
+//
+//	slideshow
+//	http://ryanflorence.com/jquery-slideshow/
+//
 .slideshow {
 	width: 768px;
 	height: 1024px;
 
 	padding: 0px;
 	float: left;
+
+	position: relative;
 }
 
+.slideshowObject {
+	position: relative;
+}
+
+
+//
+//	touchTarget for pagination interactions
+//
+#touchTarget {
+	width: 768px;
+	height: 1024px;
+	top: 0px;
+	left: 0px;
+	
+	position: absolute;
+	background-color: fade(@shaper, 10%);		
+	z-index: @layer5;
+}
 
 
 
@@ -841,6 +935,9 @@ a:hover {
  *	Begin Media queries
  *
  *	------------------------------------------------------------------------ */
+
+// media queries can somehow be automated with a mix-in?
+
 @import "shape-media-queries.less";
 
 

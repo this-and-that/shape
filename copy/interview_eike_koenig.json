@@ -145,13 +145,33 @@
 	},
 
 
-	"captions": {
-		"text": [
-			"Booka Shade", "Tickle Video"
-		]
-	}
+    "captions": {
+        "text": [
+            {
+                "title": "Booka Shade",
+                "body": "Tickle Video"
+            },
+            {
+                "title": "Jazzanova",
+                "body": "In lieu of a digital creation, Hort created a physical identity and photographed it."
+            },
+            {
+                "title": "Workshop Dessau",
+                "body": "Eike&rsquo;s workshop philosophy is to facilitate students ideation in all directions."
+            },
+            {
+                "title": "Workshop Dortmund",
+                "body": "Sillyness and play are indicative of the output of Hort and integral approaches within workshops."
+            },
+            {
+                "title": "Workshop Berlin",
+                "body": "Sillyness and play are indicative of the output of Hort and integral approaches within workshops."
+            },
+            {
+                "title": "Workshop Argentina"
+            }
+        ]
+    }
+
 
 }}
-
-
-

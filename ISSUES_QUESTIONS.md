@@ -28,6 +28,7 @@ design
 * interaction
 - [ ] (three line menu) in top left? what's in it?
 - [ ] view all articles preview bottom or left? (default is bottom)
+- [ ] custom play controls #8 
 
 * structure
 - [ ] left-right page tschichold grid may have to go away #7
