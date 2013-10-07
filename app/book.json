@@ -1,0 +1,27 @@
+{
+	"hpub": 1,
+	"title": "1024x768",
+	"author": ["Multiple"],
+	"creator": ["Ken Frederick"],
+	"date": "2012-08-22",
+	"url": "book://",
+
+	"orientation": "both",
+	"zoomable": false,
+
+	"-baker-background": "#000000",
+	"-baker-vertical-bounce": false,
+	"-baker-media-autoplay": true,
+	"-baker-background-image-portrait": "assets/background-portrait.png",
+	"-baker-background-image-landscape": "assets/background-landscape.png",
+	"-baker-page-numbers-color": "#000000",
+
+	"contents": [
+		"cover.html",
+		"triangle.html",
+		"content.html",
+		"eike_koenig.html",
+		"symbiotic_relationships.html",
+        "shape.html"
+	]
+}

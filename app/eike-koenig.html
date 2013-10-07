@@ -1,0 +1,1313 @@
+<!-- 
+ -  This & That
+ -  No. 1
+ -  Shape
+ -
+ -
+ -  Ken Frederick
+ -  ken.frederick@gmx.de
+ -
+ -  http://kennethfrederick.de/
+ -  http://blog.kennethfrederick.de/
+ -
+ -->
+
+
+<!doctype html>
+<!--[if lt IE 7]>			<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>				<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>				<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+	<head>
+		<!-- META -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="">
+
+
+
+		<!-- MOBILE -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-title" content="This &amp; That">
+
+
+		<!-- iOS DEVICE ICON -->
+		<!-- iPhone & iPod Touch -->
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/application-icon-57x57.png" />
+		<!-- iPad -->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/application-icon-72x72.png" />
+		<!-- Retina (Universal) -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/application-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/application-icon-144x144.png" />
+
+		<!-- iOS DEVICE STARTUP IMAGES -->
+		<!-- iPhone/iPod Touch Portrait	-->
+		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup.png" media="screen and (max-device-width: 320px)" /> -->
+		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> -->
+
+		<!-- iPad -->
+		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape.png" sizes="1024x748" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" /> -->
+		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait.png" sizes="768x1004" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/> -->
+
+		<!-- iPad (Retina) -->
+		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" /> -->
+		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" /> -->
+
+
+
+		<title>This &amp; That</title>
+
+
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		<style>
+		</style>
+
+
+
+
+		<!-- JAVASCRIPT -->
+		<!-- build:js scripts/vendor/jquery.js -->
+		<!-- JQUERY -->
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+		<script src="bower_components/Lettering.js/jquery.lettering.js"></script>
+		<!-- endbuild -->
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			filename = 'interview_eike_koenig.json';
+
+			var bGalleryVisible = false;
+			function toggleGallery() {
+				console.log( 'toggleGallery()' );
+
+				toggleAuthor();
+				// console.log( $('#gallery') );
+			};
+
+			/**
+			 *	toggle visibility of #author
+			 *
+			 *	@param  {boolean} val
+			 *	        			true: visible, false: invisible
+			 * @return {[type]}     [description]
+			 */
+			function toggleAuthor(val) {
+				var opacity = $('#author').css('opacity');
+
+				if( opacity >= 1.0 ) {
+					// set opacity to 0
+					// TODO: make an 'invisible' class?
+					$('#author').toggleClass('fadeIn');
+				}
+				else {
+					// set opacity to 1.0
+					// TODO: make an 'invisible' class?
+					$('#author').toggleClass('fadeIn');
+				}
+			};
+
+		</script>
+
+
+
+	</head>
+	<body>
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Navigation
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="navigation">
+			<div class="row baseline-grid1">
+				<div class="span4 align-left">
+					Nav1
+				</div>
+				<div class="span4 offset1 align-right">
+					<a href="javascript:toggleGallery();">Nav</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Header
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<!-- subject -->
+		 <div class="sticky">
+			<div id="subject-container" class="page">
+				<div class="row baseline-grid5">
+					<div class="span3 offset3 align-center bold">
+						<!-- <p id="subject" class="shaper"> -->
+						<p id="subject" class="black-dark-gray">
+							Eike<br />
+							K&ouml;nig
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- author -->
+		 <div class="sticky">
+			<div id="author">
+				<div class="row baseline-grid48">
+					<div class="span2 offset2 align-center">
+						Ken Frederick
+					</div>
+					<div class="span2 offset1 align-center">
+						Simone Whitmann
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Interview Header -->
+		<div id="tt-container" class="sticky">
+			<div class="row baseline-grid6">
+				<div class="span1 offset1">
+					<p id="tt" class="black align-left">
+						This <!-- &amp; That -->
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- gallery navigation -->
+		<div id="gallery-navigation" class="sticky">
+			<div class="row baseline-grid6">
+				<div class="span2 offset5 align-center">
+					<p class="black-dark-gray">
+						1 &mdash; 10
+					</p>
+				</div>
+				<div class="span2 align-center">
+					<p class="black-dark-gray">
+						<!-- <a href="#">close</a> -->
+					</p>
+				</div>
+			</div>
+
+
+			<!--
+			 -	
+			 -	DEBUG
+			 -
+			-->
+			<div class="sticky">
+				<script type="text/javascript">
+					for( var i=0; i<57; i++ ) {
+						window.document.write( '<div class="layer1">\n<div class="row baseline-grid' + i + '">\n<div class="span7 offset1">\n<p class="red">' + i + ' _________________________________ X ________________________________ x</p>\n</div>\n</div>\n</div>' );
+					}
+				</script>
+			</div>
+
+		</div>
+		 <!-- /sticky -->
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Gallery
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="gallery-slider" class="gallery warm-gray hidden">
+			<div class="swipe-wrap pages">
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 1
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image1" class="page">
+					<div class="row baseline-grid18">
+						<div class="span4">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" />
+						</div>
+						<div class="span4 offset1">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Jazzanova</span></li>
+									<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 2
+				 -
+				 - ------------------------------------------------------------------------ -->
+				 <!--
+				 -
+				 -	TODO: fade black in / out
+				 -
+				-->
+				<div id="image2" class="page black">
+
+					<div class="row baseline-grid18">
+						<div class="span5 offset2 align-center">
+							<video controls width="390" height="295" controls class="black">
+								<source src="/images/eike-koenig/this-and-that_eike-koenig_booka-shade_tickle_390x295.m4v" width="390" height="295" type="video/mp4" />
+							</video>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption white-light-gray">
+									<li><span>Booka Shade</span></li>
+									<li><span>Tickle Video</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 3
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image3" class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span6">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-more-vinyl.png" />
+						</div>
+						<div class="span3 baseline-grid10">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-light-teaser.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid31">
+							<div class="span3 offset1">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-more-poster.jpg" />
+							</div>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Booka Shade</span></li>
+									<li><span>Neon</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 4
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image4" class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Nike</span></li>
+									<li><span>Lebron James Shoe Drop</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 5
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image5" class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-portrait-poster.jpg" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Nike</span></li>
+									<li><span>Lebron James</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 6
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image6" class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-9-poster.jpg" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Nike</span></li>
+									<li><span>Lebron James</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 7
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image7" class="page">
+
+					<div class="row baseline-grid18">
+						<div class="span7 offset1 align-center">
+							<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-dessau_00.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Workshop Dessau</span></li>
+									<li><span>Eike&rsquo;s workshop philiosophy is to facilitate students ideation in all directions.</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 8
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image8" class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span7 offset1 align-center">
+							<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-dortmund_00.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Workshop Dortmund</span></li>
+									<li><span>Sillyness and play are indicative of the output of Hort and integral approaches within workshops.</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 9
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image9" class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span7 offset1 align-center">
+							<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-berlin_00.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Workshop Berlin</span></li>
+									<li><span>Sillyness and play are indicative of the output of Hort and integral approaches within workshops.</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 10
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image10" class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span9 align-center">
+							<video controls width="640" height="576" controls class="black">
+								<source src="/images/eike-koenig/this-and-that-eike-koenig-hort_in_argentina_640x576.mp4" width="640" height="576" type="video/mp4" />
+							</video>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption white-light-gray">
+									<li><span>Workshop Argentina</span></li>
+									<li><span></span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+<!-------------------------------------------------------------------------
+				 -
+				 -  Image 11
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image11" class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_flyer.jpg" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Stiftung Bauhaus</span></li>
+									<li><span>Lebron James</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Image 12
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div id="image12" class="page">
+					<div class="row baseline-grid10">
+						<div class="span4">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_00.jpg" />
+						</div>
+						<div class="span4 offset1">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_01.jpg" />
+						</div>
+					</div>
+					<div class="row baseline-grid2">
+						<div class="span3 align-center">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_02.jpg" />
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid40">
+							<div class="span2 offset5">
+								<h6><ul class="caption">
+									<li><span>Stiftung Bauhaus</span></li>
+									<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
+								</ul></h6>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+			</div> <!-- end swipe-wrap/pages -->
+		</div> <!-- end gallery -->
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Article
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="article-slider" class="article">
+			<div class="swipe-wrap pages">
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 1
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle tera">
+								<div class="row baseline-grid1">
+									Der<br />
+									Kind<br />
+									&mdash;er
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 2
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="holder">
+
+						<div class="center-middle">
+							<div class="middle tera">
+								<div class="row baseline-grid1">
+									<span class="shaper">K&uuml;m
+									&mdash;mer<br />
+									&mdash;er<br /></span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 3
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page shaper">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset1">
+							<div class="col-width96">
+								<p>When I initially reached out to Eike K&ouml;nig for an interview, I was familiar with the gorgeous and evocative work that Hort produces. The wonderfully simple work done for electronic artists Booka Shade, the Stiftung Bauhaus Dessau identity, or the trashy Calle Underground. Hort&rsquo;s work and approach is an embodiment of the Eamsian philosophy of &ldquo;Take your pleasures seriously.&rdquo;</p>
+
+								<p>The old guard of Meta or the legacy of Pierre Mendell although widely respected, no longer represents contemporary approaches to design. The face of this consistent and challenging German design aesthetic, that has lain dormant since the closing of the Weimar Bauhaus, is exciting and &ldquo;offen.&rdquo;</p>
+
+								<p>Much like the Bauhaus, albeit not driven by an institution, educating is a key component. The mere name of Hort, &ldquo;after-school club&rdquo; or &ldquo;Latchkey Club&rdquo;, implies Eike&rsquo;s emphasis on education and learning. The number of workshops Eike leads internationally is staggering and a feat by itself.</p>
+
+								After a bit of back and forth via email we agreed to meet at the, where he was giving a two-day workshop. It was a brisk March evening as I wandered aimlessly around the main building of the school in search of Eike. Eventually I stumbled across a small
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span3 offset4">
+							<div class="col-width100">
+								<p>room where he was, essentially, holding court with the students of the workshop, and I was able to enjoy a preview of his talk that would take place on the next evening at Gasteig M&uuml;nchen.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 4
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page shaper">
+
+					<div class="row baseline-grid10">
+						<div class="span3 offset1">
+							<div class="col-width100">
+								<p>The air was sticky and the room was packed. A projector was perilously perched on a small table and Eike stood wedged in the corner behind a much too small podium and it was as I stood leaning against the door jam in this compact sauna, that I realized the amount of rigor that goes into projects at Hort. I had assume a certain rigor of creative exploration, but what I was caught off guard (and humbled) by was the amount of &ldquo;strategic&rdquo; vigor that Eike spoke of as he traversed the landscape of Hort&rsquo;s projects. 
+
+								<p>What Hort does is design, but moreover they further prove that what we as designers do is an art (not art) and not a science.</p>
+
+								We and a handful of students mosied our way to FavoritBar. A notably quirky, sparsely furnished, establishment nestled in the back alleys between Sendlinger Tor and Marienplatz. This night was no exception, as I my na&iuml;vity about the interview gave way to the reality of how this interview was actually going to take place.
+							</div>
+						</div>
+						<div class="span3 offset1">
+							<div class="col-width102">
+								<p>As we saddle up to the bar, we&rsquo;re immediately &ldquo;shh&rsquo;d&rdquo; by the bartender and made aware that tonight a more pressing presentation than our conversation is taking place. That being an in-depth break down of contemporary philosophical ideologies as represented by Looney Tunes. And this whole time you thought, Wil. E. Coyote was just chasing Road Runner, when in actuality he is an existentalist hero forever punished to suffer.</p>
+
+								This moment is a wonderful example of the occurences that are driving Germany&rsquo;s uprising aesthetic. Gone is the stereotype of up-tight, punctual, linear focused, tight pants wearing (ok, keep that last one) Germany, replaced, if only to us foreigners, by a care-free, &ldquo;chill the fuck out&rdquo; attitude. The pretense of an &ldquo;interview&rdquo; broke down as we sat perched upon our stools soaking up the intriguing (if not slightly absurd) lecture before us.
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span3 offset4">
+							<div class="col-width102">
+								<p>Hort may not be redefining the strategic or visual vision for fortune 500 companies, they&rsquo;re aiming much higher in my opinion their defining the strategic and visual vision of a generation.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 4
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<canvas resize="true" id="canvas"></canvas>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 5
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>You established Hort in 1994, but at that time did you have the vision to create a studio as a &ldquo;shelter for personalities?&rdquo; Better said, was it always your idea to educate designers in what you call &ldquo;a large colorful playground.&rdquo;</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Yes... no, that is, in the form in which Hort currently exists, that wasn&rsquo;t planned at that time. It was more like I wanted to have my own shelter. I wanted to be responsible for my self. And through this responsibility determine, where I trust myself and where I do not. And that was for me then to say if I&rsquo;m taking over responsibility for myself then it&rsquo;s also a kind of shelter. As soon as I give away this responsibility, I have no more protection and I would have to follow what the others do. So I said, &ldquo;ok, I&rsquo;ll open my own shop which protects me.&rdquo;</p>
+
+								<p>The moment I decided to start my own business, a record company approached me, at that time they were called &ldquo;Water Music&rdquo; in Hamburg. They said, &ldquo;Eike ok, if you were to go freelance you would get 30 projects from me.&rdquo;</p>
+
+								<p>That was complete financial independence. I knew full well I could work for the next 2, 3, 4 years without seeking out other clients and I would probably make an insane amount of money at first. That means, I could completely rely on myself and &ldquo;ok, money is coming in, so I can try this out. I can try other things out.&rdquo;</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 6
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>But, well, I could already tell, that free&rsquo;s me up and I&rsquo;m protected from having to do things that others would normally have to do. So I could really say, &ldquo;no, I don&rsquo;t think this is a good project, someone else should take it on.&rdquo;</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>...and you could simply choose projects, based on your strengths or where you could work and experiment and further develop yourself.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>And so I was just working, for many years, over 15 years, I was just insanely consistent. And eventually it all comes back. Eventually, only people come to you, who are looking for exactly what you can do.</p>
+
+								<p>And if I had given in at the time, well then, many stay within their area, one is creative, the other is money.</p>
+
+								<p>I didn&rsquo;t want that. I&rsquo;ve always said so, money must also be creative, otherwise I won&rsquo;t do it.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								Can you elaborate?
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>It&rsquo;s always like this, there are things I actually don&rsquo;t like to show, but they bring in money.</p>
+
+								<p>I only work on things where I have a feeling that I can do what I&rsquo;d like to. I&rsquo;ve only worked on things where I had the feeling, here I can grow and improve and at the same time earn money. Always this combination of &ldquo;I can get further along, design-wise, as a designer I can be involved&rdquo; but I would also be compensated. And not to say, well, actually I was just a pair of hands and was paid for that. That was never my idea.</p>
+							</div>
+						</div>
+					</div>
+
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 7
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>That is, I find consistency within the design process to be an important attribute, that&rsquo;s something I stand by. And I don&rsquo;t mean that everyone should do as I do, but rather they should be aware of what they do. Develop awareness. They could work in advertising, I don&rsquo;t care. But they should say, I do advertising, because I want to do it and not because, I have to or something like that.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>I agree. But this evening what you mentioned somrthing about Jazzanova, I found pretty interesting. Usually there is a certain number of design rounds, then the client gets what they get. But you invested so much money, or rather time, to develop something new until the customer was happy. So what&rsquo;s your limit? When do you say, &ldquo;hey, we&rsquo;re done, because if we continue to work then money doesn&rsquo;t matter or it doesn&rsquo;t make sense anymore.&rdquo; Is it, for example, in this case, passion, client responsibility or something else?</p>
+							</div>
+						</div>
+					</div>
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I don&rsquo;t want to produce anything that in the end I can&rsquo;t say, &ldquo;I like that.&rdquo; This is also what drives me. Perhaps this doesn&rsquo;t reflect positively financially, but for me personally it is very important. The freedom to say, okay, don&rsquo;t let me be dictated financially, that I have do it that way, but rather I&rsquo;ll say I&rsquo;ll pay for it, here I&rsquo;ll invest more than what makes sense economically.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid20">
+							<div class="span3 offset6">
+								<a href=""><img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" /></a>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 8
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I have the opinion, over time I&rsquo;ve had many experiences, the most difficult projects were the ones which pushed me the farthest. The ones that brought me as a designer or personality so much further ahead than those that were just well paid. This whole debate we of course need to be aware of. And I&rsquo;ve also, above all, I&rsquo;m no longer alone, I have people working for me who need money. That said, I have to generate some form of income and in the end this is always so, I&rsquo;m really driven by the desire to do something good, to do something I can be satisfied with my during my lifetime.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>I see.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Well, but sometimes you can&rsquo;t pull the ripcord anymore, because there is so much already invested, that you say, now it won&rsquo;t help anymore. Now, to say we&rsquo;re stopping, is total nonsense.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>I&rsquo;ll ask because for me, it&rsquo;s easy to say, &ldquo;this is for some band,&rdquo; who may not have a lot of money, but if you work for clients like Adidas or Nike or whatever and they say &ldquo;ehhh we don&rsquo;t like that&ldquo; when do you say we&rsquo;re satisfied with our work and have fulfilled the contract and it seems you&rsquo;re trying to cheat us or simply take advantage of us.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>They don&rsquo;t get something for nothing, even if they are sexy. There are many other people who will work for free.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 9
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="layer1">
+						<div class="row">
+							<div class="span5 offset2 align-center">
+								<div class="col-width90">
+									<a href="#"><img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row baseline-grid32">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>No matter how nice it sounds, I wouldn&rsquo;t do it [Ed. spec work]. Because it doesn&rsquo;t help anything. It helps nothing. Many think I get to add this to my list of clients, but it doesn&rsquo;t interest a soul whether, I have no idea, Coca Cola or whatever is listed, nobody cares. Nowadays, every other designer has &lsquo;Nike&rsquo; in his portfolio because one ​​time they made a flyer for footlocker, y&rsquo;know? Locally, somewhere in Munich for a Nike campaign, then Nike is listed as a client. That means nothing.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Hort, is this place in Berlin where people work but in the end it&rsquo;s also a focal point where people love what they do. You know, you have to protect them. That is how I think of Hort, not just this place in Berlin, but as a community of designers.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 10
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Exactly. This is my idea of working together. I would also like to be a paradigm of a small studio, how to work, how to treat clients, how one... yeah I would like to be a model for young agencies, who say oh, I want start something like Hort.</p>
+								<p>I think we should be a little bit sensible, what are we doing? Who are we? Where are we? And then we can also micro-democratically decide. Yes, we can&rsquo;t change the big world, but we can say, ah, I&rsquo;ll buy an apple that is grown organically. I can do that. So I can still influence the larger whole.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Earlier we were talking about your workshops, because a part of your visit here in Munich is this workshop at Designschule M&uuml;nchen. I&rsquo;d love to hear your thoughts and philosophy about instructing, or teaching or discussing. It&rsquo;s pretty clear, and you&rsquo;ve stated it, that for you teaching is very important. And, perhaps you&rsquo;ve heard it very often, but you yourself broke off your own studies.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I did indeed. I also had my problems to go into teaching. Teaching means to continue to learn. To pass on knowledge, And I am of the opinion there is no knowledge. There is general knowledge, which can be shared by anyone, that can be downloaded from anywhere, there&rsquo;s no need for anyone particular. For this knowledge there&rsquo;s no need for professors. Because it is so commonplace, I just have to get it. Such as design foundations, etc.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 11
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>How much respect do you expect from your students?</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>None.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Why?</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I see myself as a designer, I don&rsquo;t feel like a teacher, someone who says this is right and that is wrong. That&rsquo;s what teaching is, an emphasis, I don&rsquo;t see my self in that idea. But rather I say I&rsquo;m a guide. And I&rsquo;m a motivator. This probably comes out of my personal experience, from my own experience which was so negative and driven from professors. What was easy for me to see was, this professor is this way if I do this and that I&rsquo;ll get a good grade. That&rsquo;s how it was for me: but where am I? What does this have to do with me? It&rsquo;s always about this professor here. As I slipped into this role, the first time someone asked me to hold a lecture, I said &ldquo;a lecture is so odd,&rdquo; I&rsquo;m up front and somebody is listening to me, this is totally one-sided. There&rsquo;s no exchange and there&rsquo;s no return. So I said, I won&rsquo;t do a lecture, I&rsquo;ll do a workshop. That was in 2003 or something like that. That was a long time ago. And then I held a workshop with students and said &ldquo;wow, it&rsquo;s great to work with young people.&rdquo; In these moments where we can communicate eye-to-eye, where there isn&rsquo;t this &ldquo;I am this and I am that...&rdquo; ok there is still that, I can&rsquo;t deny that completely, but I still have the feeling we&rsquo;re communicating and we can engage with each other. It&rsquo;s not a one-sided situation. Then I said, this is great work, I love working with young people. </p>
+							</div>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid32">
+							<div class="span3">
+								<a href=""><img src="images/eike-koenig/this-and-that_eike-koenig_workshop-dessau_00.jpg" /></a>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 12
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I also do the same thing in my office but... now I&rsquo;ve slid into this entire professor-thing and now I&rsquo;m practically a full-time professor in [HfG] Offenbach. Offenbach is a good school. Very open. Interdisciplinary. Painting, sculpture, room installation projects, everything is cohesive. As I said I don&rsquo;t see myself as an instructor, who sits up front and says &ldquo;this is how it is.&rdquo; I make themes per semester, over-arching topics, i.e. &ldquo;I&rdquo; or something like that and there are sub-topics which students can research.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>I would say that&rsquo;s rather provocative</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Exactly. I&rsquo;m more the type, that encourages, that suggests a theme, which one has to somehow play and one who rather motivates. Rather saying: just try it. Yes, and: this is right and this is wrong, is nonsense. What I do is, I ask questions. I just ask questions. I only say &ldquo;Why?&rdquo; Or &ldquo;Do you think that&rsquo;s right?&rdquo; And then the decision is in fact back at the person. I don&rsquo;t want to make the decision for any student. I will not say: &ldquo;this I think is good and this I think is not good.&rdquo; Then the decision has been made by me. And so I find teaching to be a... you can provide the foundation. Well, the design principles, color theory, typography, gestalt principles and so on. That you can do. But when it really comes to design, then I&rsquo;m just a guide. And even then I&rsquo;m more of someone, &ldquo;hey, you have to fall in love! You have to fall in love with typography,&rdquo; then you&rsquo;re a good typographer. And because I want pull people in.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 13
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>That&rsquo;s great! Often when looking at the body of work from yourself and from Hort, this philosophy is pretty clear. However, where is the line between art and design? Or perhaps alternatively, what makes good design?</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Yeah, that&rsquo;s two completely different questions.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Yeah... could be.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>So I always say, art is a different life. So to say if you are doing art, that to me means you are an artist. And that&rsquo;s simply a life decision. And I&rsquo;m a designer. That is, may people say we are artistic. We solve things in an artistic way but actually we communicate. That&rsquo;s why we are not artists but communicators. This is also comes from, that I myself am strongly fanatically associated with art.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 14
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>Meaning, my own interest in sculpture and installation work, stemming from painting and it&rsquo;s staging. So to say, that&rsquo;s where I come from. Those also where my roots are.</p>
+
+								<p>Of course I&rsquo;m influences by what happens there and I&rsquo;ve naturally included in my work. Today, both of these areas completely intersect. Art is now also inspired by current graphic design. It&rsquo;s no longer the case that, art is elitist and that everything else follows this art. No, no, no, it&rsquo;s all intersecting and that&rsquo;s a good thing. There are so many disciplines, such as fashion or painting or architecture and there&rsquo;s no issue that design also influences them. With that in mind, I always say, we have a task that we have to solve. Whether we solve it artistically or via marketing, that&rsquo;s our decision. Why can&rsquo;t I say, this is where I come from and that&rsquo;s what influences me and that what I&rsquo;ll integrate within my communications solutions. I find this rediscovery totally exciting, to say, this is me, that&rsquo;s mine. I&rsquo;ve got a lot of artist friends, because I&rsquo;m so close to them. But I don&rsquo;t do what they do, I do something different.</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>So if I understand you correctly. There is of course contemporary design which quite frankly drives Hort, you create contemporary design, and I don&rsquo;t mean that in a bad way. However, what about contemporary vs. classic, because what one does now, is in for the moment, but come 2013 you&rsquo;re broke and irrelevant.</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 15
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>I think that&rsquo;s a great question. Because this idea to make iconic design is a self serving idea. To say that something I design is a classic. Everything that was done by Otl Aicher, was at the time designed in a contemporary style. What might have survived, or perhaps was rediscovered and romanticized, is actually rooted in it&rsquo;s own time and space. There was a need to design within the times. And I see myself so. I don&rsquo;t want iconic. I don&rsquo;t want...</p>
+							</div>
+						</div>
+
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Really?</p>
+							</div>
+						</div>
+
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>No, I find it ridiculous. To build something like my father. No, because I come from here, I&rsquo;m in 2012 and it has happen now, or perhaps a bit earlier. Communication has changed drastically, the whole idea from 50 years ago. That&rsquo;s no longer an idea, it&rsquo;s not here.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset1">
+							<div class="col-width102">
+								<p>Honestly?</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="layer1">
+						<div class="row baseline-grid32">
+							<div class="span3 offset3 align-center">
+								<a href=""><img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_flyer.jpg" /></a>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+
+				<!-------------------------------------------------------------------------
+				 -
+				 -  Page 16
+				 -
+				 - ------------------------------------------------------------------------ -->
+				<div class="page">
+
+					<div class="row baseline-grid10">
+						<div class="span4 offset4">
+							<div class="col-width102">
+								<p>It&rsquo;s ridiculous, it&rsquo;s ridiculous. The last 10 years have changed so much, everything I try is absurd, in that I try it. I know designers, I know people who say, &ldquo;I make timeless icons.&rdquo; Those are pretty but boring grave stones. Yes, of course, they&rsquo;ll also work in 50 years. But of course, but clearly because they are based on the aesthetic principles of perception.</p>
+
+								<p>Please, how easy is that? I just want to start a discourse. I just want to see that the people develop themselves, that something happened. The &ldquo;No, we do not want any more cliches, we want to have a discussion about communication.&rdquo; That&rsquo;s why I&rsquo;m here.</p>
+
+								<p>Of course, we are contemporary.</p>
+
+								<p>It&rsquo;s logical.</p>
+
+								<p>Of course, we are situated in the reality of what happens, of course. Perhaps we are also trendsetters, yes.</p>
+
+								<p>But is that so bad?</p>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- end page -->
+
+
+			</div> <!-- end swipe-wrap/pages -->
+		</div> <!-- end article/slider -->
+
+
+
+
+
+
+
+
+		<!-- ANALTYICS -->
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<!-- script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script -->
+
+
+
+
+
+
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script src="bower_components/retina.js-js/src/retina.js"></script>
+		<script src="bower_components/Swipe/swipe.js"></script>
+		<script src="scripts/main.js"></script>
+		<script type="text/javascript">
+			var bDone = false;
+			var index = 0;
+			$(document).ready(function() {
+
+				// debug hack
+				// var paging = setInterval(function() {
+				//	if( index > swipers[0].pages-1 ) {
+				//		bDone = true;
+				//	}
+				//	else {
+				//		swipers[0].swiper.slide(index, 10);
+				//		index++;
+				//	}
+					
+				// },15 );
+
+				// if( bDone ) {
+				//	clearInterval( paging );
+				//	// index = 0;
+				// }
+
+				// TODO: add event listener
+				console.log( swipers[0].swiper.getPos() );
+				if( swipers[0].swiper.getPos() === 1 ) {
+					toggleAuthor();
+				}
+
+
+			});
+
+			// $('#gallery-slider').hide();
+		</script>
+
+		<!-- endbuild -->
+
+
+		<!-- build:js scripts/vendor/bootstrap.js -->
+		<!-- BOOTSTRAP -->
+		<script src="bower_components/bootstrap/js/bootstrap-affix.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-alert.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-dropdown.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-tooltip.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-modal.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-transition.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-button.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-popover.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-typeahead.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-carousel.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-scrollspy.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-collapse.js"></script>
+		<script src="bower_components/bootstrap/js/bootstrap-tab.js"></script>
+		<!-- endbuild -->
+
+
+	</body>
+</html>
