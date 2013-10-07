@@ -25,7 +25,6 @@
 // http://twitter.github.io/bootstrap/customize.html
 //
 @import "../bower_components/bootstrap/less/bootstrap.less";
-@import "../bower_components/bootstrap/less/responsive.less"; // Don't forget to comment lines 22 to remove the second import call to **mixin.less**
 
 
 
@@ -108,9 +107,28 @@
 @type-base-family: neutral;
 @type-base-family-bold: neutral-bold;
 @type-base-weight: regular;
+
 @import "./typography.less";
 
 
+
+
+
+
+/*	------------------------------------------------------------------------
+ *
+ *	Additional CSS/Less modules
+ *
+ *	------------------------------------------------------------------------ */
+@import "../bower_components/retina.js-js/src/retina.less";
+
+// Effeckt.css
+@import "../bower_components/Effeckt.css/css/modules/off-screen-nav.css";
+@import "../bower_components/Effeckt.css/css/modules/page-transitions.css";
+@import "../bower_components/Effeckt.css/css/modules/captions.css";
+
+// Onepage-Scroll.css
+@import "../bower_components/onepage-scroll/onepage-scroll.css";
 
 
 
@@ -124,20 +142,6 @@
 
 
 
-
-
-
-/*	------------------------------------------------------------------------
- *
- *	Additional Less modules
- *
- *	------------------------------------------------------------------------ */
-@import "../bower_components/retina.js-js/src/retina.less";
-
-// Effeckt.css
-@import "../bower_components/Effeckt.css/css/modules/off-screen-nav.css";
-@import "../bower_components/Effeckt.css/css/modules/page-transitions.css";
-@import "../bower_components/Effeckt.css/css/modules/captions.css";
 
 
 

@@ -82,7 +82,7 @@
 		color: @white;
 		border-color: @white;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @white;
 	}
 }
@@ -98,7 +98,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @white-light-gray;
 	}
 }
@@ -114,14 +114,17 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @white-dark-gray;
 	}
 }
 
 //	black(s)
 .black {
-	div&, .page&, .pages&, .article& {
+	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		color: @black;
+	// }
+	div&, .page&, .article& {
 		background-color: @black;
 	}
 }
@@ -137,7 +140,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @black-light-gray;
 	}
 }
@@ -153,7 +156,7 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @black-dark-gray;
 	}
 }
@@ -171,7 +174,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @light-gray;
 	}
 }
@@ -187,7 +190,7 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @dark-gray;
 	}
 }
@@ -205,7 +208,7 @@
 		color: @red;
 		border-color: @red;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @red;
 	}
 }
@@ -221,7 +224,7 @@
 		color: @yellow;
 		border-color: @yellow;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @yellow;
 	}
 }
@@ -237,7 +240,7 @@
 		color: @blue;
 		border-color: @blue;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @blue;
 	}
 }
@@ -255,7 +258,7 @@
 		color: @orange;
 		border-color: @orange;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @orange;
 	}
 }
@@ -271,7 +274,7 @@
 		color: @green;
 		border-color: @green;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @green;
 	}
 }
@@ -287,7 +290,7 @@
 		color: @purple;
 		border-color: @purple;
 	}
-	div&, .page&, .pages&, .article& {
+	div&, .page&, .article& {
 		background-color: @purple;
 	}
 }
@@ -779,30 +782,16 @@ iframe {
 //	Pages
 //
 .page {
-	position: absolute;
-	top: 0px
-	left: 0px;
-	width: 100%;
-	height: 100%;
+	// position: absolute;
+	// top: 0px
+	// left: 0px;
+	// width: 100%;
+	// height: 100%;
 
-	margin-top: 0px;
-	.align-left;
+	// margin-top: 0px;
+	// .align-left;
 
-	border: none;
-	// z-index: @layer0;
-}
-
-
-//
-//	holder for individual page(s)
-//
-.pages { 
-	position: relative;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-
-	.align-center;
+	// border: none;
 	// z-index: @layer0;
 }
 
@@ -813,8 +802,7 @@ iframe {
 //	wrapper for all pages within an article
 //
 .article {
-	.pages;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 
@@ -910,7 +898,7 @@ iframe {
 .transLoop (@index) when (@index > -1) {
 	(~".trans@{index}") {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
-		div&, .page&, .pages&, .article& {
+		div&, .page&, .article& {
 			// background-color: @black;
 			opacity: (@index*0.05);
 			z-index: @layer3;

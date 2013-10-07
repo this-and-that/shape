@@ -45,33 +45,14 @@ var orientation;
  */
 // global holders for the various parts of an article
 // generic to be reused by all articles
+var filename = null;
 var article = {};
 
 
 /*
  *	Events
  */
-var swipers = [];
-var down = {
-	event: false
-};
-var up = {
-	event: true
-};
-var move = {}, pmove = {};
-var wheel = {
-	event: false,
-	// the distance that has be wheeled
-	// before the event is triggered
-	threshold: 12
-};
-var scroll = {
-	event: false,
-	// the distance that has be scrolled
-	// before the event is triggered
-	threshold: 12
-};
-var pscroll = {};
+var opscroll;
 
 
 /*
@@ -111,7 +92,6 @@ $(document).load(function() {
 	orientation	= 'landscape';
 	orientationChange();
 
-
 	/*
 	 *	Check Connection status
 	 */
@@ -133,7 +113,6 @@ $(document).load(function() {
 			}
 		}
 	}
-
 
 });
 
@@ -167,10 +146,10 @@ $(document).ready(function() {
 
 
 	// set carousel globally
-	$('.carousel').carousel({
-		interval: 5000,
-		pause: 'false'
-	});
+	// $('.carousel').carousel({
+	// 	interval: 5000,
+	// 	pause: 'false'
+	// });
 
 
 
@@ -178,36 +157,13 @@ $(document).ready(function() {
 	 *	Misc
 	 */
 	loadArticle();
-	// set placement of pages
-	paginateHorizontal();
+	orientationChange();
 
 
 
 	/*
 	 *	Events
 	 */
-	//
-	//	Setup Swipe.js
-	//
-	var options = {
-		// startSlide: 0,
-		speed: 450,
-		// auto: 1000,
-		continuous: true,
-		disableScroll: true
-	};
-	window.swipeArticle = Swipe( document.getElementById('article-slider'), options );
-	window.swipeGallery = Swipe( document.getElementById('gallery-slider'), options );
-
-	swipers = [{
-		swiper: swipeArticle,
-		divId: '#article-slider',
-		// pages: swipeArticle.getNumSlides()
-	}, {
-		swiper: swipeGallery,
-		divId: '#gallery-slider',
-		// pages: swipeGallery.getNumSlides()
-	}];
 
 });
 
@@ -250,65 +206,41 @@ function orientationChange() {
 	 *	Pages
 	 */
 	// set placement of pages
-	paginateHorizontal();
-
-
-	/*
-	 *	Misc.
-	 */
+	paginate();
 
 };
 
 
 // ------------------------------------------------------------------------
-function paginateHorizontal() {
-	var width = window.innerWidth;
-	var height = window.innerHeight;
-	console.log( width + ' x ' + height );
+function paginate() {
 
-	// count the number of page elements
-	var pagesNum = $('.page').size();
-	for(var i=0; i<pagesNum; i++) {
-		$( '.page' ).each(function(i) {
-			// adjust page(s) css
-			$(this).css({
-				'width': width,
-				'height': height,
-				'top': 0 + 'px',
-				// adjust the left edge
-				/*
-				 *	Unnecessary, when using Swipe.js
-				 */
-				// 'left': i*width
-			});
-		});	
-	}
-	// console.log( $('.page') );
+	opscroll = $('.article').onepage_scroll({
+		sectionContainer: '.page',
+		easing: 'cubic-bezier(.02, .01, .47, 1)',
+		// first page = last page = easeOutBounce
+		animationTime: 300,
+		pagination: false,
+		updateURL: false,
+		direction: 'horizontal'
+	});
 
-	/*
-	 *	Unnecessary, when using Swipe.js
-	 */
-	// // adjust page(s) css
-	// $('.pages').css({
-	// 	'width': pagesNum*width,
-	// 	'height': height
-	// });
-	// // console.log( $('.pages') );
-
-	// // adjust article css
-	// $('.article').css({
-	// 	'width': pagesNum*width,
-	// 	'height': height
-	// });
-	// // console.log( $('.article') );
 };
 
 // ------------------------------------------------------------------------
+function scrollBack() {
+	$('.article').moveUp();
+};
+function scrollForward() {
+	$('.article').moveDown();
+};
 function scrollTo(element) {
-	if( $(element).offset() != undefined ) {
-		$('html, body').animate({
-			scrollTop: $(element).offset().top
-		 }, 450);
+	var index = $(element).data("index");
+	var delta = index - ($(".page.active").data("index") - 1);
+	if( delta > 0 ) {
+		$('.article').moveDown(Math.abs(delta)-1);
+	}
+	else {
+		$('.article').moveUp(Math.abs(delta)+1);
 	}
 };
 
@@ -385,21 +317,6 @@ function jsonToHtml(arr, idName) {
 
 
 // ------------------------------------------------------------------------
-function scrollUp() {
-	var h = window.innerHeight;
-	$('html, body').animate({
-		scrollTop: ($(window).scrollTop() - h)
-	 }, 450);
-};
-function scrollDown() {
-	var h = window.innerHeight;
-	$('html, body').animate({
-		scrollTop: ($(window).scrollTop() + h)
-	 }, 450);
-};
-
-
-// ------------------------------------------------------------------------
 /*
  *	Cookies
  *	http://www.quirksmode.org/js/cookies.html
@@ -455,7 +372,7 @@ function deleteSession(name) {
 
 // ------------------------------------------------------------------------
 //
-// Events   
+// Events	
 //
 // ------------------------------------------------------------------------
 $(window).resize(function() {
@@ -464,150 +381,7 @@ $(window).resize(function() {
 
 
 // ------------------------------------------------------------------------
-// add mouse events for debugging in browser
-if( !device.ios ) {
-	$('#article-slider > div').mousedown(function(e) {
-		e.preventDefault();
-		down.x = e.pageX;
-		down.y = e.pageY;
-		down.event = true;
-		up.event = false;
-	});
-	$('#article-slider > div').mouseup(function(e) {
-		up.x = e.pageX;
-		up.y = e.pageY;
-		down.event = false;
-		up.event = true;
-	});
-
-	// the following events are contigent upon
-	// the number of Swipe instances
-	for( var i=0; i<swipers.length; i++ ) {
-		// $(swipers[i].divId + ' > div').mousedown(function(e) {
-		// 	e.preventDefault();
-		// 	down.x = e.pageX;
-		// 	down.y = e.pageY;
-		// 	down.event = true;
-		// 	up.event = false;
-		// });
-		// $(swipers[i].divId + ' > div').mouseup(function(e) {
-		// 	up.x = e.pageX;
-		// 	up.y = e.pageY;
-		// 	down.event = false;
-		// 	up.event = true;
-		// });
-
-		$(swipers[i].divId + ' > div').mousemove(function(e) {
-			move.x = e.pageX;
-			move.y = e.pageY;
-			if( down.event ) {
-				if( pmove.x < move.x ) {
-					swipers[i].swiper.prev(); // right
-				}
-				else {
-					swipers[i].swiper.next(); // left
-				}
-				if( pmove.y < move.y ) {
-					// swipers[i].swiper.prev(); // up
-				}
-				else {
-					// swipers[i].swiper.next(); // down
-				}
-				down.event = false;
-				up.event = true;
-			}
-			pmove.x = move.x;
-			pmove.y = move.y;
-		});
-
-		// add wheel/trackpad events for debugging in browser
-		// TODO: debug... not working
-		$(swipers[i].divId + ' > div').mousewheel(function(e, delta, deltaX, deltaY) {
-			wheel.x = deltaX;
-			wheel.y = deltaY;
-
-			if( !wheel.event && Math.abs(delta) >= wheel.threshold ) {
-				if( wheel.x < 0 ) {
-					swipers[i].swiper.prev(); // right
-				}
-				else {
-					swipers[i].swiper.next(); // left
-				}
-				if( wheel.y < 0 ) {
-					// swipers[i].swiper.prev(); // up
-				}
-				else {
-					// swipers[i].swiper.next(); // down
-				}
-				wheel.event = true;
-			}
-			wheelStop();
-		});
-	}
-
-	function wheelStop() {
-		//
-		// wheel stop
-		//
-		//	wait X ms until allowing another wheel event
-		//	this keeps from scrolling multiple pages at once
-		var delay = 250;
-		clearTimeout($.data(this, 'wheelTimer'));
-		$.data(this, 'wheelTimer', setTimeout(function() {
-			wheel.event = false;
-		}, delay));
-
-		// prevent scrolling of the page
-		// technically handled by swipe.js above
-		// but this shouldn't hurt anything... right?
-		e.stopPropagation();
-	   e.preventDefault();
-	};
-
-}
-
-
-// ------------------------------------------------------------------------
 $(window).scroll(function() { 
-	scroll.y = $(this).scrollTop(); 
-	scroll.x = $(this).scrollLeft();
-
-	// var h = window.innerHeight-100;
-	// var pct = ((scroll.y-h)/h)*-1;
-
-	if( !scroll.event ) {
-		if( Math.abs( scroll.x - pscroll.x ) >= scroll.threshold ) {
-			if( scroll.x < 0 ) {
-				// right
-			}
-			else {
-				// left
-			}
-		}
-		if( Math.abs( scroll.y - pscroll.y ) >= scroll.threshold ) {
-			if( scroll.y < 0 ) {
-				// up
-			}
-			else {
-				// down
-			}
-		}
-		scroll.event = true;
-	}
-
-	//
-	// scroll stop
-	//
-	//	wait X ms until allowing another wheel event
-	//	this keeps from scrolling multiple pages at once
-	var delay = 250;
-	clearTimeout($.data(this, 'scrollTimer'));
-	$.data(this, 'scrollTimer', setTimeout(function() {
-		scroll.event = false;
-	}, delay));
-
-	pscroll.y = scroll.x;
-	pscroll.y = scroll.y;
 }); 
 
 
@@ -627,7 +401,7 @@ $(document).ready(function () {
 	// 			}
 	// 			else {
 	// 				$(document.body).css("-webkit-transform-origin", "280px 190px")
-	// 			   		.css("-webkit-transform",  "rotate(90deg)"); 
+	// 						.css("-webkit-transform",  "rotate(90deg)"); 
 	// 			}
 	// 		}
 	// 	 })

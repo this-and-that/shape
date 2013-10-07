@@ -14,7 +14,7 @@ Icon
 *.manifest
 
 # Debug files
-\#_
+# \#_
 
 # Thumbnails
 ._*
