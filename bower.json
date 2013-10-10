@@ -9,7 +9,9 @@
     "Lettering.js": "~0.6.1",
     "jquery-mousewheel": "~3.1.3",
     "hammerjs": "https://github.com/EightMedia/hammer.js.git#~1.0.5",
-    "onepage-scroll": "git@github.com:frederickk/onepage-scroll.git"
+    "onepage-scroll": "git@github.com:frederickk/onepage-scroll.git",
+    "orientation-listener": "git@github.com:component/orientation-listener.git#~1.0.4",
+    "jQuery-Retina-Display-Plugin": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git"
   },
   "devDependencies": {},
   "ignore": [

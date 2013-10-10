@@ -45,7 +45,7 @@ var orientation;
  */
 // global holders for the various parts of an article
 // generic to be reused by all articles
-var filename = null;
+var filename = (filename != undefined) ? filename : null;
 var article = {};
 
 
@@ -144,13 +144,11 @@ $(document).ready(function() {
 		$(this).attr('target', '_blank');
 	});
 
-
 	// set carousel globally
-	// $('.carousel').carousel({
-	// 	interval: 5000,
-	// 	pause: 'false'
-	// });
-
+	$('.carousel').carousel({
+		interval: 5000,
+		pause: 'false'
+	});
 
 
 	/*
@@ -159,11 +157,32 @@ $(document).ready(function() {
 	loadArticle();
 	orientationChange();
 
+	// serve up retina images
+	$('img').retina('@2x');
 
 
 	/*
 	 *	Events
 	 */
+	// http://stackoverflow.com/questions/1207008/how-do-i-lock-the-orientation-to-portrait-mode-in-a-iphone-web-application
+	// $(window)	
+	// 	.bind('orientationchange', function(){
+	// 		if (window.orientation % 180 == 0){
+	// 			$(document.body).css("-webkit-transform-origin", "")
+	// 				.css("-webkit-transform", "");			
+	// 		}
+	// 		else {
+	// 			if ( window.orientation > 0) { //clockwise
+	// 				$(document.body).css("-webkit-transform-origin", "200px 190px")
+	// 					.css("-webkit-transform",  "rotate(-90deg)");  
+	// 			}
+	// 			else {
+	// 				$(document.body).css("-webkit-transform-origin", "280px 190px")
+	// 						.css("-webkit-transform",  "rotate(90deg)"); 
+	// 			}
+	// 		}
+	// 	 })
+	// 	.trigger('orientationchange'); 
 
 });
 
@@ -220,7 +239,7 @@ function paginate() {
 		// first page = last page = easeOutBounce
 		animationTime: 300,
 		pagination: false,
-		updateURL: false,
+		updateURL: true,
 		direction: 'horizontal'
 	});
 
@@ -386,24 +405,3 @@ $(window).scroll(function() {
 
 
 
-$(document).ready(function () {
-	// http://stackoverflow.com/questions/1207008/how-do-i-lock-the-orientation-to-portrait-mode-in-a-iphone-web-application
-	// $(window)	
-	// 	.bind('orientationchange', function(){
-	// 		if (window.orientation % 180 == 0){
-	// 			$(document.body).css("-webkit-transform-origin", "")
-	// 				.css("-webkit-transform", "");			
-	// 		}
-	// 		else {
-	// 			if ( window.orientation > 0) { //clockwise
-	// 				$(document.body).css("-webkit-transform-origin", "200px 190px")
-	// 					.css("-webkit-transform",  "rotate(-90deg)");  
-	// 			}
-	// 			else {
-	// 				$(document.body).css("-webkit-transform-origin", "280px 190px")
-	// 						.css("-webkit-transform",  "rotate(90deg)"); 
-	// 			}
-	// 		}
-	// 	 })
-	// 	.trigger('orientationchange'); 
-});

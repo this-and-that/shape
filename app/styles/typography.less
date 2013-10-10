@@ -35,8 +35,8 @@
 // @type-base-family-bold: neutral-bold;
 // @type-base-weight: regular;
 @type-base-size: 15 + 0px; //px
-@type-base-line-height: 18px; //3px;
-@measure: @type-base-size * @type-base-line-height;
+@type-base-line-height: 18; //3px;
+@measure: 0px + (@type-base-size * @type-base-line-height);
 
 
 //
@@ -127,7 +127,7 @@
 	font-size: @base-size;
 	font-family: @base-family;
 	font-weight: @base-weight;
-	line-height: @base-line-height; //~"@{base-size}/@{base-line-height}";
+	line-height: (0px + @base-line-height); //~"@{base-size}/@{base-line-height}";
 }
 
 

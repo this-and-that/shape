@@ -44,7 +44,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/application-icon-144x144.png" />
 
 		<!-- iOS DEVICE STARTUP IMAGES -->
-		<!-- iPhone/iPod Touch Portrait	-->
+		<!-- iPhone & iPod Touch Portrait -->
 		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup.png" media="screen and (max-device-width: 320px)" /> -->
 		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> -->
 
@@ -88,75 +88,87 @@
 	<body>
 
 
+
 		<!-- ARTICLE CONTENT BEGIN -->
 		<div class="article">
-
 
 			<!-------------------------------------------------------------------------
 			 -
 			 -  Page 1
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page1" class="page red">
+			<div id="page1" class="page">
+				<div class="row">
+					<div class="col-sm-3">
+						<p class="black">col-sm-1</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-1 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 blue">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 blue">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 blue">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 blue">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-1 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+				</div>
 
 				<div class="row">
-					<div class="col-sm-3 col-sm-offset-3">
-						<h1 class="black">page 1</h1>
+					<div class="col-sm-3">
+						<p class="black">col-sm-3</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-3 blue">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+					<div class="col-sm-3 red">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-3">
+						<p class="black">col-sm-4</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="red col-sm-4 col-sm-offset-1">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
+					</div>
+				</div>
+				<div class="row">
+					<div class="blue col-sm-4 col-sm-offset-4">
+						<p class="black">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p><br />
 					</div>
 				</div>
 
 			</div> <!-- end page -->
 
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Page 2
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="page2" class="page orange">
-
-				<div class="row">
-					<div class="align-middle">
-						<div class="middle">
-							<!-- <div class="col-md-3 col-md-offset-3"> -->
-								<h1 class="black">page 2</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div> <!-- end page -->
-
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Page 3
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="page3" class="page yellow">
-
-				<div class="row">
-					<div class="col-md-3 col-md-offset-3">
-						<h1 class="black">page 3</h1>
-					</div>
-				</div>
-
-			</div> <!-- end page -->
-
-		</div> <!-- end article/slider -->
-
-
-
-
-
-
-		<!-- TOUCH TARGET -->
-		<!-- <div id="touchTarget">&nbsp;</div> -->
-
-
-
+		</div> <!-- end article -->
 
 
 
@@ -178,6 +190,13 @@
 
 
 
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
+		<script src="scripts/main.js"></script>
+		<!-- endbuild -->
+
+
 		<!-- build:js scripts/vendor/bootstrap.js -->
 		<!-- BOOTSTRAP -->
 		<script src="bower_components/bootstrap/js/affix.js"></script>
@@ -192,13 +211,6 @@
 		<script src="bower_components/bootstrap/js/tooltip.js"></script>
 		<script src="bower_components/bootstrap/js/transition.js"></script>
 		<script src="bower_components/bootstrap/js/popover.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<script src="scripts/main.js"></script>
 		<!-- endbuild -->
 
 

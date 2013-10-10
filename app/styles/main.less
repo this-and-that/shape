@@ -7,8 +7,7 @@
  *	http://blog.kennethfrederick.de/
  *
  *
- *	This file is merely a "build" file for all of the
- *	included Less files
+ *	This file is merely a "build" file for all of the included Less files
  *
  */
 
@@ -25,6 +24,18 @@
 // http://twitter.github.io/bootstrap/customize.html
 //
 @import "../bower_components/bootstrap/less/bootstrap.less";
+
+
+
+
+
+
+/*	------------------------------------------------------------------------
+ *
+ *	This & That framework
+ *
+ *	------------------------------------------------------------------------ */
+@import "./this-and-that.less";
 
 
 
@@ -120,25 +131,17 @@
  *	Additional CSS/Less modules
  *
  *	------------------------------------------------------------------------ */
-@import "../bower_components/retina.js-js/src/retina.less";
+/*
+ * Effeckt.css
+ */
+@import (less) "../bower_components/Effeckt.css/css/modules/off-screen-nav.css";
+@import (less) "../bower_components/Effeckt.css/css/modules/page-transitions.css";
+@import (less) "../bower_components/Effeckt.css/css/modules/captions.css";
 
-// Effeckt.css
-@import "../bower_components/Effeckt.css/css/modules/off-screen-nav.css";
-@import "../bower_components/Effeckt.css/css/modules/page-transitions.css";
-@import "../bower_components/Effeckt.css/css/modules/captions.css";
-
-// Onepage-Scroll.css
-@import "../bower_components/onepage-scroll/onepage-scroll.css";
-
-
-
-
-/*	------------------------------------------------------------------------
- *
- *	This & That framework
- *
- *	------------------------------------------------------------------------ */
-@import "./this-and-that.less";
+/*
+ * Onepage-Scroll.css
+ */
+@import (less) "../bower_components/onepage-scroll/onepage-scroll.css";
 
 
 
@@ -156,12 +159,15 @@
 
 
 
+
 /*	------------------------------------------------------------------------
  *
  *	Media Queries
  *
  *	------------------------------------------------------------------------ */
 @import "./media-queries.less";
+
+
 
 
 

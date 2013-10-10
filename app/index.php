@@ -74,7 +74,7 @@
 		<!-- build:js scripts/vendor/jquery.js -->
 		<!-- JQUERY -->
 		<script src="bower_components/jquery/jquery.js"></script>
-		<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+		<script src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
 		<script src="bower_components/Lettering.js/jquery.lettering.js"></script>
 		<!-- endbuild -->
 
@@ -89,64 +89,55 @@
 
 
 		<!-- ARTICLE CONTENT BEGIN -->
-		<!-- SWIPE/PAGE TRANSITION CONTAINER BEGIN -->
-		<div id="article-slider" class="article">
-			<div class="swipe-wrap pages">
+		<div class="article">
 
+			<!-------------------------------------------------------------------------
+			-
+			-	Page 1
+			-
+			- ------------------------------------------------------------------------ -->
+			<div class="page">
 
-				<!-------------------------------------------------------------------------
-				-
-				-	Page 1
-				-
-				- ------------------------------------------------------------------------ -->
-				<div class="page">
+				<div class="row">
+					<div class="col-sm-3 col-sm-offset-1">
+						<br />
+						<?php 
+							$blacklist = array('.', '..', 'index.php','.DS_Store','.htaccess','book.json','favicon.ico');
 
-					<div class="container-fluid">
-						<div class="row-fluid">
-						
-							<div class="span1">
-								<br />
-								<?php 
-									$blacklist = array('.', '..', 'index.php','.DS_Store','.htaccess','book.json','favicon.ico');
-
-									// this could be optimized drastically
-									// but for my purposes... it's fine
-									if ($handle = opendir('./')) {
-										// files
-										echo "<div class=\"row-fluid\">";
-										while (false !== ($file = readdir($handle))) {
-											if (!in_array($file, $blacklist) && !is_dir($file)) {
-												echo "<a href=\"$file\">$file</a><br />\n";
-											}
-										}
-										echo "</div>";
-										echo "<hr />";
-
-										closedir($handle);
+							// this could be optimized drastically
+							// but for my purposes... it's fine
+							if ($handle = opendir('./')) {
+								// files
+								echo "<div class=\"row-fluid\">";
+								while (false !== ($file = readdir($handle))) {
+									if (!in_array($file, $blacklist) && !is_dir($file)) {
+										echo "<a href=\"$file\">$file</a><br />\n";
 									}
+								}
+								echo "</div>";
+								echo "<hr />";
 
-									// if ($handle = opendir('./')) {
-									// 	// folders
-									// 	echo "<div class=\"row-fluid\">";
-									// 	while (false !== ($file = readdir($handle))) {
-									// 		if (!in_array($file, $blacklist) && is_dir($file)) {
-									// 			echo "<a href=\"$file\">$file</a><br />\n";
-									// 		}
-									// 	}
-									// 	echo "</div>";
+								closedir($handle);
+							}
 
-									// 	closedir($handle);
-									// }
-								?>
-							</div>
+							// if ($handle = opendir('./')) {
+							// 	// folders
+							// 	echo "<div class=\"row-fluid\">";
+							// 	while (false !== ($file = readdir($handle))) {
+							// 		if (!in_array($file, $blacklist) && is_dir($file)) {
+							// 			echo "<a href=\"$file\">$file</a><br />\n";
+							// 		}
+							// 	}
+							// 	echo "</div>";
 
-						</div>
+							// 	closedir($handle);
+							// }
+						?>
 					</div>
+				</div>
 
-				</div> <!-- end page -->
+			</div> <!-- end page -->
 
-
-			</div> <!-- end swipe-wrap/pages -->
 		</div> <!-- end article/slider -->
 
 
@@ -190,32 +181,29 @@
 
 
 
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script src="bower_components/retina.js-js/src/retina.js"></script>
-		<script src="bower_components/Swipe/swipe.js"></script>
-		<script src="scripts/main.js"></script>
+		<!-- build:js scripts/vendor/bootstrap.js -->
+		<!-- BOOTSTRAP -->
+		<script src="bower_components/bootstrap/js/affix.js"></script>
+		<script src="bower_components/bootstrap/js/alert.js"></script>
+		<script src="bower_components/bootstrap/js/button.js"></script>
+		<script src="bower_components/bootstrap/js/carousel.js"></script>
+		<script src="bower_components/bootstrap/js/collapse.js"></script>
+		<script src="bower_components/bootstrap/js/dropdown.js"></script>
+		<script src="bower_components/bootstrap/js/modal.js"></script>
+		<script src="bower_components/bootstrap/js/scrollspy.js"></script>
+		<script src="bower_components/bootstrap/js/tab.js"></script>
+		<script src="bower_components/bootstrap/js/tooltip.js"></script>
+		<script src="bower_components/bootstrap/js/transition.js"></script>
+		<script src="bower_components/bootstrap/js/popover.js"></script>
 		<!-- endbuild -->
 
 
-		<!-- build:js scripts/vendor/bootstrap.js -->
-		<!-- BOOTSTRAP -->
-		<script src="bower_components/bootstrap/js/bootstrap-affix.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-alert.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-dropdown.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tooltip.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-modal.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-transition.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-button.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-popover.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-typeahead.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-carousel.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-scrollspy.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-collapse.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tab.js"></script>
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
+		<script src="scripts/main.js"></script>
 		<!-- endbuild -->
 
 
 	</body>
 </html>
-	

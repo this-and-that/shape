@@ -336,7 +336,7 @@
 // individual layer classes
 // these are containers
 .layerLoop (@index) when (@index < 7) {
-	(~".layer@{index}") {
+	.layer@{index} {
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -410,12 +410,12 @@ body {
 p {
 	// resets
 	-webkit-margin-before: 0px;
-	-webkit-margin-after: @type-base-line-height;
+	-webkit-margin-after: (0px + @type-base-line-height);
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
-	margin: 0 0 @type-base-line-height 0;
+	margin: 0 0 (0px + @type-base-line-height) 0;
 	// margin: 0 0 0 0;
-	// line-height: @type-base-line-height;
+	// line-height: (0px + @type-base-line-height);
 
 	& + p {
 		//siblings indentation
@@ -603,9 +603,38 @@ iframe {
 .align-left {
 	text-align: left;
 }
+
+//
+//	centered
+//
 .align-center {
 	text-align: center;
 }
+.center {
+	position: relative;
+	.align-center;
+	width: 100%;
+
+	// margin: 0 auto;
+	overflow: hidden;
+}
+.align-middle {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: table;
+
+	& .middle {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		.align-center;
+	}
+}
+
 .align-right {
 	text-align: right;
 }
@@ -617,19 +646,6 @@ iframe {
 .align-bottom {
 	position: absolute;
 	bottom: 0px;
-}
-
-
-//
-//	centered
-//
-.center {
-	position: relative;
-	.align-center;
-	width: 100%;
-
-	// margin: 0 auto;
-	overflow: hidden;
 }
 
 
@@ -650,21 +666,6 @@ iframe {
 
 	// z-index: @layer4;
 }
-.center-middle {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	display: table;
-}
-.center-middle .middle {
-	display: table-cell;
-	vertical-align: middle;
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	.align-center;
-}
 
 
 
@@ -684,14 +685,12 @@ iframe {
 //	http://css-tricks.com/sass-vs-less/
 //
 @winheight: 1026; //`window.innerHeight`;
-@baseline-grid-iterations: (@winheight)/(~`parseInt( "@{type-base-line-height}" )`);
+@baseline-grid-iterations: floor( @winheight/@type-base-line-height );
 
 .baseline-gridLoop (@index) when (@index > 0) {
-	@margin-top: ~`parseInt( "@{type-base-line-height}" )`;
-
-	(~".baseline-grid@{index}") {
-		@baseline-offset: ( (@index*(~`parseInt( "@{type-base-line-height}" )`)) ); //+ @margin-top );
-		margin-top: ~"@{baseline-offset}px";
+	.baseline-grid@{index} {
+		// margin-top: 0px + ((@index+1) * @type-base-line-height);
+		margin-top: 0px + (@index * @type-base-line-height);
 	}
 	.baseline-gridLoop(@index - 1);
 }
@@ -699,7 +698,7 @@ iframe {
 .baseline-gridLoop (@baseline-grid-iterations);
 
 .baseline-grid {
-	margin-top: ~"@{type-base-line-height}"; //30px;
+	margin-top: 0px; // (0px + @type-base-line-height);
 }
 
 
@@ -710,9 +709,9 @@ iframe {
 //
 @vertical-grid-iterations: 100;
 .vertical-gridLoop (@index) when (@index > -1) {
-	(~".vertical-grid@{index}") {
+	.vertical-grid@{index} {
 		@vertical-offset: (@index);
-		position: absolute; //relative;
+		position: absolute; // relative;
 		top: ~"@{vertical-offset}%";
 		// height: ~"@{difference}%";
 	}
@@ -727,7 +726,7 @@ iframe {
 //
 @col-width-iterations: 150;
 .col-widthLoop (@index) when (@index > 0) {
-	(~".col-width@{index}") {
+	.col-width@{index} {
 		@col-width-pct: (@index);
 		width: ~"@{col-width-pct}%";
 	}
@@ -752,6 +751,7 @@ iframe {
 //
 .fit {
 	width: 100%;
+	height: auto;
 }
 
 //
@@ -789,10 +789,10 @@ iframe {
 	// height: 100%;
 
 	// margin-top: 0px;
-	// .align-left;
+	.align-left;
 
 	// border: none;
-	// z-index: @layer0;
+	z-index: @layer0;
 }
 
 
@@ -802,7 +802,6 @@ iframe {
 //	wrapper for all pages within an article
 //
 .article {
-	// overflow: hidden;
 }
 
 
@@ -896,7 +895,7 @@ iframe {
 //
 @trans-iterations: 20;
 .transLoop (@index) when (@index > -1) {
-	(~".trans@{index}") {
+	.trans@{index} {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
 		div&, .page&, .article& {
 			// background-color: @black;
@@ -946,7 +945,7 @@ iframe {
 // from 10% - 90%
 @fade-iterations: 10;
 .fadeOutLoop (@index) when (@index > 0) {
-	(~".fadeOut@{index}") {
+	.fadeOut@{index} {
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-moz-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
@@ -957,7 +956,7 @@ iframe {
 		-moz-opacity: 1.0;
 		opacity: 1.0;
 	}
-	(~".fadeOut@{index}:hover") {
+	.fadeOut@{index}:hover {
 		-webkit-opacity: (@index*0.1);
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
@@ -991,7 +990,7 @@ iframe {
 // fadeIn
 // from 10% - 90%
 .fadeInLoop (@index) when (@index > 0) {
-	(~".fadeIn@{index}") {
+	.fadeIn@{index} {
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-moz-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
@@ -1002,7 +1001,7 @@ iframe {
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
-	(~".fadeIn@{index}:hover") {
+	.fadeIn@{index}:hover {
 		-webkit-opacity: 1.0;
 		-moz-opacity: 1.0;
 		opacity: 1.0;

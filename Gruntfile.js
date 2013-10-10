@@ -34,9 +34,12 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		yeoman: yeomanConfig,
 		watch: {
-			recess: {
+			less: {
+				options: {
+					paths: ['<%= yeoman.app %>/styles']
+				},
 				files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
-				tasks: ['recess']
+				tasks: ['less']
 			},
 			livereload: {
 				files: [
@@ -133,14 +136,19 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		recess: {
-			dist: {
-				options: {
-					compile: true
-				},
-				files: {
-					'<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.less']
-				}
+		less: {
+			options: {
+				paths: ['<%= yeoman.app %>/styles'],
+				report: true
+			},
+			// http://stackoverflow.com/questions/15094667/compile-less-files-with-grunt-contrib-less-wont-work
+			// http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+			src: {
+				expand: true,
+				cwd:    '<%= yeoman.app %>/styles',
+				src:    'main.less',
+				dest:   '<%= yeoman.app %>/styles',
+				ext:    '.css'
 			}
 		},
 		// not used since Uglify task does concat,
@@ -265,7 +273,7 @@ module.exports = function (grunt) {
 		},
 		concurrent: {
 			dist: [
-				'recess',
+				'less',
 				'imagemin',
 				'svgmin',
 				'htmlmin'
@@ -282,7 +290,7 @@ module.exports = function (grunt) {
 
 		grunt.task.run([
 			'clean:server',
-			'recess',
+			'less',
 			'copy:server',
 			'livereload-start',
 			'connect:livereload',
@@ -293,7 +301,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:server',
-		'recess',
+		'less',
 		'copy:server',
 		'connect:test',
 		'mocha'

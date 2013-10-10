@@ -89,9 +89,6 @@ http://letteringjs.com/
 * Retina.js
 https://github.com/imulus/retinajs
 
-* Swipe.js
-https://github.com/bradbirdsall/Swipe
-
 * JQuery
 http://jquery.com/
 
