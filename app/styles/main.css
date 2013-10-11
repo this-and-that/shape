@@ -6366,9 +6366,10 @@ p a {
   display: inline;
 }
 a:hover {
-  text-decoration: none;
   color: #1e140f;
   line-height: 15px;
+  border-bottom: 0px;
+  text-decoration: none;
   display: inline-block;
 }
 p a:hover {
@@ -6379,6 +6380,10 @@ p a:hover {
 }
 .underline-solid {
   border-bottom: 1px solid #1e140f;
+}
+.underline-none {
+  border-bottom: 0px;
+  text-decoration: none;
 }
 img.scale,
 object.scale {
@@ -6435,7 +6440,7 @@ iframe.scale {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
 }
 .align-bottom {
   position: absolute;
@@ -6454,406 +6459,406 @@ iframe.scale {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 1026px;
 }
 .baseline-grid-56 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 1008px;
 }
 .baseline-grid-55 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 990px;
 }
 .baseline-grid-54 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 972px;
 }
 .baseline-grid-53 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 954px;
 }
 .baseline-grid-52 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 936px;
 }
 .baseline-grid-51 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 918px;
 }
 .baseline-grid-50 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 900px;
 }
 .baseline-grid-49 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 882px;
 }
 .baseline-grid-48 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 864px;
 }
 .baseline-grid-47 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 846px;
 }
 .baseline-grid-46 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 828px;
 }
 .baseline-grid-45 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 810px;
 }
 .baseline-grid-44 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 792px;
 }
 .baseline-grid-43 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 774px;
 }
 .baseline-grid-42 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 756px;
 }
 .baseline-grid-41 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 738px;
 }
 .baseline-grid-40 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 720px;
 }
 .baseline-grid-39 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 702px;
 }
 .baseline-grid-38 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 684px;
 }
 .baseline-grid-37 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 666px;
 }
 .baseline-grid-36 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 648px;
 }
 .baseline-grid-35 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 630px;
 }
 .baseline-grid-34 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 612px;
 }
 .baseline-grid-33 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 594px;
 }
 .baseline-grid-32 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 576px;
 }
 .baseline-grid-31 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 558px;
 }
 .baseline-grid-30 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 540px;
 }
 .baseline-grid-29 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 522px;
 }
 .baseline-grid-28 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 504px;
 }
 .baseline-grid-27 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 486px;
 }
 .baseline-grid-26 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 468px;
 }
 .baseline-grid-25 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 450px;
 }
 .baseline-grid-24 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 432px;
 }
 .baseline-grid-23 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 414px;
 }
 .baseline-grid-22 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 396px;
 }
 .baseline-grid-21 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 378px;
 }
 .baseline-grid-20 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 360px;
 }
 .baseline-grid-19 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 342px;
 }
 .baseline-grid-18 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 324px;
 }
 .baseline-grid-17 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 306px;
 }
 .baseline-grid-16 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 288px;
 }
 .baseline-grid-15 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 270px;
 }
 .baseline-grid-14 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 252px;
 }
 .baseline-grid-13 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 234px;
 }
 .baseline-grid-12 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 216px;
 }
 .baseline-grid-11 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 198px;
 }
 .baseline-grid-10 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 180px;
 }
 .baseline-grid-9 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 162px;
 }
 .baseline-grid-8 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 144px;
 }
 .baseline-grid-7 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 126px;
 }
 .baseline-grid-6 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 108px;
 }
 .baseline-grid-5 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 90px;
 }
 .baseline-grid-4 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 72px;
 }
 .baseline-grid-3 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 54px;
 }
 .baseline-grid-2 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 36px;
 }
 .baseline-grid-1 {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 18px;
 }
 .baseline-grid {
   position: absolute;
   top: 0px;
   width: 100%;
-  padding: 12px 12px 0 0;
+  padding: 32px 12px 0 0;
   margin-top: 0px;
 }
 .vertical-grid-100 {
@@ -7347,11 +7352,11 @@ div.trans-0,
   z-index: 400;
 }
 .fadeOut {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7362,11 +7367,11 @@ div.trans-0,
   opacity: 0.0;
 }
 .fadeOut-10 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7377,11 +7382,11 @@ div.trans-0,
   opacity: 1;
 }
 .fadeOut-9 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7392,11 +7397,11 @@ div.trans-0,
   opacity: 0.9;
 }
 .fadeOut-8 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7407,11 +7412,11 @@ div.trans-0,
   opacity: 0.8;
 }
 .fadeOut-7 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7422,11 +7427,11 @@ div.trans-0,
   opacity: 0.7000000000000001;
 }
 .fadeOut-6 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7437,11 +7442,11 @@ div.trans-0,
   opacity: 0.6000000000000001;
 }
 .fadeOut-5 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7452,11 +7457,11 @@ div.trans-0,
   opacity: 0.5;
 }
 .fadeOut-4 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7467,11 +7472,11 @@ div.trans-0,
   opacity: 0.4;
 }
 .fadeOut-3 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7482,11 +7487,11 @@ div.trans-0,
   opacity: 0.30000000000000004;
 }
 .fadeOut-2 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7497,11 +7502,11 @@ div.trans-0,
   opacity: 0.2;
 }
 .fadeOut-1 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
@@ -7512,11 +7517,11 @@ div.trans-0,
   opacity: 0.1;
 }
 .fadeIn {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.0;
   -moz-opacity: 0.0;
   opacity: 0.0;
@@ -7527,11 +7532,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-10 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
@@ -7542,11 +7547,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-9 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.9;
   -moz-opacity: 0.9;
   opacity: 0.9;
@@ -7557,11 +7562,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-8 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.8;
   -moz-opacity: 0.8;
   opacity: 0.8;
@@ -7572,11 +7577,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-7 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.7000000000000001;
   -moz-opacity: 0.7000000000000001;
   opacity: 0.7000000000000001;
@@ -7587,11 +7592,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-6 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.6000000000000001;
   -moz-opacity: 0.6000000000000001;
   opacity: 0.6000000000000001;
@@ -7602,11 +7607,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-5 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
@@ -7617,11 +7622,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-4 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.4;
   -moz-opacity: 0.4;
   opacity: 0.4;
@@ -7632,11 +7637,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-3 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.30000000000000004;
   -moz-opacity: 0.30000000000000004;
   opacity: 0.30000000000000004;
@@ -7647,11 +7652,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-2 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.2;
   -moz-opacity: 0.2;
   opacity: 0.2;
@@ -7662,11 +7667,11 @@ div.trans-0,
   opacity: 1.0;
 }
 .fadeIn-1 {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   -webkit-opacity: 0.1;
   -moz-opacity: 0.1;
   opacity: 0.1;
@@ -7675,6 +7680,15 @@ div.trans-0,
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+}
+#touch-target {
+  width: 768px;
+  height: 1024px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: rgba(250, 225, 0, 0.1);
+  z-index: 800;
 }
 /*	------------------------------------------------------------------------
  *
@@ -10182,6 +10196,15 @@ div.triangle-mask {
   z-index: 1000;
   overflow: hidden;
 }
+#header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  padding: 12px;
+  z-index: 1000;
+}
 p.caption {
   position: absolute;
   z-index: 1000;
@@ -10200,29 +10223,6 @@ ul.caption li {
 ul.caption li span {
   position: relative;
   left: 36px;
-}
-#touchTarget {
-  width: 768px;
-  height: 1024px;
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  background-color: rgba(250, 225, 0, 0.1);
-  z-index: 800;
-}
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-wrap > div {
-  float: left;
-  width: 100%;
-  position: relative;
 }
 /*	------------------------------------------------------------------------
  *

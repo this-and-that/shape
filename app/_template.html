@@ -29,7 +29,7 @@
 		<!-- MOBILE -->
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-title" content="This &amp; That">
 
@@ -78,6 +78,32 @@
 		<script src="bower_components/Lettering.js/jquery.lettering.js"></script>
 		<!-- endbuild -->
 
+
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
+		<script src="scripts/main.js"></script>
+		<!-- endbuild -->
+
+
+		<!-- build:js scripts/vendor/paper.js -->
+		<!-- PAPER.JS -->
+		<script src="scripts/paper/paper-core.js"></script>
+		<!-- // <script src="scripts/frederickk/frederickkPaper.js"></script> -->
+		<!-- // <script type="text/paperscript" canvas="canvas" src="scripts/smoothing.js"></script> -->
+		<!-- endbuild -->
+
+		<script type="text/paperscript" canvas="canvas">
+			var path = new Path();
+			path.strokeColor = 'black';
+			var start = new Point(100, 100);
+			path.moveTo(start);
+			path.lineTo(start + [ 100, -50 ]);
+
+			console.log('booom');
+		</script>
+
+
 		<!-- page specific -->
 		<script type="text/javascript">
 		</script>
@@ -102,13 +128,13 @@
 				<div class="middle">
 					<div class="row">
 						<div class="col-sm-3 align-left">
-							<a href="javascript:scrollBack();"><i class="icon-angle-left"></i></a>
+							<a href="javascript:scrollBack();" class="black-dark-gray underline-none"><i class="icon-angle-left icon-large"></i></a>
 						</div>
 						<div class="col-sm-3 align-center">
-							<a href="javascript:toggleGallery();">Middle</a>
+							&nbsp;
 						</div>
 						<div class="col-sm-3 align-right">
-							<a href="javascript:scrollForward();"><i class="icon-angle-right"></i></a>
+							<a href="javascript:scrollForward();" class="black-dark-gray underline-none"><i class="icon-angle-right icon-large"></i></a>
 						</div>
 					</div>
 				</div>
@@ -118,13 +144,22 @@
 			<div class="row">
 				<div class="align-top">
 					<div class="col-sm-3 align-left">
-						<a href="javascript:scrollBack();"><i class="icon-angle-left"></i></a>
+						<a href="javascript:toggleGallery();" class="black-dark-gray underline-none"><i class="icon-reorder icon-large"></i></a>
 					</div>
 					<div class="col-sm-3 align-center">
-						<a href="javascript:toggleGallery();">Top</a>
+						&nbsp;
 					</div>
 					<div class="col-sm-3 align-right">
-						<a href="javascript:scrollForward();"><i class="icon-angle-right"></i></a>
+						&nbsp;
+					</div>
+				</div>
+			</div>
+
+			<!-- GALLERY NAVIGATION BEGIN -->
+			<div class="baseline-grid-6">
+				<div id="gallery-navigation" class="hidden">
+					<div class="col-sm-2 col-sm-offset-7 align-center">
+						<a href="#" class="black-dark-gray underline-none">close</a>
 					</div>
 				</div>
 			</div>
@@ -133,13 +168,13 @@
 			<div class="row">
 				<div class="align-bottom">
 					<div class="col-sm-3 align-left">
-						<a href="javascript:scrollBack();"><i class="icon-angle-left"></i></a>
+						&nbsp;
 					</div>
 					<div class="col-sm-3 align-center">
-						<a href="javascript:toggleGallery();">Bottom</a>
+						&nbsp;
 					</div>
 					<div class="col-sm-3 align-right">
-						<a href="javascript:scrollForward();"><i class="icon-angle-right"></i></a>
+						&nbsp;
 					</div>
 				</div>
 			</div>
@@ -157,6 +192,59 @@
 		 -
 		 - ------------------------------------------------------------------------ -->
 		 <div id="header">
+
+		 	<!-- SUBJECT CONTENT BEGIN -->
+		 	<div class="baseline-grid-5">
+		 		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
+			 		<p id="subject" class="black-dark-gray bold"> 
+			 			Article<br />
+				 		Title
+				 	</p>
+			 	</div>
+		 	</div>
+
+			<!-- GALLERY PAGE NUMBERING BEGIN -->
+			<div class="baseline-grid-6">
+				<div id="gallery-navigation" class="hidden">
+					<div class="col-sm-2 col-sm-offset-5 align-center">
+						<p class="black-dark-gray">
+							<span id="gallery-pages-index">1</span> &mdash; <span id="gallery-pages-total">10</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		 	<!-- AUTHOR CONTENT BEGIN -->
+			<div class="baseline-grid-48">
+				<div id="author-container">
+					<div class="col-sm-2 col-sm-offset-2 align-center">
+				 		<p id="author-1" class="black-dark-gray"> 
+							Max Mustermann
+						</p>
+					</div>
+					<div class="col-sm-2 col-sm-offset-1 align-center">
+				 		<p id="author-2" class="black-dark-gray"> 
+							Angela N. Other
+						</p>
+					</div>
+				</div>
+			</div>
+
+		 	<!-- INTERVIEWER -EE CONTENT BEGIN -->
+			<div class="row baseline-grid-6">
+				<div id="interview-container" class="hidden">
+					<div class="col-sm-2 col-sm-offset-1">
+						<p id="interviewer" class="black align-left">
+							This <!-- &amp; That -->
+						</p>
+					</div>
+					<!-- <div class="col-sm-2 col-sm-offset-1">
+						<p id="interviewee" class="black align-left">
+							Interviewee
+						</p>
+					</div> -->
+				</div>
+			</div>
 		 </div>
 
 
@@ -171,7 +259,7 @@
 		 - ------------------------------------------------------------------------ -->
 
 		<!-- GALLERY CONTENT BEGIN -->
-		<div class="gallery hidden">
+		<div id="gallery" class="gallery fadeIn">
 
 
 			<!-------------------------------------------------------------------------
@@ -180,25 +268,48 @@
 			 -
 			 - ------------------------------------------------------------------------ -->
 			<div id="image1" class="page warm-gray">
-				image 1
+
+				<div class="align-middle">
+					<div class="middle">
+						<div class="row">
+							<div class="col-sm-9 align-center">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div> <!-- end page -->
 
 
 
 			<!-------------------------------------------------------------------------
 			 -
-			 -  Image 1
+			 -  Image 2
 			 -
 			 - ------------------------------------------------------------------------ -->
 			<div id="image2" class="page warm-gray">
-				image 2
+
+				<div class="align-middle">
+					<div class="middle">
+						<div class="row">
+							<div class="col-sm-4 align-center">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
+							</div>
+							<div class="col-sm-4 col-sm-offset-1 align-center">
+								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div> <!-- end page -->
 
 
 
 			<!-------------------------------------------------------------------------
 			 -
-			 -  Image 1
+			 -  Image 3
 			 -
 			 - ------------------------------------------------------------------------ -->
 			<div id="image3" class="page warm-gray">
@@ -252,9 +363,10 @@
 			 -  Page 2
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page2" class="page orange">
+			<div id="page2" class="page">
 
-				<div class="align-middle">
+				<canvas id="canvas" resize></canvas>
+				<!-- <div class="align-middle">
 					<div class="middle">
 						<div class="row">
 							<div class="col-sm-3 col-sm-offset-2">
@@ -272,7 +384,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 			</div> <!-- end page -->
 
@@ -283,7 +395,7 @@
 			 -  Page 3
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page3" class="page yellow">
+			<div id="page3" class="page blue">
 
 				<div class="align-middle">
 					<div class="middle">
@@ -335,11 +447,7 @@
 
 
 
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<script src="scripts/main.js"></script>
-		<!-- endbuild -->
+		
 
 
 		<!-- build:js scripts/vendor/bootstrap.js -->

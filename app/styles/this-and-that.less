@@ -554,6 +554,7 @@ a:hover {
 	color: @black;
 	line-height: @epsilon - 0px;
 	// .underline-solid;
+	.underline-none;
 
 	display: inline-block;
 	p & {
@@ -572,6 +573,10 @@ a:hover {
 	// border-bottom-style: solid;
 	// border-width: 1px;
 	// border-color: @black;
+}
+.underline-none {
+	border-bottom: 0px;
+	text-decoration: none;
 }
 
 
@@ -669,7 +674,8 @@ iframe {
 
 	// a right padding is needed so that elements
 	// respect the global outer margins
-	padding: @scaffolding-margins @scaffolding-margins 0 0;
+	// +20 pushes content below status bar
+	padding: (@scaffolding-margins+20) @scaffolding-margins 0 0;
 }
 .align-bottom {
 	position: absolute;
@@ -962,11 +968,11 @@ iframe {
 
 // fadeOut
 .fadeOut {
-	-webkit-transition: opacity 0.25s ease-in-out;
-	-moz-transition: opacity 0.25s ease-in-out;
-	-ms-transition: opacity 0.25s ease-in-out;
-	-o-transition: opacity 0.25s ease-in-out;
-	transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
 
 	// starting value
 	-webkit-opacity: 1.0;
@@ -985,11 +991,11 @@ iframe {
 @fade-iterations: 10;
 .fadeOutLoop (@index) when (@index > 0) {
 	.fadeOut-@{index} {
-		-webkit-transition: opacity 0.25s ease-in-out;
-		-moz-transition: opacity 0.25s ease-in-out;
-		-ms-transition: opacity 0.25s ease-in-out;
-		-o-transition: opacity 0.25s ease-in-out;
-		transition: opacity 0.25s ease-in-out;
+		-webkit-transition: opacity 0.2s ease-in-out;
+		-moz-transition: opacity 0.2s ease-in-out;
+		-ms-transition: opacity 0.2s ease-in-out;
+		-o-transition: opacity 0.2s ease-in-out;
+		transition: opacity 0.2s ease-in-out;
 
 		-webkit-opacity: 1.0;
 		-moz-opacity: 1.0;
@@ -1008,11 +1014,11 @@ iframe {
 
 // fadeIn
 .fadeIn {
-	-webkit-transition: opacity 0.25s ease-in-out;
-	-moz-transition: opacity 0.25s ease-in-out;
-	-ms-transition: opacity 0.25s ease-in-out;
-	-o-transition: opacity 0.25s ease-in-out;
-	transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
 
 	// starting value
 	-webkit-opacity: 0.0;
@@ -1030,11 +1036,11 @@ iframe {
 // from 10% - 90%
 .fadeInLoop (@index) when (@index > 0) {
 	.fadeIn-@{index} {
-		-webkit-transition: opacity 0.25s ease-in-out;
-		-moz-transition: opacity 0.25s ease-in-out;
-		-ms-transition: opacity 0.25s ease-in-out;
-		-o-transition: opacity 0.25s ease-in-out;
-		transition: opacity 0.25s ease-in-out;
+		-webkit-transition: opacity 0.2s ease-in-out;
+		-moz-transition: opacity 0.2s ease-in-out;
+		-ms-transition: opacity 0.2s ease-in-out;
+		-o-transition: opacity 0.2s ease-in-out;
+		transition: opacity 0.2s ease-in-out;
 
 		-webkit-opacity: (@index*0.1);
 		-moz-opacity: (@index*0.1);
@@ -1050,5 +1056,31 @@ iframe {
 }
 .fadeInLoop (0) {}
 .fadeInLoop (@fade-iterations);
+
+
+
+//	------------------------------------------------------------------------
+//
+//	Interaction Handling
+//
+//	------------------------------------------------------------------------
+
+//
+//	touch-target for pagination interactions
+//
+#touch-target {
+	width: 768px;
+	height: 1024px;
+	top: 0px;
+	left: 0px;
+	
+	position: absolute;
+	background-color: fade(@shaper, 10%);		
+	z-index: @layer-5;
+}
+
+
+
+
 
 
