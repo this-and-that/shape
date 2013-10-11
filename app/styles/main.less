@@ -19,9 +19,20 @@
  *
  *	------------------------------------------------------------------------ */
 //
-// certain elements of bootstrap can be customized by modifying
+// certain elements of bootstrap can be customized by modifying:
 // bower_components/bootstrap/less/variables.less
-// http://twitter.github.io/bootstrap/customize.html
+// 
+// these are my recommended values and the ones used for This & That
+// - @font-size-base: 15px;
+// - @line-height-base: 18px;
+// - @screen-md: 1024px;
+// - @grid-columns: 9;
+// - @grid-gutter-width: 12px;
+// 
+// if you intend on using bootstrap glyph icons be sure to 
+// update this variable and copy bower_components/bootstrap/fonts/glyphicons-* into
+// typefaces/glyphicons-*
+// - @icon-font-path: "../typefaces/bootstrap"
 //
 @import "../bower_components/bootstrap/less/bootstrap.less";
 
@@ -131,6 +142,18 @@
  *	Additional CSS/Less modules
  *
  *	------------------------------------------------------------------------ */
+/*
+ * Font Awesome
+ */
+//
+// certain elements of bootstrap can be customized by modifying:
+// bower_components/font-awesome/less/variables.less
+// 
+// these my recommended values and the ones used for This & That
+// - @FontAwesomePath:    "../typefaces/font-awesome";
+// 
+@import "../bower_components/font-awesome/less/font-awesome.less";
+
 /*
  * Effeckt.css
  */

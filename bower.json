@@ -11,7 +11,8 @@
     "hammerjs": "https://github.com/EightMedia/hammer.js.git#~1.0.5",
     "onepage-scroll": "git@github.com:frederickk/onepage-scroll.git",
     "orientation-listener": "git@github.com:component/orientation-listener.git#~1.0.4",
-    "jQuery-Retina-Display-Plugin": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git"
+    "jQuery-Retina-Display-Plugin": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git",
+    "font-awesome": "~3.2.1"
   },
   "devDependencies": {},
   "ignore": [

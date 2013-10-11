@@ -32,12 +32,21 @@
 
 //	------------------------------------------------------------------------
 //
-//	Colors
+//	Properties
 //
 //	------------------------------------------------------------------------
 
 //
-//	A collection of generic primary & secondary color definitions
+//	Scafolding definitions
+//
+
+// have outer margins top, right, bottom, left mimic
+// the gutter width as defined in bootstrap
+@scaffolding-margins: @grid-gutter-width;
+
+
+//
+//	Primary & secondary color definitions
 //
 
 // white(s)
@@ -68,6 +77,12 @@
 @link:				rgba( 10, 190, 240, 1.0);
 
 
+
+//	------------------------------------------------------------------------
+//
+//	Colors
+//
+//	------------------------------------------------------------------------
 
 //	white(s)
 .white {
@@ -308,40 +323,42 @@
 //	a layering structure which anyone who has used any design
 //	software can quickly understand and implement
 //
-@layer0:	-200;	// more-bottom layer
+@layer-0:	-200;	// more-bottom layer
 
-@layer1:	0;		// bottom layer
+@layer-1:	0;		// bottom layer
 // img
 // canvas
 
-@layer2:	200;
+@layer-2:	200;
 // .black-trans
 // .white-trans
 
-@layer3:	400;
+@layer-3:	400;
 // #work-menu-overlay
 
-@layer4:	600;
-// #navigation
+@layer-4:	600;
 // video
 // .holder
 
-@layer5:	800;
+@layer-5:	800;
 // .sticky
 
-@layer6:	1000;	// upper layer
+@layer-6:	1000;	// upper layer
 // .gallery
 // .caption
+
+// @layer-7: 2000;
+// #navigation
 
 // individual layer classes
 // these are containers
 .layerLoop (@index) when (@index < 7) {
-	.layer@{index} {
+	.layer-@{index} {
 		position: absolute;
 		top: 0px;
 		left: 0px;
 		z-index: (-200 + (@index * 200));
-		// z-index: @{layer}@index;
+		// z-index: @{layer-}@index;
 	}
 	.layerLoop(@index + 1);
 }
@@ -562,7 +579,7 @@ a:hover {
 //	Images
 //
 img, object {
-	// z-index: @layer1;
+	// z-index: @layer-1;
 
 	&.scale {
 		width: 100%;
@@ -602,6 +619,8 @@ iframe {
 //	------------------------------------------------------------------------
 .align-left {
 	text-align: left;
+	// padding-left: @scaffolding-margins;
+	float: left;
 }
 
 //
@@ -611,7 +630,7 @@ iframe {
 	text-align: center;
 }
 .center {
-	position: relative;
+	// position: relative;
 	.align-center;
 	width: 100%;
 
@@ -622,6 +641,8 @@ iframe {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	margin: 0 auto;
+
 	overflow: hidden;
 	display: table;
 
@@ -637,15 +658,27 @@ iframe {
 
 .align-right {
 	text-align: right;
+	// padding-right: @scaffolding-margins;
+	float: right;
 }
 
 .align-top {
 	position: absolute;
 	top: 0px;
+	width: 100%;
+
+	// a right padding is needed so that elements
+	// respect the global outer margins
+	padding: @scaffolding-margins @scaffolding-margins 0 0;
 }
 .align-bottom {
 	position: absolute;
 	bottom: 0px;
+	width: 100%;
+
+	// a right padding is needed so that elements
+	// respect the global outer margins
+	padding: 0 @scaffolding-margins @scaffolding-margins 0;
 }
 
 
@@ -664,7 +697,7 @@ iframe {
 	overflow: hidden;
 	.align-center;
 
-	// z-index: @layer4;
+	// z-index: @layer-4;
 }
 
 
@@ -688,7 +721,9 @@ iframe {
 @baseline-grid-iterations: floor( @winheight/@type-base-line-height );
 
 .baseline-gridLoop (@index) when (@index > 0) {
-	.baseline-grid@{index} {
+	.baseline-grid-@{index} {
+		.align-top;
+		// position: fixed; //relative;
 		// margin-top: 0px + ((@index+1) * @type-base-line-height);
 		margin-top: 0px + (@index * @type-base-line-height);
 	}
@@ -698,6 +733,7 @@ iframe {
 .baseline-gridLoop (@baseline-grid-iterations);
 
 .baseline-grid {
+	.align-top;
 	margin-top: 0px; // (0px + @type-base-line-height);
 }
 
@@ -709,7 +745,7 @@ iframe {
 //
 @vertical-grid-iterations: 100;
 .vertical-gridLoop (@index) when (@index > -1) {
-	.vertical-grid@{index} {
+	.vertical-grid-@{index} {
 		@vertical-offset: (@index);
 		position: absolute; // relative;
 		top: ~"@{vertical-offset}%";
@@ -726,7 +762,7 @@ iframe {
 //
 @col-width-iterations: 150;
 .col-widthLoop (@index) when (@index > 0) {
-	.col-width@{index} {
+	.col-width-@{index} {
 		@col-width-pct: (@index);
 		width: ~"@{col-width-pct}%";
 	}
@@ -792,7 +828,7 @@ iframe {
 	.align-left;
 
 	// border: none;
-	z-index: @layer0;
+	z-index: @layer-0;
 }
 
 
@@ -815,7 +851,7 @@ iframe {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	z-index: @layer5;
+	z-index: @layer-5;
 	// display: none;
 	opacity: 1.0;
 }
@@ -829,8 +865,11 @@ iframe {
 .navigation, #navigation {
 	.article;
 	position: fixed;
+	width: 100%;
+	height: 100%;
 	top: 0px;
 	left: 0px;
+	padding: @scaffolding-margins;
 
 	z-index: 2000; // specific exception to ensure topmost
 }
@@ -866,7 +905,7 @@ iframe {
 	top: 0px;
 	left: 0px;
 	// position: fixed;
-	z-index: @layer5;
+	z-index: @layer-5;
 }
 
 #rasters {
@@ -895,12 +934,12 @@ iframe {
 //
 @trans-iterations: 20;
 .transLoop (@index) when (@index > -1) {
-	.trans@{index} {
+	.trans-@{index} {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
 		div&, .page&, .article& {
 			// background-color: @black;
 			opacity: (@index*0.05);
-			z-index: @layer3;
+			z-index: @layer-3;
 		}
 	}
 	.transLoop(@index - 1);
@@ -945,7 +984,7 @@ iframe {
 // from 10% - 90%
 @fade-iterations: 10;
 .fadeOutLoop (@index) when (@index > 0) {
-	.fadeOut@{index} {
+	.fadeOut-@{index} {
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-moz-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
@@ -956,7 +995,7 @@ iframe {
 		-moz-opacity: 1.0;
 		opacity: 1.0;
 	}
-	.fadeOut@{index}:hover {
+	.fadeOut-@{index}:hover {
 		-webkit-opacity: (@index*0.1);
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
@@ -990,7 +1029,7 @@ iframe {
 // fadeIn
 // from 10% - 90%
 .fadeInLoop (@index) when (@index > 0) {
-	.fadeIn@{index} {
+	.fadeIn-@{index} {
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-moz-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
@@ -1001,7 +1040,7 @@ iframe {
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
-	.fadeIn@{index}:hover {
+	.fadeIn-@{index}:hover {
 		-webkit-opacity: 1.0;
 		-moz-opacity: 1.0;
 		opacity: 1.0;

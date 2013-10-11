@@ -52,8 +52,9 @@ var article = {};
 /*
  *	Events
  */
-var opscroll;
-
+var articleScroll;
+var galleryScroll;
+var scrollClass = '.article';
 
 /*
  *	Misc.
@@ -233,13 +234,24 @@ function orientationChange() {
 // ------------------------------------------------------------------------
 function paginate() {
 
-	opscroll = $('.article').onepage_scroll({
-		sectionContainer: '.page',
+	// galleryScroll = $('.gallery').onepage_scroll({
+	// 	sectionContainer: '.gallery .page',
+	// 	easing: 'cubic-bezier(.02, .01, .47, 1)',
+	// 	// first page = last page = easeOutBounce
+	// 	animationTime: 300,
+	// 	pagination: false,
+	// 	updateURL: false,
+	// 	direction: 'horizontal',
+	// 	swipeTarget: '#navigation'
+	// });
+
+	articleScroll = $(scrollClass).onepage_scroll({
+		sectionContainer: scrollClass + ' .page',
 		easing: 'cubic-bezier(.02, .01, .47, 1)',
 		// first page = last page = easeOutBounce
 		animationTime: 300,
 		pagination: false,
-		updateURL: true,
+		updateURL: false,
 		direction: 'horizontal'
 	});
 
@@ -247,19 +259,19 @@ function paginate() {
 
 // ------------------------------------------------------------------------
 function scrollBack() {
-	$('.article').moveUp();
+	$(scrollClass).moveUp();
 };
 function scrollForward() {
-	$('.article').moveDown();
+	$(scrollClass).moveDown();
 };
 function scrollTo(element) {
 	var index = $(element).data("index");
 	var delta = index - ($(".page.active").data("index") - 1);
 	if( delta > 0 ) {
-		$('.article').moveDown(Math.abs(delta)-1);
+		$(scrollClass).moveDown(Math.abs(delta)-1);
 	}
 	else {
-		$('.article').moveUp(Math.abs(delta)+1);
+		$(scrollClass).moveUp(Math.abs(delta)+1);
 	}
 };
 
@@ -366,7 +378,7 @@ function jsonToHtml(arr, idName) {
 };
 
 
-/**
+/*
  *	Local Storage
  */
 function saveSession(name, value) {
@@ -404,4 +416,9 @@ $(window).scroll(function() {
 }); 
 
 
-
+// ------------------------------------------------------------------------
+// $('#navigation').swipeEvents().bind('swipeRight', function(){ 
+// 	scrollBack();
+// }).bind('swipeLeft', function(){ 
+// 	scrollForward();
+// });
