@@ -313,29 +313,18 @@ function scrollTo(element) {
 
 
 // ------------------------------------------------------------------------
-function toggleGallery(val) {
+function toggleGallery() {
 	// console.log( 'toggleGallery()' );
 
-	if( val == true ) {
-		// fade the gallery in
-		$('.gallery').toggleClass('fade-in');
-		$('.gallery-navigation').toggleClass('fade-in');
-	}
-	else {
-		$('.gallery').toggleClass('fade-out');
-		$('.gallery-navigation').toggleClass('fade-out');
-	}
+	// fade the gallery in
+	$('.gallery').toggleClass('fade-in');
+	$('.gallery-navigation').toggleClass('fade-in');
 
 	// fade the author out
-	toggleAuthor(false);
+	toggleAuthor();
 };
-function toggleAuthor(val) {
-	if( val == true) {
-		$('.article-author-container').toggleClass('fade-in');
-	}
-	else {
-		$('.article-author-container').toggleClass('fade-out');
-	}
+function toggleAuthor() {
+	$('.article-author-container').toggleClass('fade-out');
 };
 
 
