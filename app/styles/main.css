@@ -9782,10 +9782,32 @@ ul.caption li span {
   
 }
 @media screen and (width: 1024px), (height: 768px) {
-  
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .monospaced,
+  .bold,
+  .regular {
+    font-family: blokk-neue;
+  }
 }
-@media screen and (min-width: 1025px) {
-  
+@media screen and (min-width: 1023px) {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .monospaced,
+  .bold,
+  .regular {
+    font-family: blokk-neue;
+  }
 }
 @media screen and (max-height: 767px) {
   
