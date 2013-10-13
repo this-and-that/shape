@@ -6469,6 +6469,15 @@ iframe.scale {
   overflow: hidden;
   text-align: center;
 }
+.baseline-grid-view {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  opacity: 0.0;
+  z-index: 1500;
+  pointer-events: none;
+}
 .baseline-grid-57 {
   position: absolute;
   top: 0px;
@@ -7194,9 +7203,7 @@ iframe.scale {
   height: 100%;
 }
 .invisible {
-  -webkit-opacity: 0.0;
-  -moz-opacity: 0.0;
-  opacity: 0.0;
+  display: none;
 }
 .page {
   -webkit-transform-style: preserve-3d;

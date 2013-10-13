@@ -109,7 +109,7 @@
 			<div class="row">
 				<div class="align-top">
 					<div class="col-sm-3 align-left">
-						<a href="javascript:toggleGallery();" class="black-dark-gray underline-none"><i class="icon-reorder icon-large"></i></a>
+						<a id="main-menu" href="javascript:toggleGrid();" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
 					</div>
 					<div class="col-sm-3 align-center">
 						&nbsp;
@@ -125,7 +125,7 @@
 				<div class="baseline-grid-6">
 					<div class="gallery-navigation"> <!-- class="invisible" -->
 						<div class="col-sm-2 col-sm-offset-7 align-center">
-							<a href="javascript:toggleGallery();" class="black-dark-gray underline-none">close</a>
+							<a id="gallery-close" href="javascript:toggleGallery();" class="black-dark-gray underline-none">close</a>
 						</div>
 					</div>
 				</div>
@@ -161,7 +161,7 @@
 		 -	Debug Baseline-Grid
 		 -
 		 - ------------------------------------------------------------------------ -->
-		<div style="position: fixed; top: 0px; left: 0px; width: 100%; z-index: 1500; pointer-events: none;">
+		<div class="baseline-grid-view">
 			<div class="col-sm-7 col-sm-offset-1">
 				<div class="row baseline-grid">
 					<h6 class="black-dark-gray monospaced">0  &nbsp;_____________________________________ X _____________________________________ 0</h6>
@@ -338,7 +338,7 @@
 					<div class="middle">
 						<div class="row">
 							<div class="col-sm-3 col-sm-offset-3">
-								<h1 class="black"><a href="#">pa&ndash;</a></h1>
+								<h1 class="black"><a id="gallery-link" data-index="1">pa&ndash;</a></h1>
 							</div>
 						</div>
 						<div class="row">
