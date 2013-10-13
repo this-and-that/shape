@@ -1,12 +1,14 @@
+//
+//	media-queries.less
+//
+//	Ken Frederick
+//	ken.frederick@gmx.de
+//
+//	http://cargocollective.com/kenfrederick/
+//	http://kenfrederick.blogspot.com/
+//
 /**
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://cargocollective.com/kenfrederick/
- *	http://blog.kennethfrederick.de/
- *
- *
+ * 
  *	mostly borrowed from 
  *	Dapper 
  *	0.1.0
@@ -14,8 +16,8 @@
  *	Flip Steward (@flipstewart)
  *
  *	Licensed under The MIT License
- *	http://opensource.org/licenses/MIT
- *
+ *	http: *opensource.org/licenses/MIT
+ *	
  */
 
 
@@ -29,58 +31,45 @@
 //
 //	iPhones & iPod Touches
 //
-/* 
- *	iPhone & iPod Touch Portrait
- */
+
+// 
+//	iPhone & iPod Touch Portrait
+//
 @media screen and (width: 320px), (height: 480px) {
-	body {
-		background-color: #fff;
-	}
 }
 
-/* 
- *	iPhone & iPod Touch Landscape
- */
+// 
+//	iPhone & iPod Touch Landscape
+//
 @media screen and (width: 480px), (height: 320px) {
-	body {
-		background-color: #000;
-		color: #ddd;
-	}
 }
 
 
 
-/* 
- *	iPhone 4 Portrait
- */
+// 
+//	iPhone 4 Portrait
+//
 @media screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 }
 
-/* 
- *	iPhone 4 Landscape
- */
+// 
+//	iPhone 4 Landscape
+//
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 
 
-/* 
- *	iPhone 5 & 5th Generation iPod Touch Portrait
- */
+// 
+//	iPhone 5 & 5th Generation iPod Touch Portrait
+//
 @media screen and (width: 320px), (height: 568px) {
-	body {
-		background-color: #fff;
-	}
 }
 
-/* 
- *	iPhone 5 & 5th Generation iPod Touch Landscape
- */
+// 
+//	iPhone 5 & 5th Generation iPod Touch Landscape
+//
 @media screen and (width: 658px), (height: 320px) {
-	body {
-		background-color: #000;
-		color: #ddd;
-	}
 }
 
 
@@ -89,39 +78,16 @@
 //	iPads
 //
 
-/*
- *	iPad Portrait
- */
+//
+//	iPad Portrait
+//
 @media screen and (width: 768px), (height: 1024px) {
-	body, html, .pages {
-		// padding: 12px 12px;
-		// margin: 0 12px;
-	}
-
-	.page {
-		// margin: 0 12px;
-		// padding: (20px + 12px) 12px;
-		// top: 0px;
-	}
 }
 
-/*
- *	iPad Landscape
- */
+//
+//	iPad Landscape
+//
 @media screen and (width: 1024px), (height: 768px) {
-	body {
-	}
-
-	.page {
-		// margin: 12px 70px;
-	}
-
-	.warm-gray {
-		canvas&, div&, .page&, .pages&, .article&, .gallery& {
-			background-color: #f0f;
-		}
-	}
-
 }
 
 
@@ -136,9 +102,4 @@
 
 // all devices with screen height 767px and smaller
 @media screen and (max-height: 767px) {
-	img, iframe {
-		&.scale {
-			width: 75%;
-		}
-	}
 }

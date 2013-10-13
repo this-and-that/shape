@@ -5,10 +5,7 @@
  *
  *	http://kennethfrederick.de/
  *	http://blog.kennethfrederick.de/
- *
- *
- *	This file is merely a "build" file for all of the included Less files
- *
+ *	
  */
 /*	------------------------------------------------------------------------
  *
@@ -5930,35 +5927,6 @@ td.visible-print {
  *	This & That framework
  *
  *	------------------------------------------------------------------------ */
-/**
- *	This-and-That.less
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://kennethfrederick.de/
- *	http://blog.kennethfrederick.de/
- *
- *
- *	This is a framework of CSS styles that create the structure
- *	used throughout This & That (https://github.com/this-and-that/)
- *	I offer it here as a framework for the creation of web-zines.
- *
- *	Given that This & That was designed for use primarily within the
- *	Baker (https://github.com/Simbul/baker) framework, optimizations
- *	or non-webkit (Safari) considerations have not been implemented
- *
- *	Unless you really don't like the defaults I've defined
- *	there's no need to alter any of it...
- *
- *
- *	http://thisetthatmagazine.tumblr.com/
- *	github.com/this-and-that/
- *
- *	Licensed under The MIT License
- *	http://opensource.org/licenses/MIT
- *
- */
 .white {
   color: #ffffff;
 }
@@ -5974,6 +5942,9 @@ div.white,
 .page.white,
 .article.white {
   background-color: #ffffff;
+}
+canvas.white {
+  background: #ffffff;
 }
 .white-light-gray {
   color: rgba(255, 255, 255, 0.45);
@@ -5991,6 +5962,9 @@ div.white-light-gray,
 .article.white-light-gray {
   background-color: rgba(255, 255, 255, 0.45);
 }
+canvas.white-light-gray {
+  background: rgba(255, 255, 255, 0.45);
+}
 .white-dark-gray {
   color: rgba(255, 255, 255, 0.83);
 }
@@ -6007,6 +5981,9 @@ div.white-dark-gray,
 .article.white-dark-gray {
   background-color: rgba(255, 255, 255, 0.83);
 }
+canvas.white-dark-gray {
+  background: rgba(255, 255, 255, 0.83);
+}
 .black {
   color: #1e140f;
 }
@@ -6014,6 +5991,9 @@ div.black,
 .page.black,
 .article.black {
   background-color: #1e140f;
+}
+canvas.black {
+  background: #1e140f;
 }
 .black-light-gray {
   color: rgba(30, 20, 15, 0.1);
@@ -6031,6 +6011,9 @@ div.black-light-gray,
 .article.black-light-gray {
   background-color: rgba(30, 20, 15, 0.1);
 }
+canvas.black-light-gray {
+  background: rgba(30, 20, 15, 0.1);
+}
 .black-dark-gray {
   color: rgba(30, 20, 15, 0.45);
 }
@@ -6046,6 +6029,9 @@ div.black-dark-gray,
 .page.black-dark-gray,
 .article.black-dark-gray {
   background-color: rgba(30, 20, 15, 0.45);
+}
+canvas.black-dark-gray {
+  background: rgba(30, 20, 15, 0.45);
 }
 .light-gray {
   color: #e9e8e7;
@@ -6063,6 +6049,9 @@ div.light-gray,
 .article.light-gray {
   background-color: #e9e8e7;
 }
+canvas.light-gray {
+  background: #e9e8e7;
+}
 .dark-gray {
   color: #9a9593;
 }
@@ -6078,6 +6067,9 @@ div.dark-gray,
 .page.dark-gray,
 .article.dark-gray {
   background-color: #9a9593;
+}
+canvas.dark-gray {
+  background: #9a9593;
 }
 .red {
   color: #ff4464;
@@ -6095,6 +6087,9 @@ div.red,
 .article.red {
   background-color: #ff4464;
 }
+canvas.red {
+  background: #ff4464;
+}
 .yellow {
   color: #f2cc44;
 }
@@ -6110,6 +6105,9 @@ div.yellow,
 .page.yellow,
 .article.yellow {
   background-color: #f2cc44;
+}
+canvas.yellow {
+  background: #f2cc44;
 }
 .blue {
   color: #00ccff;
@@ -6127,6 +6125,9 @@ div.blue,
 .article.blue {
   background-color: #00ccff;
 }
+canvas.blue {
+  background: #00ccff;
+}
 .orange {
   color: #ff6446;
 }
@@ -6142,6 +6143,9 @@ div.orange,
 .page.orange,
 .article.orange {
   background-color: #ff6446;
+}
+canvas.orange {
+  background: #ff6446;
 }
 .green {
   color: #00ee99;
@@ -6159,6 +6163,9 @@ div.green,
 .article.green {
   background-color: #00ee99;
 }
+canvas.green {
+  background: #00ee99;
+}
 .purple {
   color: #90278e;
 }
@@ -6174,6 +6181,9 @@ div.purple,
 .page.purple,
 .article.purple {
   background-color: #90278e;
+}
+canvas.purple {
+  background: #90278e;
 }
 .layer-0 {
   position: absolute;
@@ -6355,6 +6365,9 @@ h6 a,
 h6 a:hover {
   line-height: 11px;
 }
+.monospaced {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
 a {
   text-decoration: none;
   color: #1e140f;
@@ -6403,6 +6416,7 @@ iframe {
 }
 iframe.scale {
   width: 100%;
+  height: 100%;
 }
 .align-left {
   text-align: left;
@@ -7179,32 +7193,104 @@ iframe.scale {
   width: 100%;
   height: 100%;
 }
-.hidden {
+.invisible {
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
   opacity: 0.0;
 }
 .page {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
   text-align: left;
   float: left;
   z-index: -200;
 }
+.article {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+.article-author-container {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 1.0;
+  -moz-opacity: 1.0;
+  opacity: 1.0;
+}
+.article-interview-container {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
 .gallery {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
   position: fixed;
+  width: 100%;
+  top: 100%;
   top: 0px;
   left: 0px;
-  z-index: 800;
-  opacity: 1.0;
+  z-index: 600;
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+  pointer-events: none;
+}
+.gallery-navigation {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+  pointer-events: none;
+  z-index: 1000;
 }
 .navigation,
 #navigation {
   position: fixed;
   width: 100%;
-  height: 100%;
   top: 0px;
   left: 0px;
   padding: 12px;
-  z-index: 2000;
+  z-index: 1000;
 }
-.sticky {
+#scroll-back {
+  background-color: rgba(30, 20, 15, 0.1);
+  position: fixed;
+  height: 100%;
+  width: 36px;
+  left: 0px;
+  z-index: 800;
+}
+#scroll-forward {
+  background-color: rgba(30, 20, 15, 0.1);
+  position: fixed;
+  height: 100%;
+  width: 36px;
+  right: 0px;
+  z-index: 800;
+}
+#header {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -7215,7 +7301,6 @@ iframe.scale {
   height: 100%;
   top: 0px;
   left: 0px;
-  z-index: 800;
 }
 #rasters {
   visibility: hidden;
@@ -7351,344 +7436,428 @@ div.trans-0,
   opacity: 0;
   z-index: 400;
 }
-.fadeOut {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut:hover {
+.fade-out {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 0.0;
   -moz-opacity: 0.0;
   opacity: 0.0;
 }
-.fadeOut-10 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-in {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeOut-10:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-}
-.fadeOut-9 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeOut-9:hover {
-  -webkit-opacity: 0.9;
-  -moz-opacity: 0.9;
-  opacity: 0.9;
-}
-.fadeOut-8 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-8:hover {
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-}
-.fadeOut-7 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-7:hover {
-  -webkit-opacity: 0.7000000000000001;
-  -moz-opacity: 0.7000000000000001;
-  opacity: 0.7000000000000001;
-}
-.fadeOut-6 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-6:hover {
-  -webkit-opacity: 0.6000000000000001;
-  -moz-opacity: 0.6000000000000001;
-  opacity: 0.6000000000000001;
-}
-.fadeOut-5 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-5:hover {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-}
-.fadeOut-4 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-4:hover {
-  -webkit-opacity: 0.4;
-  -moz-opacity: 0.4;
-  opacity: 0.4;
-}
-.fadeOut-3 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-3:hover {
-  -webkit-opacity: 0.30000000000000004;
-  -moz-opacity: 0.30000000000000004;
-  opacity: 0.30000000000000004;
-}
-.fadeOut-2 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-2:hover {
-  -webkit-opacity: 0.2;
-  -moz-opacity: 0.2;
-  opacity: 0.2;
-}
-.fadeOut-1 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  -webkit-opacity: 1.0;
-  -moz-opacity: 1.0;
-  opacity: 1.0;
-}
-.fadeOut-1:hover {
-  -webkit-opacity: 0.1;
-  -moz-opacity: 0.1;
-  opacity: 0.1;
-}
-.fadeIn {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 0.0;
   -moz-opacity: 0.0;
   opacity: 0.0;
 }
-.fadeIn:hover {
+.fade-out-over-10 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-10 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-10:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-.fadeIn-10:hover {
+.fade-out-over-9 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-9 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-9:hover {
   -webkit-opacity: 0.9;
   -moz-opacity: 0.9;
   opacity: 0.9;
 }
-.fadeIn-9:hover {
+.fade-out-over-8 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-8 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-8:hover {
   -webkit-opacity: 0.8;
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-.fadeIn-8:hover {
+.fade-out-over-7 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-7 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-7:hover {
   -webkit-opacity: 0.7000000000000001;
   -moz-opacity: 0.7000000000000001;
   opacity: 0.7000000000000001;
 }
-.fadeIn-7:hover {
+.fade-out-over-6 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-6 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-6:hover {
   -webkit-opacity: 0.6000000000000001;
   -moz-opacity: 0.6000000000000001;
   opacity: 0.6000000000000001;
 }
-.fadeIn-6:hover {
+.fade-out-over-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-5 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-5:hover {
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
-.fadeIn-5:hover {
+.fade-out-over-4 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-4 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-4:hover {
   -webkit-opacity: 0.4;
   -moz-opacity: 0.4;
   opacity: 0.4;
 }
-.fadeIn-4:hover {
+.fade-out-over-3 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-3 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-3:hover {
   -webkit-opacity: 0.30000000000000004;
   -moz-opacity: 0.30000000000000004;
   opacity: 0.30000000000000004;
 }
-.fadeIn-3:hover {
+.fade-out-over-2 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-2 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-2:hover {
   -webkit-opacity: 0.2;
   -moz-opacity: 0.2;
   opacity: 0.2;
 }
-.fadeIn-2:hover {
+.fade-out-over-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-.fadeIn-1 {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.fade-out-over-1:hover {
   -webkit-opacity: 0.1;
   -moz-opacity: 0.1;
   opacity: 0.1;
 }
-.fadeIn-1:hover {
+.fade-in-over {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
+  pointer-events: auto;
 }
-#touch-target {
-  width: 768px;
-  height: 1024px;
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  background-color: rgba(250, 225, 0, 0.1);
-  z-index: 800;
+.fade-in-over-10 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.fade-in-over-10:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-9 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9;
+}
+.fade-in-over-9:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-8 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+.fade-in-over-8:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-7 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.7000000000000001;
+  -moz-opacity: 0.7000000000000001;
+  opacity: 0.7000000000000001;
+}
+.fade-in-over-7:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-6 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.6000000000000001;
+  -moz-opacity: 0.6000000000000001;
+  opacity: 0.6000000000000001;
+}
+.fade-in-over-6:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.fade-in-over-5:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-4 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+.fade-in-over-4:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-3 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.30000000000000004;
+  -moz-opacity: 0.30000000000000004;
+  opacity: 0.30000000000000004;
+}
+.fade-in-over-3:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-2 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+}
+.fade-in-over-2:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+}
+.fade-in-over-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.1;
+  -moz-opacity: 0.1;
+  opacity: 0.1;
+}
+.fade-in-over-1:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  -webkit-opacity: 0.0;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
 }
 /*	------------------------------------------------------------------------
  *
@@ -7734,14 +7903,7 @@ div.trans-0,
   font-family: 'blokk-neue';
 }
 /**
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://kennethfrederick.de/
- *	http://blog.kennethfrederick.de/
- *
- *
+ * 
  *	a slightly modified version of 
  *	Typeplate
  *	1.0.0
@@ -9373,657 +9535,6 @@ a .icon-flip-vertical:before {
 /*
  * Effeckt.css
  */
-.md-perspective,
-.md-perspective body {
-  height: 100%;
-  overflow: hidden;
-}
-.md-perspective body {
-  perspective: 600px;
-}
-.effeckt-off-screen-nav-show {
-  visibility: visible;
-}
-.effeckt-off-screen-nav-left-overlay {
-  transform: translateX(-100%);
-  transition: 500ms cubic-bezier(0.09, 0.68, 0, 0.99);
-}
-.effeckt-off-screen-nav-left-overlay.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-left-push {
-  transform: translateX(-12rem);
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-left-push.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-left-push.effeckt-off-screen-nav-show ~ .page-wrap {
-  transform: translateX(12rem);
-}
-.effeckt-off-screen-nav-left-push ~ .page-wrap {
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-left-squeeze {
-  width: 40%;
-  transform: translateX(-100%);
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-left-squeeze.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-left-squeeze.effeckt-off-screen-nav-show ~ .page-wrap {
-  width: 60%;
-}
-.effeckt-off-screen-nav-left-squeeze ~ .page-wrap {
-  transition: width 500ms;
-  max-width: none;
-}
-.effeckt-off-screen-nav-right-overlay {
-  right: 0;
-  left: auto;
-  transform: translateX(100%);
-  transition: 500ms cubic-bezier(0.09, 0.68, 0, 0.99);
-}
-.effeckt-off-screen-nav-right-overlay.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-right-push {
-  left: auto;
-  right: 0;
-  transform: translateX(12rem);
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-right-push.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-right-push.effeckt-off-screen-nav-show ~ .page-wrap {
-  transform: translateX(-12rem);
-}
-.effeckt-off-screen-nav-right-push ~ .page-wrap {
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-right-squeeze {
-  left: auto;
-  right: 0;
-  width: 40%;
-  transform: translateX(100%);
-  transition: 500ms;
-}
-.effeckt-off-screen-nav-right-squeeze.effeckt-off-screen-nav-show {
-  transform: translateX(0);
-}
-.effeckt-off-screen-nav-right-squeeze.effeckt-off-screen-nav-show ~ .page-wrap {
-  width: 60%;
-}
-.effeckt-off-screen-nav-right-squeeze ~ .page-wrap {
-  float: left;
-  transition: width 500ms;
-  max-width: none;
-}
-.effeckt-off-screen-nav-rotate {
-  transform-origin: 100% 50%;
-  transition: 500ms;
-  transform: translateX(-100%) translateX(6px) scale(1.01) rotateY(-30deg);
-}
-.effeckt-off-screen-nav-rotate.effeckt-off-screen-nav-show {
-  transform: none;
-}
-.effeckt-off-screen-nav-rotate.effeckt-off-screen-nav-show ~ .page-wrap {
-  transform: translateX(260px) rotateY(15deg);
-}
-.effeckt-off-screen-nav-rotate.effeckt-off-screen-nav-show ~ .page-wrap .off-screen-nav-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.effeckt-off-screen-nav-rotate ~ .page-wrap {
-  transform-origin: 0 50%;
-  transition: 0.5s;
-}
-.effeckt-page-transition.effeckt-page-transition-animating {
-  visibility: visible;
-}
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-.animation-delay-180 {
-  animation-delay: 0.18s;
-}
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-.animation-delay-300 {
-  animation-delay: 0.3s;
-}
-.animation-delay-500 {
-  animation-delay: 0.5s;
-}
-.animation-delay-700 {
-  animation-delay: 0.7s;
-}
-.animation-delay-1000 {
-  animation-delay: 1s;
-}
-.effeckt-page-transition-left-slide-in {
-  animation: slideInLeft 0.7s forwards ease-out;
-}
-.effeckt-page-transition-right-slide-in {
-  animation: slideInRight 0.7s forwards ease-out;
-}
-.effeckt-page-transition-top-slide-in {
-  animation: slideInTop 0.7s forwards ease-out;
-}
-.effeckt-page-transition-bottom-slide-in {
-  animation: slideInBottom 0.7s forwards ease-out;
-}
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInTop {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes slideInBottom {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.effeckt-page-transition-left-slide-out {
-  animation: slideOutLeft 0.7s forwards ease-out;
-}
-.effeckt-page-transition-right-slide-out {
-  animation: slideOutRight 0.7s forwards ease-out;
-}
-.effeckt-page-transition-top-slide-out {
-  animation: slideOutTop 0.7s forwards ease-out;
-}
-.effeckt-page-transition-bottom-slide-out {
-  animation: slideOutBottom 0.7s forwards ease-out;
-}
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slideOutRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-@keyframes slideOutTop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-@keyframes slideOutBottom {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-.effeckt-page-transition-down-scale-out {
-  animation: scaleDown 0.7s ease both;
-}
-.effeckt-page-transition-up-scale-in {
-  animation: scaleUp 0.7s ease both;
-}
-@keyframes scaleDown {
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-@keyframes scaleUp {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-.effeckt-page-transition-left-fade-in {
-  animation: fadeLeftIn 0.7s ease both;
-}
-.effeckt-page-transition-right-fade-in {
-  animation: fadeRightIn 0.7s ease both;
-}
-.effeckt-page-transition-top-fade-in {
-  animation: fadeTopIn 0.7s ease both;
-}
-.effeckt-page-transition-bottom-fade-in {
-  animation: fadeBottomIn 0.7s ease both;
-}
-@keyframes fadeLeftIn {
-  to {
-    opacity: 0.3;
-    transform: translateX(-100%);
-  }
-}
-@keyframes fadeRightIn {
-  to {
-    opacity: 0.3;
-    transform: translateX(100%);
-  }
-}
-@keyframes fadeTopIn {
-  to {
-    opacity: 0.3;
-    transform: translateY(-100%);
-  }
-}
-@keyframes fadeBottomIn {
-  to {
-    opacity: 0.3;
-    transform: translateY(100%);
-  }
-}
-.effeckt-page-transition-left-fade-out {
-  animation: fadeLeftOut 0.7s ease both;
-}
-.effeckt-page-transition-right-fade-out {
-  animation: fadeRightOut 0.7s ease both;
-}
-.effeckt-page-transition-top-fade-out {
-  animation: fadeTopOut 0.7s ease both;
-}
-.effeckt-page-transition-bottom-fade-out {
-  animation: fadeBottomOut 0.7s ease both;
-}
-@keyframes fadeLeftOut {
-  from {
-    opacity: 0.3;
-    transform: translateX(-100%);
-  }
-}
-@keyframes fadeRightOut {
-  from {
-    opacity: 0.3;
-    transform: translateX(100%);
-  }
-}
-@keyframes fadeTopOut {
-  from {
-    opacity: 0.3;
-    transform: translateY(-100%);
-  }
-}
-@keyframes fadeBottomOut {
-  from {
-    opacity: 0.3;
-    transform: translateY(100%);
-  }
-}
-.effeckt-page-transition-left-flip-in {
-  transform-origin: 50% 50%;
-  animation: flipInLeft 0.5s both ease-out;
-}
-.effeckt-page-transition-right-flip-out {
-  transform-origin: 50% 50%;
-  animation: flipOutRight 0.5s both ease-in;
-}
-@keyframes flipInLeft {
-  from {
-    opacity: 0.2;
-    transform: translateZ(-1000px) rotateY(-90deg);
-  }
-}
-@keyframes flipOutRight {
-  to {
-    opacity: 0.2;
-    transform: translateZ(-1000px) rotateY(90deg);
-  }
-}
-.effeckt-page-transition-newspaper-out {
-  transform-origin: 50% 50%;
-  animation: rotateOutNewspaper 0.5s both ease-in;
-}
-.effeckt-page-transition-newspaper-in {
-  transform-origin: 50% 50%;
-  animation: rotateInNewspaper 0.5s both ease-out;
-}
-@keyframes rotateOutNewspaper {
-  to {
-    opacity: 1;
-    transform: translateZ(-3000px) rotateZ(360deg);
-  }
-}
-@keyframes rotateInNewspaper {
-  from {
-    opacity: 1;
-    transform: translateZ(-3000px) rotateZ(-360deg);
-  }
-}
-.effeckt-page-transition-left-rotate-push {
-  transform-origin: 0% 50%;
-  animation: rotatePushLeft 0.8s both ease;
-}
-.effeckt-page-transition-right-rotate-push {
-  transform-origin: 100% 50%;
-  animation: rotatePushRight 0.8s both ease;
-}
-.effeckt-page-transition-top-rotate-push {
-  transform-origin: 50% 0%;
-  animation: rotatePushTop 0.8s both ease;
-}
-.effeckt-page-transition-bottom-rotate-push {
-  transform-origin: 50% 100%;
-  animation: rotatePushBottom 0.8s both ease;
-}
-@keyframes rotatePushLeft {
-  to {
-    opacity: 0;
-    transform: rotateY(90deg);
-  }
-}
-@keyframes rotatePushRight {
-  to {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-}
-@keyframes rotatePushTop {
-  to {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-}
-@keyframes rotatePushBottom {
-  to {
-    opacity: 0;
-    transform: rotateX(90deg);
-  }
-}
-.effeckt-page-transition-left-rotate-pull {
-  transform-origin: 0% 50%;
-  animation: rotatePullLeft 0.5s both ease;
-}
-.effeckt-page-transition-right-rotate-pull {
-  transform-origin: 100% 50%;
-  animation: rotatePullRight 0.5s both ease;
-}
-.effeckt-page-transition-top-rotate-pull {
-  transform-origin: 50% 0%;
-  animation: rotatePullTop 0.5s both ease;
-}
-.effeckt-page-transition-bottom-rotate-pull {
-  transform-origin: 50% 100%;
-  animation: rotatePullBottom 0.5s both ease;
-}
-@keyframes rotatePullLeft {
-  from {
-    opacity: 0;
-    transform: rotateY(90deg);
-  }
-}
-@keyframes rotatePullRight {
-  from {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-}
-@keyframes rotatePullTop {
-  from {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-}
-@keyframes rotatePullBottom {
-  from {
-    opacity: 0;
-    transform: rotateX(90deg);
-  }
-}
-.effeckt-page-transition-left-rotate-fold {
-  transform-origin: 100% 50%;
-  animation: rotateFoldLeft 0.7s both ease;
-}
-.effeckt-page-transition-right-rotate-fold {
-  transform-origin: 0% 50%;
-  animation: rotateFoldRight 0.7s both ease;
-}
-.effeckt-page-transition-top-rotate-fold {
-  transform-origin: 50% 100%;
-  animation: rotateFoldTop 0.7s both ease;
-}
-.effeckt-page-transition-bottom-rotate-fold {
-  transform-origin: 50% 0%;
-  animation: rotateFoldBottom 0.7s both ease;
-}
-@keyframes rotateFoldLeft {
-  to {
-    opacity: 0;
-    transform: translateX(-100%) rotateY(-90deg);
-  }
-}
-@keyframes rotateFoldRight {
-  to {
-    opacity: 0;
-    transform: translateX(100%) rotateY(90deg);
-  }
-}
-@keyframes rotateFoldTop {
-  to {
-    opacity: 0;
-    transform: translateY(-100%) rotateX(90deg);
-  }
-}
-@keyframes rotateFoldBottom {
-  to {
-    opacity: 0;
-    transform: translateY(100%) rotateX(-90deg);
-  }
-}
-.effeckt-caption {
-  position: relative;
-  float: left;
-  overflow: hidden;
-}
-.effeckt-caption:nth-child(2n) {
-  margin-right: 0;
-}
-.effeckt-caption img {
-  transition: 500ms;
-}
-.effeckt-caption figcaption {
-  position: absolute;
-  transition: 500ms;
-  width: 100%;
-}
-.effeckt-caption-1 figcaption {
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-}
-.effeckt-caption-1:hover figcaption,
-.effeckt-caption-1:active figcaption {
-  opacity: 1;
-}
-.effeckt-caption-2 figcaption {
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(100%);
-}
-.effeckt-caption-2:hover figcaption,
-.effeckt-caption-2:active figcaption {
-  opacity: 1;
-  transform: translateY(0);
-}
-.effeckt-caption-3 figcaption {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: none;
-  z-index: 0;
-}
-.effeckt-caption-3 img {
-  position: relative;
-  z-index: 1;
-  transition-delay: 0.25s;
-}
-.effeckt-caption-3 .effeckt-figcaption-wrap {
-  position: absolute;
-  bottom: 1rem;
-  opacity: 0;
-  transition: opacity 0.25s linear 0s;
-}
-.effeckt-caption-3:hover .effeckt-figcaption-wrap,
-.effeckt-caption-3:active .effeckt-figcaption-wrap {
-  opacity: 1;
-  transition-delay: 0.25s;
-}
-.effeckt-caption-3:hover img,
-.effeckt-caption-3:active img {
-  transform: scale(0.5) translateY(-80px);
-  transition-delay: 0;
-}
-.effeckt-caption-4 figcaption {
-  left: 0;
-  bottom: 0;
-  opacity: 0;
-  transform: translateX(100%);
-}
-.effeckt-caption-4:hover figcaption,
-.effeckt-caption-4:active figcaption {
-  opacity: 1;
-  transform: translateX(0);
-}
-.effeckt-caption-5 figcaption {
-  top: 0;
-  left: 0;
-  height: 100%;
-  opacity: 0;
-}
-.effeckt-caption-5:hover figcaption,
-.effeckt-caption-5:active figcaption {
-  opacity: 1;
-}
-.effeckt-caption-6 figcaption {
-  top: 0;
-  left: 0;
-  transform: translateX(100%) rotate(20deg);
-  opacity: 0;
-}
-.effeckt-caption-6:hover figcaption,
-.effeckt-caption-6:active figcaption {
-  transform: translateX(0) rotate(0deg);
-  opacity: 1;
-}
-.effeckt-caption-7 figcaption {
-  top: 0;
-  left: 0;
-  transform: translateX(-100%);
-  opacity: 0;
-  z-index: 2;
-}
-.effeckt-caption-7 .effeckt-figcaption-wrap {
-  transition: 500ms 250ms;
-  transform: translateX(200%);
-}
-.effeckt-caption-7:hover figcaption,
-.effeckt-caption-7:active figcaption {
-  transform: translateX(0);
-  opacity: 1;
-}
-.effeckt-caption-7:hover .effeckt-figcaption-wrap,
-.effeckt-caption-7:active .effeckt-figcaption-wrap {
-  transform: translateX(0);
-}
-.effeckt-caption-8 figcaption {
-  top: 0;
-  left: 0;
-  height: 100%;
-  transform: translateX(-100%);
-  opacity: 0;
-}
-.effeckt-caption-8 img {
-  transition: 500ms;
-  transform: translateX(0);
-}
-.effeckt-caption-8:hover figcaption,
-.effeckt-caption-8:active figcaption {
-  transform: translateX(0);
-  opacity: 1;
-}
-.effeckt-caption-8:hover img,
-.effeckt-caption-8:active img {
-  transform: translateX(100%);
-}
-.effeckt-caption-9 figcaption {
-  top: 0;
-  left: 0;
-  transform: scale(2);
-  text-align: center;
-  opacity: 0;
-}
-.effeckt-caption-9 img {
-  transition: 500ms;
-}
-.effeckt-caption-9:hover figcaption,
-.effeckt-caption-9:active figcaption {
-  transform: scale(1);
-  opacity: 1;
-}
-.effeckt-caption-9:hover img,
-.effeckt-caption-9:active img {
-  transform: scale(1.1);
-}
-.effeckt-caption-10 {
-  overflow: visible;
-  perspective: 1300px;
-}
-.effeckt-caption-10 figcaption {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-}
-.effeckt-caption-10 img {
-  transition: 0.5s;
-}
-.effeckt-caption-10:hover figcaption,
-.effeckt-caption-10:active figcaption {
-  transform: rotateY(360deg);
-}
-.effeckt-caption-10:hover img,
-.effeckt-caption-10:active img {
-  transform: rotateY(180deg);
-}
 /*
  * Onepage-Scroll.css
  */
@@ -10051,6 +9562,7 @@ html {
   position: relative;
   padding: 0;
   -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
 }
 .onepage-wrapper .section {
   width: 100%;
@@ -10095,19 +9607,9 @@ html {
 }
 /*	------------------------------------------------------------------------
  *
- *	Specific Application
+ *	Application Specific
  *
  *	------------------------------------------------------------------------ */
-/**
- *	app.less
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://cargocollective.com/kenfrederick/
- *	http://kenfrederick.blogspot.com/
- *
- */
 p.shaping,
 span.shaping,
 h1.shaping,
@@ -10118,13 +9620,15 @@ h5.shaping,
 h6.shaping {
   color: #e93415;
 }
-canvas.shaping,
 div.shaping,
 .page.shaping,
 .pages.shaping,
 .article.shaping,
 .gallery.shaping {
   background-color: #e93415;
+}
+canvas.shaping {
+  background: #e93415;
 }
 p.shaper,
 span.shaper,
@@ -10136,13 +9640,15 @@ h5.shaper,
 h6.shaper {
   color: #fae100;
 }
-canvas.shaper,
 div.shaper,
 .page.shaper,
 .pages.shaper,
 .article.shaper,
 .gallery.shaper {
   background-color: #fae100;
+}
+canvas.shaper {
+  background: #fae100;
 }
 p.shape,
 span.shape,
@@ -10154,7 +9660,6 @@ h5.shape,
 h6.shape {
   color: #1925d2;
 }
-canvas.shape,
 div.shape,
 .page.shape,
 .pages.shape,
@@ -10162,13 +9667,18 @@ div.shape,
 .gallery.shape {
   background-color: #1925d2;
 }
-canvas.warm-gray,
+canvas.shape {
+  background: #1925d2;
+}
 div.warm-gray,
 .page.warm-gray,
 .pages.warm-gray,
 .article.warm-gray,
 .gallery.warm-gray {
   background-color: rgba(205, 205, 195, 0.95);
+}
+canvas.warm-gray {
+  background: rgba(205, 205, 195, 0.95);
 }
 div.circle-mask {
   width: 100%;
@@ -10197,6 +9707,8 @@ div.triangle-mask {
   overflow: hidden;
 }
 #header {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -10230,14 +9742,7 @@ ul.caption li span {
  *
  *	------------------------------------------------------------------------ */
 /**
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://cargocollective.com/kenfrederick/
- *	http://blog.kennethfrederick.de/
- *
- *
+ * 
  *	mostly borrowed from 
  *	Dapper 
  *	0.1.0
@@ -10245,80 +9750,36 @@ ul.caption li span {
  *	Flip Steward (@flipstewart)
  *
  *	Licensed under The MIT License
- *	http://opensource.org/licenses/MIT
- *
- */
-/* 
- *	iPhone & iPod Touch Portrait
+ *	http: *opensource.org/licenses/MIT
+ *	
  */
 @media screen and (width: 320px), (height: 480px) {
-  body {
-    background-color: #fff;
-  }
+  
 }
-/* 
- *	iPhone & iPod Touch Landscape
- */
 @media screen and (width: 480px), (height: 320px) {
-  body {
-    background-color: #000;
-    color: #ddd;
-  }
+  
 }
-/* 
- *	iPhone 4 Portrait
- */
 @media screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
   
 }
-/* 
- *	iPhone 4 Landscape
- */
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   
 }
-/* 
- *	iPhone 5 & 5th Generation iPod Touch Portrait
- */
 @media screen and (width: 320px), (height: 568px) {
-  body {
-    background-color: #fff;
-  }
+  
 }
-/* 
- *	iPhone 5 & 5th Generation iPod Touch Landscape
- */
 @media screen and (width: 658px), (height: 320px) {
-  body {
-    background-color: #000;
-    color: #ddd;
-  }
+  
 }
-/*
- *	iPad Portrait
- */
 @media screen and (width: 768px), (height: 1024px) {
   
 }
-/*
- *	iPad Landscape
- */
 @media screen and (width: 1024px), (height: 768px) {
-  canvas.warm-gray,
-  div.warm-gray,
-  .page.warm-gray,
-  .pages.warm-gray,
-  .article.warm-gray,
-  .gallery.warm-gray {
-    background-color: #f0f;
-  }
+  
 }
 @media screen and (min-width: 1025px) {
   
 }
 @media screen and (max-height: 767px) {
-  img.scale,
-  iframe.scale {
-    width: 75%;
-  }
+  
 }

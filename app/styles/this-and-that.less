@@ -1,32 +1,30 @@
-/**
- *	This-and-That.less
- *
- *	Ken Frederick
- *	ken.frederick@gmx.de
- *
- *	http://kennethfrederick.de/
- *	http://blog.kennethfrederick.de/
- *
- *
- *	This is a framework of CSS styles that create the structure
- *	used throughout This & That (https://github.com/this-and-that/)
- *	I offer it here as a framework for the creation of web-zines.
- *
- *	Given that This & That was designed for use primarily within the
- *	Baker (https://github.com/Simbul/baker) framework, optimizations
- *	or non-webkit (Safari) considerations have not been implemented
- *
- *	Unless you really don't like the defaults I've defined
- *	there's no need to alter any of it...
- *
- *
- *	http://thisetthatmagazine.tumblr.com/
- *	github.com/this-and-that/
- *
- *	Licensed under The MIT License
- *	http://opensource.org/licenses/MIT
- *
- */
+//
+//	this-and-that.less
+//
+//	Ken Frederick
+//	ken.frederick@gmx.de
+//
+//	http://cargocollective.com/kenfrederick/
+//	http://kenfrederick.blogspot.com/
+//
+//	This is a framework of CSS styles that create the structure
+//	used throughout This & That (https://github.com/this-and-that/)
+//	I offer it here as a framework for the creation of web-zines.
+//
+//	Given that This & That was designed for use primarily within the
+//	Baker (https://github.com/Simbul/baker) framework, optimizations
+//	or non-webkit (Safari) considerations have not been implemented
+//
+//	Unless you really don't like the defaults I've defined
+//	there's no need to alter any of it...
+//
+//
+//	http://thisetthatmagazine.tumblr.com/
+//	github.com/this-and-that/
+//
+//	Licensed under The MIT License
+//	http://opensource.org/licenses/MIT
+//
 
 
 
@@ -76,6 +74,11 @@
 // links... why not
 @link:				rgba( 10, 190, 240, 1.0);
 
+//
+//	Transition/Animation definitions
+//
+@timing-ms: 200ms;
+
 
 
 //	------------------------------------------------------------------------
@@ -100,6 +103,9 @@
 	div&, .page&, .article& {
 		background-color: @white;
 	}
+	canvas& {
+		background: @white;
+	}
 }
 .white-light-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -115,6 +121,9 @@
 	}
 	div&, .page&, .article& {
 		background-color: @white-light-gray;
+	}
+	canvas& {
+		background: @white-light-gray;
 	}
 }
 .white-dark-gray {
@@ -132,6 +141,9 @@
 	div&, .page&, .article& {
 		background-color: @white-dark-gray;
 	}
+	canvas& {
+		background: @white-dark-gray;
+	}
 }
 
 //	black(s)
@@ -141,6 +153,9 @@
 	// }
 	div&, .page&, .article& {
 		background-color: @black;
+	}
+	canvas& {
+		background: @black;
 	}
 }
 .black-light-gray {
@@ -158,6 +173,9 @@
 	div&, .page&, .article& {
 		background-color: @black-light-gray;
 	}
+	canvas& {
+		background: @black-light-gray;
+	}
 }
 .black-dark-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -173,6 +191,9 @@
 	}
 	div&, .page&, .article& {
 		background-color: @black-dark-gray;
+	}
+	canvas& {
+		background: @black-dark-gray;
 	}
 }
 
@@ -192,6 +213,9 @@
 	div&, .page&, .article& {
 		background-color: @light-gray;
 	}
+	canvas& {
+		background: @light-gray;
+	}
 }
 .dark-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -207,6 +231,9 @@
 	}
 	div&, .page&, .article& {
 		background-color: @dark-gray;
+	}
+	canvas& {
+		background: @dark-gray;
 	}
 }
 
@@ -226,6 +253,9 @@
 	div&, .page&, .article& {
 		background-color: @red;
 	}
+	canvas& {
+		background: @red;
+	}
 }
 .yellow {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -242,6 +272,9 @@
 	div&, .page&, .article& {
 		background-color: @yellow;
 	}
+	canvas& {
+		background: @yellow;
+	}
 }
 .blue {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -257,6 +290,9 @@
 	}
 	div&, .page&, .article& {
 		background-color: @blue;
+	}
+	canvas& {
+		background: @blue;
 	}
 }
 
@@ -276,6 +312,9 @@
 	div&, .page&, .article& {
 		background-color: @orange;
 	}
+	canvas& {
+		background: @orange;
+	}
 }
 .green {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
@@ -291,6 +330,9 @@
 	}
 	div&, .page&, .article& {
 		background-color: @green;
+	}
+	canvas& {
+		background: @green;
 	}
 }
 .purple {
@@ -308,6 +350,9 @@
 	div&, .page&, .article& {
 		background-color: @purple;
 	}
+	canvas& {
+		background: @purple;
+	}
 }
 
 
@@ -324,31 +369,27 @@
 //	software can quickly understand and implement
 //
 @layer-0:	-200;	// more-bottom layer
+// .page
 
 @layer-1:	0;		// bottom layer
-// img
-// canvas
 
 @layer-2:	200;
-// .black-trans
-// .white-trans
 
 @layer-3:	400;
-// #work-menu-overlay
+// .trans
 
 @layer-4:	600;
-// video
-// .holder
+// .gallery
 
 @layer-5:	800;
-// .sticky
+// #scroll-forward
+// #scroll-back
 
 @layer-6:	1000;	// upper layer
-// .gallery
-// .caption
 
 // @layer-7: 2000;
 // #navigation
+
 
 // individual layer classes
 // these are containers
@@ -531,6 +572,11 @@ h6 {
 	& a, & a:hover {
 		line-height: @zeta - 0px;
 	}
+
+}
+
+.monospaced {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
 
@@ -584,8 +630,6 @@ a:hover {
 //	Images
 //
 img, object {
-	// z-index: @layer-1;
-
 	&.scale {
 		width: 100%;
 	}
@@ -593,7 +637,6 @@ img, object {
 	& a, & a:hover {
 		border: 1px solid @black;
 	}
-
 }
 
 
@@ -608,6 +651,7 @@ iframe {
 
 	&.scale {
 		width: 100%;
+		height: 100%;
 	}
 
 }
@@ -702,8 +746,6 @@ iframe {
 
 	overflow: hidden;
 	.align-center;
-
-	// z-index: @layer-4;
 }
 
 
@@ -805,9 +847,13 @@ iframe {
 	height: 100%;
 }
 
-.hidden {
+.invisible {
+	-webkit-opacity: 0.0;
+	-moz-opacity: 0.0;
 	opacity: 0.0;
 }
+
+
 
 
 
@@ -824,11 +870,12 @@ iframe {
 //	Pages
 //
 .page {
-	// position: absolute;
+	.article;
+	position: relative;
 	// top: 0px
 	// left: 0px;
-	// width: 100%;
-	// height: 100%;
+	width: 100%;
+	height: auto; // 100%;
 
 	// margin-top: 0px;
 	.align-left;
@@ -844,8 +891,37 @@ iframe {
 //	wrapper for all pages within an article
 //
 .article {
+	// prevents flickering in safari
+	// http://stackoverflow.com/questions/15751012/css-transform-causes-flicker-in-safari-but-only-when-the-browser-is-2000px-w
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
 }
 
+.article-author-container {
+	// .invisible;
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
+
+	-webkit-opacity: 1.0;
+	-moz-opacity: 1.0;
+	opacity: 1.0;
+}
+
+.article-interview-container {
+	// .invisible;
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
+
+	-webkit-opacity: 0.0;
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+}
 
 //
 //	Gallery
@@ -855,11 +931,41 @@ iframe {
 .gallery {
 	.article;
 	position: fixed;
+	width: 100%;
+	top: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: @layer-5;
-	// display: none;
-	opacity: 1.0;
+
+	z-index: @layer-4;
+
+	// .invisible;
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
+
+	-webkit-opacity: 0.0;
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+
+	pointer-events: none;
+}
+
+.gallery-navigation {
+	// .invisible;
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
+
+	-webkit-opacity: 0.0;
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+
+	pointer-events: none;
+	z-index: @layer-6;
 }
 
 
@@ -869,24 +975,45 @@ iframe {
 //	wrapper for anything non-interactive that should be "fixed"
 //
 .navigation, #navigation {
-	.article;
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	// height: auto; // 100%;
 	top: 0px;
 	left: 0px;
 	padding: @scaffolding-margins;
 
-	z-index: 2000; // specific exception to ensure topmost
+	z-index: @layer-6;
+}
+
+#scroll-back {
+	background-color: @black-light-gray;
+	position: fixed;
+	height: 100%;
+	width: (@scaffolding-margins*3);
+	// top: 50%;
+	left: 0px;
+
+	z-index: @layer-5;
+}
+#scroll-forward {
+	background-color: @black-light-gray;
+	position: fixed;
+	height: 100%;
+	width: (@scaffolding-margins*3);
+	// top: 50%;
+	right: 0px; 
+
+	z-index: @layer-5;
 }
 
 
+
 //
-//	Sticky
+//	Header
 //
 //	wrapper for anything non-interactive that should be "fixed"
 //
-.sticky {
+#header {
 	.article;
 	position: fixed;
 	top: 0px;
@@ -910,8 +1037,6 @@ iframe {
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	// position: fixed;
-	z-index: @layer-5;
 }
 
 #rasters {
@@ -965,97 +1090,92 @@ iframe {
 //	------------------------------------------------------------------------
 
 // TODO: consider using http://h5bp.github.io/Effeckt.css/dist/ instead
+.fade-out {
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
 
-// fadeOut
-.fadeOut {
-	-webkit-transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-	-ms-transition: opacity 0.2s ease-in-out;
-	-o-transition: opacity 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out;
+	// starting value
+	-webkit-opacity: 0.0;
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+
+	// pointer-events: none;
+}
+.fade-in {
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
 
 	// starting value
 	-webkit-opacity: 1.0;
 	-moz-opacity: 1.0;
 	opacity: 1.0;
-}
-.fadeOut:hover {
-	// ending value
-	-webkit-opacity: 0.0;
-	-moz-opacity: 0.0;
-	opacity: 0.0;
+
+	pointer-events: auto;
 }
 
-// fadeOut
+// fade-out-over
+.fade-out-over {
+	.fade-in;
+}
+.fade-out-over:hover {
+	// ending value
+	.fade-out;
+}
+
+// fade-out-over
 // from 10% - 90%
 @fade-iterations: 10;
-.fadeOutLoop (@index) when (@index > 0) {
-	.fadeOut-@{index} {
-		-webkit-transition: opacity 0.2s ease-in-out;
-		-moz-transition: opacity 0.2s ease-in-out;
-		-ms-transition: opacity 0.2s ease-in-out;
-		-o-transition: opacity 0.2s ease-in-out;
-		transition: opacity 0.2s ease-in-out;
-
-		-webkit-opacity: 1.0;
-		-moz-opacity: 1.0;
-		opacity: 1.0;
+.fade-out-overLoop (@index) when (@index > 0) {
+	.fade-out-over-@{index} {
+		.fade-in;
 	}
-	.fadeOut-@{index}:hover {
+	.fade-out-over-@{index}:hover {
 		-webkit-opacity: (@index*0.1);
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
 
-	.fadeOutLoop(@index - 1);
+	.fade-out-overLoop(@index - 1);
 }
-.fadeOutLoop (0) {}
-.fadeOutLoop (@fade-iterations);
+.fade-out-overLoop (0) {}
+.fade-out-overLoop (@fade-iterations);
 
-// fadeIn
-.fadeIn {
-	-webkit-transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-	-ms-transition: opacity 0.2s ease-in-out;
-	-o-transition: opacity 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out;
-
-	// starting value
-	-webkit-opacity: 0.0;
-	-moz-opacity: 0.0;
-	opacity: 0.0;
+// fade-in-over
+.fade-in-over {
+	.fade-out;
 }
-.fadeIn:hover {
-	// ending value
-	-webkit-opacity: 1.0;
-	-moz-opacity: 1.0;
-	opacity: 1.0;
+.fade-in-over:hover {
+	.fade-in;
 }
 
-// fadeIn
+// fade-in-over
 // from 10% - 90%
-.fadeInLoop (@index) when (@index > 0) {
-	.fadeIn-@{index} {
-		-webkit-transition: opacity 0.2s ease-in-out;
-		-moz-transition: opacity 0.2s ease-in-out;
-		-ms-transition: opacity 0.2s ease-in-out;
-		-o-transition: opacity 0.2s ease-in-out;
-		transition: opacity 0.2s ease-in-out;
+.fade-in-overLoop (@index) when (@index > 0) {
+	.fade-in-over-@{index} {
+		-webkit-transition: opacity @timing-ms ease-in-out;
+		-moz-transition: opacity @timing-ms ease-in-out;
+		-ms-transition: opacity @timing-ms ease-in-out;
+		-o-transition: opacity @timing-ms ease-in-out;
+		transition: opacity @timing-ms ease-in-out;
 
 		-webkit-opacity: (@index*0.1);
 		-moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
-	.fadeIn-@{index}:hover {
-		-webkit-opacity: 1.0;
-		-moz-opacity: 1.0;
-		opacity: 1.0;
+	.fade-in-over-@{index}:hover {
+		.fade-out;
 	}
 
-	.fadeInLoop(@index - 1);
+	.fade-in-overLoop(@index - 1);
 }
-.fadeInLoop (0) {}
-.fadeInLoop (@fade-iterations);
+.fade-in-overLoop (0) {}
+.fade-in-overLoop (@fade-iterations);
 
 
 
@@ -1064,21 +1184,6 @@ iframe {
 //	Interaction Handling
 //
 //	------------------------------------------------------------------------
-
-//
-//	touch-target for pagination interactions
-//
-#touch-target {
-	width: 768px;
-	height: 1024px;
-	top: 0px;
-	left: 0px;
-	
-	position: absolute;
-	background-color: fade(@shaper, 10%);		
-	z-index: @layer-5;
-}
-
 
 
 

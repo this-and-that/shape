@@ -160,12 +160,46 @@ $(document).ready(function() {
 	orientationChange();
 
 	// serve up retina images
-	$('img').retina('@2x');
+	// $('img').retina('@2x');
 
 
 	/*
 	 *	Events
 	 */
+	// $('.lightbox_trigger').click(function(e) {
+	// 	//prevent default action (hyperlink)
+	// 	e.preventDefault();
+	// 	/*
+	// 	If the lightbox window HTML already exists in document,
+	// 	change the img src to to match the href of whatever link was clicked
+	// 	If the lightbox window HTML doesn't exists, create it and insert it.
+	// 	(This will only happen the first time around)
+	// 	*/
+	// 	if ($('#lightbox').length > 0) { // #lightbox exists
+	// 		$('#lightbox').show();
+	// 		console.log( $('#lightbox').show() );
+	// 	}
+	// 	else { //#lightbox does not exist - create and insert (runs 1st time only)
+	// 		//create HTML markup for lightbox window
+	// 		var lightbox =
+	// 		'<div id="lightbox">' +
+	// 			'<p>Click to close</p>' +
+	// 				'<div id="content">' + //insert clicked link's href into img src
+	// 				// '<img src="' + image_href +'" />' +
+	// 			'</div>' +
+	// 		'</div>';
+	// 		//insert lightbox HTML into page
+	// 		$('body').append(lightbox);
+	// 	}
+	// });
+
+	// // Click anywhere on the page to get rid of lightbox window
+	// $('#navigation').on('click', function() {
+	// 	if( $('#lightbox').css('visibility') ) {
+	// 		$('#lightbox').hide();
+	// 	}
+	// });
+
 	// http://stackoverflow.com/questions/1207008/how-do-i-lock-the-orientation-to-portrait-mode-in-a-iphone-web-application
 	// $(window)	
 	// 	.bind('orientationchange', function(){
@@ -279,39 +313,37 @@ function scrollTo(element) {
 
 
 // ------------------------------------------------------------------------
-/*
- *	Gallery
- */
-function toggleGallery() {
-	var ms = 300;
-	var opacity = $('#gallery').css('opacity');
-	console.log( opacity );
+function toggleGallery(val) {
+	// console.log( 'toggleGallery()' );
 
-	// $('#gallery').toggle(ms);
-
-	if( opacity <= 0 ) {
-		$('#gallery').addClass('fadeOut');
-		$('#gallery').removeClass('hidden');
-		$('#gallery').removeClass('fadeIn');
+	if( val == true ) {
+		// fade the gallery in
+		$('.gallery').toggleClass('fade-in');
+		$('.gallery-navigation').toggleClass('fade-in');
 	}
 	else {
-		$('#gallery').removeClass('fadeOut');
-		$('#gallery').addClass('fadeIn');
+		$('.gallery').toggleClass('fade-out');
+		$('.gallery-navigation').toggleClass('fade-out');
 	}
 
-	toggleAuthor();
+	// fade the author out
+	toggleAuthor(false);
 };
+function toggleAuthor(val) {
+	if( val == true) {
+		$('.article-author-container').toggleClass('fade-in');
+	}
+	else {
+		$('.article-author-container').toggleClass('fade-out');
+	}
+};
+
 
 
 // ------------------------------------------------------------------------
 /*
  *	Article
  */
-function toggleAuthor() {
-	var ms = 300;
-	$('#author').toggle(ms);
-};
-
 function loadArticle(structure) {
 	structure = (structure == undefined)
 		? article
