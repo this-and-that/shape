@@ -60,7 +60,6 @@ var scrollSelector = '.page';
 /*
  *	Misc.
  */
-var type;
 var bRedirected = false;
 
 
@@ -167,9 +166,10 @@ $(document).ready(function() {
 	 */
 	// if the link is a gallery link, then it should
 	// not only open the gallery, but to the right page
-	$('#gallery-link').click(function() {
-        toggleGallery( $(this) );
-    });
+	$('.gallery-link').click(function() {
+		console.log( '#gallery-link' );
+		toggleGallery( $(this) );
+	});
 
 
 	// http://stackoverflow.com/questions/1207008/how-do-i-lock-the-orientation-to-portrait-mode-in-a-iphone-web-application
@@ -258,9 +258,19 @@ function paginate() {
 		// first page = last page = easeOutBounce
 		animationTime: 300,
 		pagination: false,
-		updateURL: false,
+		updateURL: true,
 		direction: 'horizontal',
-		touchTarget: '#navigation'
+		touchTarget: '#navigation',
+
+		onBeforePageSwitch: function() {
+			onBeforeArticlePage();
+		},
+		onAfterPageSwitch: function() {
+			onAfterArticlePage();
+		},
+		onPageJump: function() {
+			onArticlePage();
+		}
 	});
 
 };

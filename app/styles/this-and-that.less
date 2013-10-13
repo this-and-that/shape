@@ -395,9 +395,10 @@
 // these are containers
 .layerLoop (@index) when (@index < 7) {
 	.layer-@{index} {
-		position: absolute;
+		position: relative;
 		top: 0px;
 		left: 0px;
+		width: 100%;
 		z-index: (-200 + (@index * 200));
 		// z-index: @{layer-}@index;
 	}
@@ -634,8 +635,11 @@ img, object {
 		width: 100%;
 	}
 
-	& a, & a:hover {
-		border: 1px solid @black;
+	& a {
+		.underline-none;
+	}
+	& a:hover {
+		.underline-solid;
 	}
 }
 

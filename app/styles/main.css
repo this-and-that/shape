@@ -6186,45 +6186,52 @@ canvas.purple {
   background: #90278e;
 }
 .layer-0 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: -200;
 }
 .layer-1 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 0;
 }
 .layer-2 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 200;
 }
 .layer-3 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 400;
 }
 .layer-4 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 600;
 }
 .layer-5 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 800;
 }
 .layer-6 {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
+  width: 100%;
   z-index: 1000;
 }
 html {
@@ -6403,10 +6410,13 @@ object.scale {
   width: 100%;
 }
 img a,
-object a,
+object a {
+  border-bottom: 0px;
+  text-decoration: none;
+}
 img a:hover,
 object a:hover {
-  border: 1px solid #1e140f;
+  border-bottom: 1px solid #1e140f;
 }
 iframe {
   margin: 0;
