@@ -355,6 +355,8 @@ function toggleGallery(element) {
 	$('.gallery').toggleClass('fade-in');
 	$('.gallery-navigation').toggleClass('fade-in');
 };
+// by toggling css opacity the css transitions
+// are triggered, yeah! limited jquery
 function toggleAuthor(val) {
 	$('.article-author-container').css(
 		'opacity', (val) ? 1.0 : 0.0
