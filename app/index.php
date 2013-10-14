@@ -63,7 +63,7 @@
 
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="styles/main.css">
+		<!-- <link rel="stylesheet" href="styles/main.css"> -->
 		<style>
 		</style>
 
@@ -74,8 +74,8 @@
 		<!-- build:js scripts/vendor/jquery.js -->
 		<!-- JQUERY -->
 		<script src="bower_components/jquery/jquery.js"></script>
-		<script src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
-		<script src="bower_components/Lettering.js/jquery.lettering.js"></script>
+		<!-- //<script src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script> -->
+		<!-- // <script src="bower_components/Lettering.js/jquery.lettering.js"></script> -->
 		<!-- endbuild -->
 
 		<!-- page specific -->

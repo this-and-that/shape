@@ -57,6 +57,25 @@ var galleryScroll;
 var scrollContainer = '.article';
 var scrollSelector = '.page';
 
+
+/*
+ *	Callbacks
+ */
+function onReady(current) {};
+
+// onepage-scroll callbacks
+// Article
+function onArticleLoad(current) {};
+function onBeforeArticlePage(from, to) {};
+function onAfterArticlePage(from, to) {};
+function onArticlePage(from, to) {};
+// Gallery
+function onGalleryLoad(current) {};
+function onBeforeGalleryPage(from, to) {};
+function onAfterGalleryPage(from, to) {};
+function onGalleryPage(from, to) {};
+
+
 /*
  *	Misc.
  */
@@ -132,7 +151,9 @@ $(document).ready(function() {
 	/*
 	 *	Links
 	 */
-	// $('a').each(function() {
+	// $('a').click( function(event) {
+	// 	event.preventDefault();
+	// 	window.location = $(this).attr('href');
 	// });
 
 	// http://stackoverflow.com/questions/7901679/jquery-add-target-blank-for-outgoing-link
@@ -144,6 +165,19 @@ $(document).ready(function() {
 		$(this).attr('target', '_blank');
 	});
 
+
+	/*
+	 *	Misc
+	 */
+	loadArticle();
+	orientationChange();
+	
+	// get active page
+	onReady( $(scrollContainer + ' ' + scrollSelector + '.active').data('index') );
+
+	// serve up retina images
+	$('img').retina('@2x');
+
 	// set carousel globally
 	$('.carousel').carousel({
 		interval: 5000,
@@ -152,22 +186,25 @@ $(document).ready(function() {
 
 
 	/*
-	 *	Misc
-	 */
-	loadArticle();
-	orientationChange();
-
-	// serve up retina images
-	$('img').retina('@2x');
-
-
-	/*
 	 *	Events
 	 */
+	// $('a').bind('click touchstart', function(e) {
+		// alert("I'm a " + e.type);
+		// e.preventDefault();
+	// });
+
+	$('#main-menu').bind('click touchstart', function() {
+		console.log( '#main-menu' );
+		toggleGrid();
+	});
+
 	// if the link is a gallery link, then it should
 	// not only open the gallery, but to the right page
-	$('.gallery-link').click(function() {
-		console.log( '#gallery-link' );
+	// $('.gallery-link').click(function() {
+	$('.gallery-link').bind('click touchstart', function() {
+		toggleGallery( $(this) );
+	});
+	$('#gallery-close').bind('click touchstart', function() {
 		toggleGallery( $(this) );
 	});
 
@@ -242,14 +279,24 @@ function orientationChange() {
 function paginate() {
 
 	// galleryScroll = $('.gallery').onepage_scroll({
-	// 	sectionContainer: '.gallery .page',
+	// 	sectionContainer: '.gallery ' + scrollSelector,
 	// 	easing: 'cubic-bezier(.02, .01, .47, 1)',
 	// 	// first page = last page = easeOutBounce
 	// 	animationTime: 300,
 	// 	pagination: false,
 	// 	updateURL: false,
 	// 	direction: 'horizontal',
-	// 	touchTarget: '#navigation'
+	// 	touchTarget: '#navigation',
+
+	// 	onBeforePageSwitch: function() {
+	// 		onBeforeGalleryPage();
+	// 	},
+	// 	onAfterPageSwitch: function() {
+	// 		onAfterGalleryPage();
+	// 	},
+	// 	onPageJump: function() {
+	// 		onGalleryPage();
+	// 	}
 	// });
 
 	articleScroll = $(scrollContainer).onepage_scroll({
@@ -262,14 +309,17 @@ function paginate() {
 		direction: 'horizontal',
 		touchTarget: '#navigation',
 
-		onBeforePageSwitch: function() {
-			onBeforeArticlePage();
+		onLoad: function(current) {
+			onArticleLoad( current );
 		},
-		onAfterPageSwitch: function() {
-			onAfterArticlePage();
+		onBeforePageSwitch: function(from, to) {
+			onBeforeArticlePage(from, to);
 		},
-		onPageJump: function() {
-			onArticlePage();
+		onAfterPageSwitch: function(from, to) {
+			onAfterArticlePage(from, to);
+		},
+		onPageJump: function(from, to) {
+			onArticlePage(from, to);
 		}
 	});
 
@@ -304,13 +354,23 @@ function toggleGallery(element) {
 	// fade the gallery in
 	$('.gallery').toggleClass('fade-in');
 	$('.gallery-navigation').toggleClass('fade-in');
+};
+function toggleAuthor(val) {
+	$('.article-author-container').css(
+		'opacity', (val) ? 1.0 : 0.0
+	);
+};
+function toggleSubject(val) {
+	$('#subject-container').css(
+		'opacity', (val) ? 1.0 : 0.0
+	);
+};
+function toggleInterview(val) {
+	$('.article-interview-container').css(
+		'opacity', (val) ? 1.0 : 0.0
+	);
+};
 
-	// fade the author out
-	toggleAuthor();
-};
-function toggleAuthor() {
-	$('.article-author-container').toggleClass('fade-out');
-};
 function toggleGrid() {
 	$('.baseline-grid-view').toggleClass('fade-in');
 };

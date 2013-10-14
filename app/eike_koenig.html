@@ -89,17 +89,67 @@
 
 		<!-- page specific -->
 		<script type="text/javascript">
+			// TODO: implement dynamic loading of article
 			filename = 'interview_eike_koenig.json';
 
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(current) {
+				// author
+				if( current >= 2 ) {
+					toggleAuthor(false); // fade out
+				}
+				else {
+					toggleAuthor(true); // fade out
+				}
+
+				// interview
+				if( current >= 6 ) {
+					toggleSubject(false);  // fade out
+					toggleInterview(true); // fade in
+				}
+				else {
+					toggleSubject(true);    // fade in
+					toggleInterview(false); // fade out
+				}
+
+			};
+
 			// onepage-scroll callbacks
-			function onBeforeArticlePage() {
-
+			// Article
+			function onBeforeArticlePage(from, to) {
 			};
-			function onAfterArticlePage() {
-
+			function onAfterArticlePage(from, to) {
 			};
-			function onArticlePage() {
+			function onArticlePage(from, to) {
+				// author
+				if( from == 2 && to == 3 ) {
+					toggleAuthor(false); // fade out
+				}
+				else if( from == 3 && to == 2 ) {
+					toggleAuthor(true); // fade in
+				}
 
+				// interview
+				if( from == 6 && to == 5 ) {
+					toggleSubject(true);    // fade in
+					toggleInterview(false); // fade out
+				}
+				else if( from == 5 && to == 6 ) {
+					toggleSubject(false);  // fade out
+					toggleInterview(true); // fade in
+				}
+			};
+
+			// Gallery
+			function onBeforeGalleryPage(from, to) {
+			};
+			function onAfterGalleryPage(from, to) {
+			};
+			function onGalleryPage(from, to) {
 			};
 
 		</script>
@@ -176,7 +226,7 @@
 		 - ------------------------------------------------------------------------ -->
 		<div class="baseline-grid-view">
 			<div class="col-sm-7 col-sm-offset-1">
-				<div class="row baseline-grid">
+				<div class="baseline-grid">
 					<h6 class="black-dark-gray monospaced">0  &nbsp;_____________________________________ X _____________________________________ 0</h6>
 				</div>
 				<script type="text/javascript">
@@ -184,7 +234,7 @@
 						var num = (i <= 9) 
 							? i + '&nbsp;'
 							: i;
-						window.document.write(	'<div class="row baseline-grid-' + i + '">\n');
+						window.document.write(	'<div class="baseline-grid-' + i + '">\n');
 						window.document.write(		'<h6 class="black-dark-gray monospaced">' + num + ' _____________________________________ X _____________________________________ ' + num + '</h6>\n');
 						window.document.write(	'</div>\n');
 					}
@@ -208,7 +258,7 @@
 		 	<!-- SUBJECT CONTENT BEGIN -->
 		 	<div class="baseline-grid-5">
 		 		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
-			 		<p id="subject" class="shaper bold"> 
+			 		<p id="subject" class="black bold"> 
 			 			Eike<br />
 				 		K&ouml;nig
 				 	</p>
@@ -227,8 +277,7 @@
 			</div>
 
 		 	<!-- AUTHOR CONTENT BEGIN -->
-			<div class="baseline-grid-24">
-			<!-- <div class="baseline-grid-48"> -->
+			<div class="baseline-grid-49">
 				<div class="article-author-container">
 					<div class="col-sm-2 col-sm-offset-2 align-center">
 				 		<p id="author-1" class="black-dark-gray"> 
@@ -244,18 +293,22 @@
 			</div>
 
 		 	<!-- INTERVIEWER -EE CONTENT BEGIN -->
-			<div class="row baseline-grid-6">
-				<div class="article-interview-container"> <!-- class="invisible" -->
-					<div class="col-sm-2 col-sm-offset-1">
-						<p id="interviewer" class="black align-left">
-							This <!-- &amp; That -->
-						</p>
+			<div class="row baseline-grid-5">
+				<div class="row">
+					<div class="article-interview-container"> <!-- class="invisible" -->
+						<div class="col-sm-2 col-sm-offset-1">
+							<p id="interviewer" class="black">
+								&nbsp;<br />
+								This
+							</p>
+						</div>
+						<div class="col-sm-2 col-sm-offset-1">
+							<p id="interviewee" class="black bold align-left">
+								Eike<br />
+								K&ouml;nig
+							</p>
+						</div>
 					</div>
-					<!-- <div class="col-sm-2 col-sm-offset-1">
-						<p id="interviewee" class="black align-left">
-							Interviewee
-						</p>
-					</div> -->
 				</div>
 			</div>
 		 </div>
@@ -282,58 +335,31 @@
 			 - ------------------------------------------------------------------------ -->
 			<div id="image1" class="page warm-gray">
 
-				<div class="align-middle">
-					<div class="middle">
-						<div class="row">
-							<div class="col-sm-9 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" />
-							</div>
+				<div class="baseline-grid-18">
+					<div class="col-sm-4">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
+					</div>
+					<div class="col-sm-4 col-sm-offset-1">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
+					</div>
+				</div>
+
+				<div class="baseline-grid-40">
+					<div class="row">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Jazzanova</span></li>
+								<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
+							</ul></h6>
 						</div>
 					</div>
 				</div>
 
 			</div> <!-- end page -->
 
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Image 2
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="image2" class="page warm-gray">
-
-				<div class="align-middle">
-					<div class="middle">
-						<div class="row">
-							<div class="col-sm-4 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
-							</div>
-							<div class="col-sm-4 col-sm-offset-1 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div> <!-- end page -->
-
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Image 3
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="image3" class="page warm-gray">
-				image 3
-			</div> <!-- end page -->
 
 
 		</div> <!-- end gallery -->
-
-
-
 
 
 
@@ -349,10 +375,12 @@
 
 				<div class="align-middle">
 					<div class="middle">
-						<div class="row baseline-grid-1 tera">
-							Der<br />
-							Kind<br />
-							&mdash;er
+						<div class="row">
+							<div class="tera baseline-grid-10">
+								Der<br />
+								Kind<br />
+								&mdash;er
+							</div>
 						</div>
 					</div>
 				</div>
@@ -370,8 +398,8 @@
 
 				<div class="align-middle">
 					<div class="middle">
-						<div class="row baseline-grid-1 tera">
-							<span class="shaper">
+						<div class="row">
+							<span class="tera shaper baseline-grid-10">
 								K&uuml;m
 								&mdash;mer<br />
 								&mdash;er<br />
@@ -394,7 +422,7 @@
 				<div class="baseline-grid-9">
 					<div class="row">
 						<div class="col-sm-4 col-sm-offset-1">
-							<div class="col-width-96">
+							<div class="col-width-94">
 								<p>When I initially reached out to Eike K&ouml;nig for an interview, I was familiar with the gorgeous and evocative work that Hort produces. The wonderfully simple work done for electronic artists Booka Shade, the Stiftung Bauhaus Dessau identity, or the trashy Calle Underground. Hort&rsquo;s work and approach is an embodiment of the Eamsian philosophy of &ldquo;Take your pleasures seriously.&rdquo;</p>
 
 								<p>The old guard of Meta or the legacy of Pierre Mendell although widely respected, no longer represents contemporary approaches to design. The face of this consistent and challenging German design aesthetic, that has lain dormant since the closing of the Weimar Bauhaus, is exciting and &ldquo;offen.&rdquo;</p>
@@ -958,18 +986,21 @@
 
 
 
+
+
+
 		<!-- ANALTYICS -->
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
+		<!-- script>
 			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 			g.src='//www.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
-		</script>
+		</script -->
 
 
 

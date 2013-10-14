@@ -77,7 +77,7 @@
 //
 //	Transition/Animation definitions
 //
-@timing-ms: 200ms;
+@timing-ms: 400ms;
 
 
 
@@ -723,7 +723,7 @@ iframe {
 	// a right padding is needed so that elements
 	// respect the global outer margins
 	// +20 pushes content below status bar
-	padding: (@scaffolding-margins+20) @scaffolding-margins 0 0;
+	padding: @scaffolding-margins @scaffolding-margins 0 0;
 }
 .align-bottom {
 	position: absolute;
@@ -787,7 +787,6 @@ iframe {
 .baseline-gridLoop (@index) when (@index > 0) {
 	.baseline-grid-@{index} {
 		.align-top;
-		// position: fixed; //relative;
 		// margin-top: 0px + ((@index+1) * @type-base-line-height);
 		margin-top: 0px + (@index * @type-base-line-height);
 	}
@@ -915,6 +914,19 @@ iframe {
 	-webkit-backface-visibility: hidden;
 }
 
+#subject-container {
+	// .invisible;
+	-webkit-transition: opacity @timing-ms ease-in-out;
+	-moz-transition: opacity @timing-ms ease-in-out;
+	-ms-transition: opacity @timing-ms ease-in-out;
+	-o-transition: opacity @timing-ms ease-in-out;
+	transition: opacity @timing-ms ease-in-out;
+
+	-webkit-opacity: 1.0;
+	-moz-opacity: 1.0;
+	opacity: 1.0;
+}
+
 .article-author-container {
 	// .invisible;
 	-webkit-transition: opacity @timing-ms ease-in-out;
@@ -950,24 +962,29 @@ iframe {
 	.article;
 	position: fixed;
 	width: 100%;
-	top: 100%;
+	height: 100%;
 	top: 0px;
 	left: 0px;
 
 	z-index: @layer-4;
 
 	// .invisible;
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
+	-webkit-transition: opacity (@timing-ms*0.5) ease-in-out;
+	-moz-transition: opacity (@timing-ms*0.5) ease-in-out;
+	-ms-transition: opacity (@timing-ms*0.5) ease-in-out;
+	-o-transition: opacity (@timing-ms*0.5) ease-in-out;
+	transition: opacity (@timing-ms*0.5) ease-in-out;
 
 	-webkit-opacity: 0.0;
 	-moz-opacity: 0.0;
 	opacity: 0.0;
 
 	pointer-events: none;
+
+	// force the pages within the gallery to be full-height
+	& .page {
+		height: 100%;
+	}
 }
 
 .gallery-navigation {
@@ -1110,28 +1127,28 @@ iframe {
 // TODO: consider using http://h5bp.github.io/Effeckt.css/dist/ instead
 .fade-out {
 	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
+	// -moz-transition: opacity @timing-ms ease-in-out;
+	// -ms-transition: opacity @timing-ms ease-in-out;
+	// -o-transition: opacity @timing-ms ease-in-out;
 	transition: opacity @timing-ms ease-in-out;
 
 	// starting value
 	-webkit-opacity: 0.0;
-	-moz-opacity: 0.0;
+	// -moz-opacity: 0.0;
 	opacity: 0.0;
 
 	// pointer-events: none;
 }
 .fade-in {
 	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
+	// -moz-transition: opacity @timing-ms ease-in-out;
+	// -ms-transition: opacity @timing-ms ease-in-out;
+	// -o-transition: opacity @timing-ms ease-in-out;
 	transition: opacity @timing-ms ease-in-out;
 
 	// starting value
 	-webkit-opacity: 1.0;
-	-moz-opacity: 1.0;
+	// -moz-opacity: 1.0;
 	opacity: 1.0;
 
 	pointer-events: auto;
@@ -1155,7 +1172,7 @@ iframe {
 	}
 	.fade-out-over-@{index}:hover {
 		-webkit-opacity: (@index*0.1);
-		-moz-opacity: (@index*0.1);
+		// -moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
 
@@ -1177,13 +1194,13 @@ iframe {
 .fade-in-overLoop (@index) when (@index > 0) {
 	.fade-in-over-@{index} {
 		-webkit-transition: opacity @timing-ms ease-in-out;
-		-moz-transition: opacity @timing-ms ease-in-out;
-		-ms-transition: opacity @timing-ms ease-in-out;
-		-o-transition: opacity @timing-ms ease-in-out;
+		// -moz-transition: opacity @timing-ms ease-in-out;
+		// -ms-transition: opacity @timing-ms ease-in-out;
+		// -o-transition: opacity @timing-ms ease-in-out;
 		transition: opacity @timing-ms ease-in-out;
 
 		-webkit-opacity: (@index*0.1);
-		-moz-opacity: (@index*0.1);
+		// -moz-opacity: (@index*0.1);
 		opacity: (@index*0.1);
 	}
 	.fade-in-over-@{index}:hover {
