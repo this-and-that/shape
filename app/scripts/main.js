@@ -61,19 +61,17 @@ var scrollSelector = '.page';
 /*
  *	Callbacks
  */
-function onReady(current) {};
+function onReady(pageIndex) {};
 
 // onepage-scroll callbacks
 // Article
-function onArticleLoad(current) {};
-function onBeforeArticlePage(from, to) {};
-function onAfterArticlePage(from, to) {};
-function onArticlePage(from, to) {};
+function onArticleLoad(pageIndex) {};
+function onBeforeArticlePage(pageIndex) {};
+function onAfterArticlePage(pageIndex) {};
 // Gallery
-function onGalleryLoad(current) {};
-function onBeforeGalleryPage(from, to) {};
-function onAfterGalleryPage(from, to) {};
-function onGalleryPage(from, to) {};
+function onGalleryLoad(pageIndex) {};
+function onBeforeGalleryPage(pageIndex) {};
+function onAfterGalleryPage(pageIndex) {};
 
 
 /*
@@ -119,7 +117,7 @@ $(document).load(function() {
 	if(!(navigator.onLine) && !bRedirected ) {
 		window.location = './oops.html';
 		bRedirected = true;
-	}	 
+	}
 
 
 	// keep all links within webapp
@@ -129,7 +127,7 @@ $(document).load(function() {
 		if( !a[i].onclick && a[i].getAttribute('target') != '_blank' ) {
 			a[i].onclick = function() {
 				window.location = this.getAttribute('href');
-				return false; 
+				return false;
 			}
 		}
 	}
@@ -171,7 +169,7 @@ $(document).ready(function() {
 	 */
 	loadArticle();
 	orientationChange();
-	
+
 	// get active page
 	onReady( $(scrollContainer + ' ' + scrollSelector + '.active').data('index') );
 
@@ -210,24 +208,24 @@ $(document).ready(function() {
 
 
 	// http://stackoverflow.com/questions/1207008/how-do-i-lock-the-orientation-to-portrait-mode-in-a-iphone-web-application
-	// $(window)	
+	// $(window)
 	// 	.bind('orientationchange', function(){
 	// 		if (window.orientation % 180 == 0){
 	// 			$(document.body).css('-webkit-transform-origin', '')
-	// 				.css('-webkit-transform', '');			
+	// 				.css('-webkit-transform', '');
 	// 		}
 	// 		else {
 	// 			if ( window.orientation > 0) { //clockwise
 	// 				$(document.body).css('-webkit-transform-origin', '200px 190px')
-	// 					.css('-webkit-transform',  'rotate(-90deg)');  
+	// 					.css('-webkit-transform',  'rotate(-90deg)');
 	// 			}
 	// 			else {
 	// 				$(document.body).css('-webkit-transform-origin', '280px 190px')
-	// 						.css('-webkit-transform',  'rotate(90deg)'); 
+	// 						.css('-webkit-transform',  'rotate(90deg)');
 	// 			}
 	// 		}
 	// 	 })
-	// 	.trigger('orientationchange'); 
+	// 	.trigger('orientationchange');
 
 });
 
@@ -288,14 +286,14 @@ function paginate() {
 	// 	direction: 'horizontal',
 	// 	touchTarget: '#navigation',
 
-	// 	onBeforePageSwitch: function() {
-	// 		onBeforeGalleryPage();
+		// onLoad: function(pageIndex) {
+		// 	onGalleryLoad(pageIndex);
+		// },
+	// 	beforeMove: function(pageIndex) {
+	// 		onBeforeGalleryPage(pageIndex);
 	// 	},
-	// 	onAfterPageSwitch: function() {
-	// 		onAfterGalleryPage();
-	// 	},
-	// 	onPageJump: function() {
-	// 		onGalleryPage();
+	// 	afterMove: function(pageIndex) {
+	// 		onAfterGalleryPage(pageIndex);
 	// 	}
 	// });
 
@@ -309,17 +307,14 @@ function paginate() {
 		direction: 'horizontal',
 		touchTarget: '#navigation',
 
-		onLoad: function(current) {
-			onArticleLoad( current );
+		onLoad: function(pageIndex) {
+			onArticleLoad(pageIndex);
 		},
-		onBeforePageSwitch: function(from, to) {
-			onBeforeArticlePage(from, to);
+		beforeMove: function(pageIndex) {
+			onBeforeArticlePage(pageIndex);
 		},
-		onAfterPageSwitch: function(from, to) {
-			onAfterArticlePage(from, to);
-		},
-		onPageJump: function(from, to) {
-			onArticlePage(from, to);
+		afterMove: function(pageIndex) {
+			onAfterArticlePage(pageIndex);
 		}
 	});
 
@@ -346,7 +341,7 @@ function scrollTo(element) {
 
 // ------------------------------------------------------------------------
 function toggleGallery(element) {
-	var index = (element != undefined) 
+	var index = (element != undefined)
 		? $(element).data('index')
 		: 0;
 	console.log( 'toggleGallery()' + index );
@@ -387,7 +382,7 @@ function loadArticle(structure) {
 		? article
 		: structure;
 
-	console.log( 'loadArticle( ' + structure + ' )' ); 
+	console.log( 'loadArticle( ' + structure + ' )' );
 	//
 	// load article json
 	//
@@ -419,7 +414,7 @@ function loadArticle(structure) {
 				interview:	jsonToHtml( interview, 'interview' ),
 				images:		jsonToHtml( images, 'captions' )
 			};
-			
+
 		});
 	}
 
@@ -505,7 +500,7 @@ function deleteSession(name) {
 
 // ------------------------------------------------------------------------
 //
-// Events	
+// Events
 //
 // ------------------------------------------------------------------------
 $(window).resize(function() {
@@ -514,7 +509,7 @@ $(window).resize(function() {
 
 
 // ------------------------------------------------------------------------
-$(window).scroll(function() { 
-}); 
+$(window).scroll(function() {
+});
 
 

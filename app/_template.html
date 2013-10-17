@@ -1,4 +1,4 @@
-<!-- 
+<!--
  -  This & That
  -  No. 1
  -  Shape
@@ -91,15 +91,52 @@
 		<script type="text/javascript">
 			filename = null;
 
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onRightTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onUpTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onDownTap(articleIndex) {
+				alert( articleIndex );
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+				alert( pageIndex );
+			};
+
+
 			// onepage-scroll callbacks
-			function onBeforeArticlePage() {
-
+			// Article
+			function onArticleLoad(pageIndex) {
+				alert( pageIndex );
 			};
-			function onAfterArticlePage() {
-
+			function onBeforeArticlePage(pageIndex) {
+				alert( pageIndex );
 			};
-			function onArticlePage() {
+			function onAfterArticlePage(pageIndex) {
+				alert( pageIndex );
+			};
 
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+				alert( pageIndex );
+			};
+			function onBeforeGalleryPage(pageIndex) {
+				alert( pageIndex );
+			};
+			function onAfterGalleryPage(pageIndex) {
+				alert( pageIndex );
 			};
 		</script>
 
@@ -180,7 +217,7 @@
 				</div>
 				<script type="text/javascript">
 					for( var i=1; i<57; i++ ) {
-						var num = (i <= 9) 
+						var num = (i <= 9)
 							? i + '&nbsp;'
 							: i;
 						window.document.write(	'<div class="row baseline-grid-' + i + '">\n');
@@ -207,7 +244,7 @@
 		 	<!-- SUBJECT CONTENT BEGIN -->
 		 	<div class="baseline-grid-5">
 		 		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
-			 		<p id="subject" class="black-dark-gray bold"> 
+			 		<p id="subject" class="black-dark-gray bold">
 			 			Article<br />
 				 		Title
 				 	</p>
@@ -230,12 +267,12 @@
 			<!-- <div class="baseline-grid-48"> -->
 				<div class="article-author-container">
 					<div class="col-sm-2 col-sm-offset-2 align-center">
-				 		<p id="author-1" class="black-dark-gray"> 
+				 		<p id="author-1" class="black-dark-gray">
 							Max Mustermann
 						</p>
 					</div>
 					<div class="col-sm-2 col-sm-offset-1 align-center">
-				 		<p id="author-2" class="black-dark-gray"> 
+				 		<p id="author-2" class="black-dark-gray">
 							Angela N. Other
 						</p>
 					</div>
@@ -299,7 +336,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 			</div> <!-- end page -->
 
 
@@ -434,7 +471,7 @@
 
 
 
-		
+
 
 
 		<!-- build:js scripts/vendor/bootstrap.js -->

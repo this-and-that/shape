@@ -1,4 +1,4 @@
-<!-- 
+<!--
  -  This & That
  -  No. 1
  -  Shape
@@ -92,14 +92,31 @@
 			// TODO: implement dynamic loading of article
 			filename = 'interview_eike_koenig.json';
 
+
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onRightTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onUpTap(articleIndex) {
+				alert( articleIndex );
+			};
+			function onDownTap(articleIndex) {
+				alert( articleIndex );
+			};
+
+
 			/*
 			 *	There must be a cleaner way to deal with
 			 *	visibility states for onLoad... onPage... etc.
 			 */
 			// initial state
-			function onReady(current) {
+			function onReady(pageIndex) {
+				alert( pageIndex );
 				// author
-				if( current >= 2 ) {
+				if( pageIndex >= 2 ) {
 					toggleAuthor(false); // fade out
 				}
 				else {
@@ -107,7 +124,7 @@
 				}
 
 				// interview
-				if( current >= 6 ) {
+				if( pageIndex >= 6 ) {
 					toggleSubject(false);  // fade out
 					toggleInterview(true); // fade in
 				}
@@ -115,16 +132,19 @@
 					toggleSubject(true);    // fade in
 					toggleInterview(false); // fade out
 				}
-
 			};
+
 
 			// onepage-scroll callbacks
 			// Article
-			function onBeforeArticlePage(from, to) {
+			function onArticleLoad(pageIndex) {
+				alert( pageIndex );
 			};
-			function onAfterArticlePage(from, to) {
+			function onBeforeArticlePage(pageIndex) {
+				alert( pageIndex );
 			};
-			function onArticlePage(from, to) {
+			function onAfterArticlePage(pageIndex) {
+				alert( pageIndex );
 				// author
 				if( from == 2 && to == 3 ) {
 					toggleAuthor(false); // fade out
@@ -145,11 +165,14 @@
 			};
 
 			// Gallery
-			function onBeforeGalleryPage(from, to) {
+			function onGalleryLoad(pageIndex) {
+				alert( pageIndex );
 			};
-			function onAfterGalleryPage(from, to) {
+			function onBeforeGalleryPage(pageIndex) {
+				alert( pageIndex );
 			};
-			function onGalleryPage(from, to) {
+			function onAfterGalleryPage(pageIndex) {
+				alert( pageIndex );
 			};
 
 		</script>
@@ -231,7 +254,7 @@
 				</div>
 				<script type="text/javascript">
 					for( var i=1; i<57; i++ ) {
-						var num = (i <= 9) 
+						var num = (i <= 9)
 							? i + '&nbsp;'
 							: i;
 						window.document.write(	'<div class="baseline-grid-' + i + '">\n');
@@ -258,7 +281,7 @@
 		 	<!-- SUBJECT CONTENT BEGIN -->
 		 	<div class="baseline-grid-5">
 		 		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
-			 		<p id="subject" class="black bold"> 
+			 		<p id="subject" class="black bold">
 			 			Eike<br />
 				 		K&ouml;nig
 				 	</p>
@@ -280,12 +303,12 @@
 			<div class="baseline-grid-49">
 				<div class="article-author-container">
 					<div class="col-sm-2 col-sm-offset-2 align-center">
-				 		<p id="author-1" class="black-dark-gray"> 
+				 		<p id="author-1" class="black-dark-gray">
 							Ken Frederick
 						</p>
 					</div>
 					<div class="col-sm-2 col-sm-offset-1 align-center">
-				 		<p id="author-2" class="black-dark-gray"> 
+				 		<p id="author-2" class="black-dark-gray">
 							Simone Whitmann
 						</p>
 					</div>
@@ -384,7 +407,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 			</div> <!-- end page -->
 
 
@@ -407,7 +430,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 			</div> <!-- end page -->
 
 
@@ -457,7 +480,7 @@
 					<div class="row">
 						<div class="col-sm-3 col-sm-offset-1">
 							<div class="col-width-100">
-								<p>The air was sticky and the room was packed. A projector was perilously perched on a small table and Eike stood wedged in the corner behind a much too small podium and it was as I stood leaning against the door jam in this compact sauna, that I realized the amount of rigor that goes into projects at Hort. I had assume a certain rigor of creative exploration, but what I was caught off guard (and humbled) by was the amount of &ldquo;strategic&rdquo; vigor that Eike spoke of as he traversed the landscape of Hort&rsquo;s projects. 
+								<p>The air was sticky and the room was packed. A projector was perilously perched on a small table and Eike stood wedged in the corner behind a much too small podium and it was as I stood leaning against the door jam in this compact sauna, that I realized the amount of rigor that goes into projects at Hort. I had assume a certain rigor of creative exploration, but what I was caught off guard (and humbled) by was the amount of &ldquo;strategic&rdquo; vigor that Eike spoke of as he traversed the landscape of Hort&rsquo;s projects.
 
 								<p>What Hort does is design, but moreover they further prove that what we as designers do is an art (not art) and not a science.</p>
 
@@ -1007,7 +1030,7 @@
 
 
 
-		
+
 
 
 		<!-- build:js scripts/vendor/bootstrap.js -->
