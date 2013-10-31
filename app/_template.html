@@ -75,34 +75,53 @@
 		<!-- build:js scripts/vendor/jquery.js -->
 		<!-- JQUERY -->
 		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
-		<script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
-		<script type="text/javascript" src="bower_components/Lettering.js/jquery.lettering.js"></script>
+		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
+		<!-- endbuild -->
+
+
+		<!-- build:js scripts/vendor/bootstrap.js -->
+		<!-- BOOTSTRAP -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
+		<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
+		<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
 		<!-- endbuild -->
 
 
 		<!-- build:js scripts/main.js -->
 		<!-- MAIN -->
-		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
 		<!-- endbuild -->
 
 
 		<!-- page specific -->
 		<script type="text/javascript">
+			// TODO: implement dynamic loading of article
 			filename = null;
+
 
 			// Baker callbacks
 			function onLeftTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onRightTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onUpTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onDownTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 
 
@@ -112,32 +131,26 @@
 			 */
 			// initial state
 			function onReady(pageIndex) {
-				alert( pageIndex );
 			};
 
 
 			// onepage-scroll callbacks
 			// Article
 			function onArticleLoad(pageIndex) {
-				alert( pageIndex );
 			};
-			function onBeforeArticlePage(pageIndex) {
-				alert( pageIndex );
+			function onBeforeArticlePage(pageIndex, nextIndex) {
 			};
 			function onAfterArticlePage(pageIndex) {
-				alert( pageIndex );
 			};
 
 			// Gallery
 			function onGalleryLoad(pageIndex) {
-				alert( pageIndex );
 			};
-			function onBeforeGalleryPage(pageIndex) {
-				alert( pageIndex );
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
 			};
 			function onAfterGalleryPage(pageIndex) {
-				alert( pageIndex );
 			};
+
 		</script>
 
 
@@ -158,7 +171,7 @@
 			<div class="row">
 				<div class="align-top">
 					<div class="col-sm-3 align-left">
-						<a id="main-menu" href="javascript:toggleGrid();" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
+						<a id="main-menu" href="javascript:void(0);" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
 					</div>
 					<div class="col-sm-3 align-center">
 						&nbsp;
@@ -174,7 +187,7 @@
 				<div class="baseline-grid-6">
 					<div class="gallery-navigation"> <!-- class="invisible" -->
 						<div class="col-sm-2 col-sm-offset-7 align-center">
-							<a id="gallery-close" href="javascript:toggleGallery();" class="black-dark-gray underline-none">close</a>
+							<a id="gallery-close" href="javascript:void(0);" class="black-dark-gray underline-none">close</a>
 						</div>
 					</div>
 				</div>
@@ -315,7 +328,7 @@
 			 -  Page 1
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page1" class="page red">
+			<div id="page" class="page page-marker red">
 
 				<div class="align-middle">
 					<div class="middle">
@@ -346,9 +359,9 @@
 			 -  Page 2
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page2" class="page">
+			<div id="page" class="page page-marker">
 
-				<iframe src="_template_canvas.html" class="scale" scrolling="no"></iframe>
+				<iframe src="_template_canvas.html" class="fit" scrolling="no"></iframe>
 
 			</div> <!-- end page -->
 
@@ -359,13 +372,13 @@
 			 -  Page 3
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="page3" class="page blue">
+			<div id="page" class="page page-marker blue">
 
 				<div class="align-middle">
 					<div class="middle">
 						<div class="row">
 							<div class="col-sm-3 col-sm-offset-1">
-								<h1 class="black">pa&ndash;</h1>
+								<h1 class="black"><a class="gallery-link" href="javascript:void(0);" data-index="1">pa&ndash;</a></h1>
 							</div>
 						</div>
 						<div class="row">
@@ -396,7 +409,7 @@
 			 -  Image 1
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="image1" class="page warm-gray">
+			<div id="image" class="image image-marker warm-gray">
 
 				<div class="align-middle">
 					<div class="middle">
@@ -417,7 +430,7 @@
 			 -  Image 2
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="image2" class="page warm-gray">
+			<div id="image" class="image image-marker warm-gray">
 
 				<div class="align-middle">
 					<div class="middle">
@@ -441,7 +454,7 @@
 			 -  Image 3
 			 -
 			 - ------------------------------------------------------------------------ -->
-			<div id="image3" class="page warm-gray">
+			<div id="image" class="image image-marker warm-gray">
 				image 3
 			</div> <!-- end page -->
 
@@ -451,44 +464,6 @@
 
 
 
-
-
-		<!-- ANALTYICS -->
-		<!--[if lt IE 7]>
-			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		<![endif]-->
-
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-			g.src='//www.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g,s)}(document,'script'));
-		</script>
-
-
-
-
-
-
-
-
-
-		<!-- build:js scripts/vendor/bootstrap.js -->
-		<!-- BOOTSTRAP -->
-		<script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script>
-		<!-- endbuild -->
 
 
 	</body>

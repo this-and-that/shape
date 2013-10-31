@@ -20,7 +20,7 @@
 //	------------------------------------------------------------------------
 @link:				@black; //rgba( 10, 190, 240, 1.0);		// #0abef0
 
-@shaping:			rgba(233,  52,  21, 1.0);	// red 
+@shaping:			rgba(233,  52,  21, 1.0);	// red
 @shaper:			rgba(250, 225,   0, 1.0);	// yellow
 @shape:				rgba( 25,  37, 210, 1.0);	// blue
 
@@ -32,10 +32,8 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shaping;
 	}
-	div&, .page&, .pages&, .article&, .gallery& {
-		background-color: @shaping;
-	}
-	canvas& {
+	div&, .page&, .article&, .gallery&, canvas& {
+		.trans-background-color(1.0);
 		background: @shaping;
 	}
 }
@@ -44,10 +42,8 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shaper;
 	}
-	div&, .page&, .pages&, .article&, .gallery& {
-		background-color: @shaper;
-	}
-	canvas& {
+	div&, .page&, .article&, .gallery&, canvas& {
+		.trans-background-color(1.0);
 		background: @shaper;
 	}
 }
@@ -56,19 +52,15 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shape;
 	}
-	div&, .page&, .pages&, .article&, .gallery& {
-		background-color: @shape;
-	}
-	canvas& {
+	div&, .page&, .article&, .gallery&, canvas& {
+		.trans-background-color(1.0);
 		background: @shape;
 	}
 }
 
 .warm-gray {
-	div&, .page&, .pages&, .article&, .gallery& {
-		background-color: @warm-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, .gallery&, canvas& {
+		.trans-background-color(1.0);
 		background: @warm-gray;
 	}
 }
@@ -103,10 +95,10 @@
 //
 div {
 	&.circle-mask {
-		width: 100%; 
+		width: 100%;
 		height: 100%;
 		// background-repeat: no-repeat;
-		// background-position: center center; 
+		// background-position: center center;
 		// background-color: @black;
 		// border-radius: 50%;
 		// -webkit-border-radius: 50%;
@@ -122,10 +114,10 @@ div {
 		position: absolute;
 	}
 	&.right-triangle-mask {
-		width: 100%; 
+		width: 100%;
 		height: 100%;
 		background-repeat: no-repeat;
-		background-position: center center; 
+		background-position: center center;
 		// background-color: @black;
 
 		-webkit-mask-image:	url('../images/shape/right-triangle.svg');
@@ -194,7 +186,7 @@ div {
 			.zeta;
 		}
 
-		& li span { 
+		& li span {
 			position: relative;
 			left: 36px;
 			// color: @red; //@black-dark-gray;

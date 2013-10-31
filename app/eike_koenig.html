@@ -66,6 +66,9 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="styles/main.css">
 		<style>
+			#koenig {
+				-letter-kern: -letter-pairs('Kö': -1px);
+			}
 		</style>
 
 
@@ -75,15 +78,15 @@
 		<!-- build:js scripts/vendor/jquery.js -->
 		<!-- JQUERY -->
 		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
-		<script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
-		<script type="text/javascript" src="bower_components/Lettering.js/jquery.lettering.js"></script>
+		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
 		<!-- endbuild -->
 
 
 		<!-- build:js scripts/main.js -->
 		<!-- MAIN -->
-		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
 		<!-- endbuild -->
 
 
@@ -95,16 +98,16 @@
 
 			// Baker callbacks
 			function onLeftTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onRightTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onUpTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 			function onDownTap(articleIndex) {
-				alert( articleIndex );
+				// alert( articleIndex );
 			};
 
 
@@ -114,23 +117,23 @@
 			 */
 			// initial state
 			function onReady(pageIndex) {
-				alert( pageIndex );
+				// alert( pageIndex );
 				// author
 				if( pageIndex >= 2 ) {
-					toggleAuthor(false); // fade out
+					$('.article-author-container').toggleOpacity(false); // fade out
 				}
 				else {
-					toggleAuthor(true); // fade out
+					$('.article-author-container').toggleOpacity(true); // fade out
 				}
 
 				// interview
 				if( pageIndex >= 6 ) {
-					toggleSubject(false);  // fade out
-					toggleInterview(true); // fade in
+					$('#subject-container').toggleOpacity(false);  // fade out
+					$('.article-interview-container').toggleOpacity(true); // fade in
 				}
 				else {
-					toggleSubject(true);    // fade in
-					toggleInterview(false); // fade out
+					$('#subject-container').toggleOpacity(true);    // fade in
+					$('.article-interview-container').toggleOpacity(false); // fade out
 				}
 			};
 
@@ -138,41 +141,35 @@
 			// onepage-scroll callbacks
 			// Article
 			function onArticleLoad(pageIndex) {
-				alert( pageIndex );
 			};
-			function onBeforeArticlePage(pageIndex) {
-				alert( pageIndex );
-			};
-			function onAfterArticlePage(pageIndex) {
-				alert( pageIndex );
+			function onBeforeArticlePage(pageIndex, nextIndex) {
 				// author
-				if( from == 2 && to == 3 ) {
-					toggleAuthor(false); // fade out
+				if( pageIndex == 2 && nextIndex == 3 ) {
+					$('.article-author-container').toggleOpacity(false); // fade out
 				}
-				else if( from == 3 && to == 2 ) {
-					toggleAuthor(true); // fade in
+				else if( pageIndex == 3 && nextIndex == 2 ) {
+					$('.article-author-container').toggleOpacity(true); // fade in
 				}
 
 				// interview
-				if( from == 6 && to == 5 ) {
-					toggleSubject(true);    // fade in
-					toggleInterview(false); // fade out
+				if( pageIndex == 6 && nextIndex == 5 ) {
+					$('#subject-container').toggleOpacity(true);    // fade in
+					$('.article-interview-container').toggleOpacity(false); // fade out
 				}
-				else if( from == 5 && to == 6 ) {
-					toggleSubject(false);  // fade out
-					toggleInterview(true); // fade in
+				else if( pageIndex == 5 && nextIndex == 6 ) {
+					$('#subject-container').toggleOpacity(false);  // fade out
+					$('.article-interview-container').toggleOpacity(true); // fade in
 				}
+			};
+			function onAfterArticlePage(pageIndex) {
 			};
 
 			// Gallery
 			function onGalleryLoad(pageIndex) {
-				alert( pageIndex );
 			};
-			function onBeforeGalleryPage(pageIndex) {
-				alert( pageIndex );
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
 			};
 			function onAfterGalleryPage(pageIndex) {
-				alert( pageIndex );
 			};
 
 		</script>
@@ -195,7 +192,7 @@
 			<div class="row">
 				<div class="align-top">
 					<div class="col-sm-3 align-left">
-						<a id="main-menu" href="javascript:toggleGrid();" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
+						<a id="main-menu" href="javascript:void(0);" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
 					</div>
 					<div class="col-sm-3 align-center">
 						&nbsp;
@@ -211,7 +208,7 @@
 				<div class="baseline-grid-6">
 					<div class="gallery-navigation"> <!-- class="invisible" -->
 						<div class="col-sm-2 col-sm-offset-7 align-center">
-							<a id="gallery-close" href="javascript:toggleGallery();" class="black-dark-gray underline-none">close</a>
+							<a id="gallery-close" href="javascript:void(0);" class="black-dark-gray underline-none">close</a>
 						</div>
 					</div>
 				</div>
@@ -283,7 +280,7 @@
 		 		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
 			 		<p id="subject" class="black bold">
 			 			Eike<br />
-				 		K&ouml;nig
+				 		<span id="koenig">K&ouml;nig</span>
 				 	</p>
 			 	</div>
 		 	</div>
@@ -311,7 +308,7 @@
 				 		<p id="author-2" class="black-dark-gray">
 							Simone Whitmann
 						</p>
-					</div>
+						</div>
 				</div>
 			</div>
 
@@ -328,7 +325,7 @@
 						<div class="col-sm-2 col-sm-offset-1">
 							<p id="interviewee" class="black bold align-left">
 								Eike<br />
-								K&ouml;nig
+				 		<span id="koenig">K&ouml;nig</span>
 							</p>
 						</div>
 					</div>
@@ -346,45 +343,6 @@
 		 -	Content
 		 -
 		 - ------------------------------------------------------------------------ -->
-
-		<!-- GALLERY CONTENT BEGIN -->
-		<div class="gallery">
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Image 1
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="image1" class="page warm-gray">
-
-				<div class="baseline-grid-18">
-					<div class="col-sm-4">
-						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
-					</div>
-					<div class="col-sm-4 col-sm-offset-1">
-						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
-					</div>
-				</div>
-
-				<div class="baseline-grid-40">
-					<div class="row">
-						<div class="col-sm-2 col-sm-offset-5">
-							<h6><ul class="caption">
-								<li><span>Jazzanova</span></li>
-								<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
-							</ul></h6>
-						</div>
-					</div>
-				</div>
-
-			</div> <!-- end page -->
-
-
-
-		</div> <!-- end gallery -->
-
-
 
 		<!-- ARTICLE CONTENT BEGIN -->
 		<div class="article">
@@ -515,7 +473,7 @@
 			 - ------------------------------------------------------------------------ -->
 			<div id="page5" class="page">
 
-				<iframe src="eike_koenig_portrait.html" class="scale" scrolling="no"></iframe>
+				<iframe src="eike_koenig_portrait.html" class="fit" scrolling="no"></iframe>
 
 			</div> <!-- end page -->
 
@@ -711,7 +669,7 @@
 				<div class="baseline-grid">
 					<div class="col-sm-5 col-sm-offset-2">
 						<div class="align-center">
-							<a class="gallery-link" href="javascript:void(0);" data-index="1"><img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" class="col-width-90" /></a>
+							<a class="gallery-link underline-none" href="javascript:void(0);" data-index="1"><img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" class="col-width-90" /></a>
 						</div>
 					</div>
 				</div>
@@ -998,10 +956,386 @@
 			</div> <!-- end page -->
 
 
-
 		</div> <!-- end article -->
 
 
+
+		<!-- GALLERY CONTENT BEGIN -->
+		<div class="gallery">
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 1
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image1" class="image warm-gray">
+
+				<div class="baseline-grid-18">
+					<div class="col-sm-4">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
+					</div>
+					<div class="col-sm-4 col-sm-offset-1">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
+					</div>
+				</div>
+
+				<div class="baseline-grid-40">
+					<div class="row">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Jazzanova</span></li>
+								<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 2
+			 -	TODO: fade black in / out
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image2" class="image warm-gray">
+
+				<div class="baseline-grid-18">
+					<div class="col-sm-5 col-sm-offset-2 align-center">
+						<video controls width="390" height="295" controls class="black">
+							<source src="/images/eike-koenig/this-and-that_eike-koenig_booka-shade_tickle_390x295.m4v" width="390" height="295" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption white-light-gray">
+								<li><span>Booka Shade</span></li>
+								<li><span>Tickle Video</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 3
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image3" class="image warm-gray">
+
+				<div class="baseline-grid-10">
+					<div class="col-sm-6">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-more-vinyl.png" />
+					</div>
+					<div class="col-sm-3">
+						<div class="baseline-grid-10">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-light-teaser.jpg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-31">
+						<div class="col-sm-3 col-sm-offset-1">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_booka-shade_neon-more-poster.jpg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Booka Shade</span></li>
+								<li><span>Neon</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 4
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image4" class="image warm-gray">
+
+				<div class="align-middle">
+					<div class="middle">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Nike</span></li>
+								<li><span>Lebron James Shoe Drop</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 5
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image5" class="image warm-gray">
+
+				<div class="align-middle">
+					<div class="middle">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-portrait-poster.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Nike</span></li>
+								<li><span>Lebron James</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 6
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image6" class="image warm-gray">
+
+				<div class="align-middle">
+					<div class="middle">
+						<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-9-poster.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Nike</span></li>
+								<li><span>Lebron James</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 7
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image7" class="image warm-gray">
+
+				<div class="baseline-grid-18">
+					<div class="col-sm-7 col-sm-offset-1 align-center">
+						<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-dessau_00.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Workshop Dessau</span></li>
+								<li><span>Eike&rsquo;s workshop philiosophy is to facilitate students ideation in all directions.</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 8
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image8" class="image warm-gray">
+
+				<div class="baseline-grid-10">
+					<div class="col-sm-7 col-sm-offset-1 align-center">
+						<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-dortmund_00.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Workshop Dortmund</span></li>
+								<li><span>Sillyness and play are indicative of the output of Hort and integral approaches within workshops.</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 9
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image9" class="image warm-gray">
+
+				<div class="baseline-grid-10">
+					<div class="col-sm-7 col-sm-offset-1 align-center">
+						<img src="/images/eike-koenig/this-and-that_eike-koenig_workshop-berlin_00.jpg" />
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Workshop Berlin</span></li>
+								<li><span>Sillyness and play are indicative of the output of Hort and integral approaches within workshops.</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 10
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image10" class="image warm-gray">
+
+				<div class="baseline-grid-10">
+					<div class="col-sm-9 align-center">
+						<video controls width="640" height="576" controls class="black">
+							<source src="/images/eike-koenig/this-and-that-eike-koenig-hort_in_argentina_640x576.mp4" width="640" height="576" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption white-light-gray">
+								<li><span>Workshop Argentina</span></li>
+								<li><span></span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 11
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image11" class="image warm-gray">
+
+				<div class="holder">
+
+					<div class="align-middle">
+						<div class="middle">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_flyer.jpg" />
+						</div>
+					</div>
+
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Stiftung Bauhaus</span></li>
+								<li><span>Lebron James</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+
+			<!-------------------------------------------------------------------------
+			 -
+			 -  Image 12
+			 -
+			 - ------------------------------------------------------------------------ -->
+			<div id="image12" class="image warm-gray">
+				<div class="row">
+					<div class="baseline-grid-10">
+						<div class="col-sm-4">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_00.jpg" />
+						</div>
+						<div class="col-sm-4 col-sm-offset-1">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_01.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="baseline-grid-2">
+						<div class="col-sm-3 col-sm-offset-1 align-center">
+							<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_poster_02.jpg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="layer1">
+					<div class="baseline-grid-40">
+						<div class="col-sm-2 col-sm-offset-5">
+							<h6><ul class="caption">
+								<li><span>Stiftung Bauhaus</span></li>
+								<li><span>Rumquis nonsedi cusae. Minulla turiam quis adit expliciae volorion post omnis ipsam faccuptae net fugit latiusam, consequis vero officium essequid eni</span></li>
+							</ul></h6>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end page -->
+
+
+		</div> <!-- end gallery -->
 
 
 

@@ -554,8 +554,8 @@ function Setup() {
 	EikeSize.width = 19*(EikeDotRadius);
 	EikeSize.height = 26*(EikeDotRadius);
 
-	var translation = new Point( 
-		(view.bounds.width/2)-(EikeSize.width/2), 
+	var translation = new Point(
+		(view.bounds.width/2)-(EikeSize.width/2),
 		(view.bounds.height/2)-(EikeSize.height/2)+18
 	);
 
@@ -563,7 +563,7 @@ function Setup() {
 	// initial dots
 	var EikeMask = new Group();
 	for( var i=0; i<EikeDots.length; i++ ) {
-		var point = new Point( 
+		var point = new Point(
 			(EikeDots[i].x+EikeDotRadius/2) + translation.x,
 			(EikeDots[i].y+EikeDotRadius/2) + translation.y
 		);
@@ -574,7 +574,7 @@ function Setup() {
 
 	// for( var i=0; i<400; i++ ) {
 	// 	// mask
-	// 	var point = new Point( 
+	// 	var point = new Point(
 	// 		(EikeDots[i].x+EikeDotRadius/2) + translation.x,
 	// 		(EikeDots[i].y+EikeDotRadius/2) + translation.y
 	// 	);
@@ -592,7 +592,7 @@ function Setup() {
 	// 	EikeMask.addChild( clipGroup[i] );
 	// }
 
-}
+};
 
 
 
@@ -600,7 +600,7 @@ function Setup() {
 // Update
 // ------------------------------------------------------------------------
 function Update(event) {
-}
+};
 
 
 
@@ -608,7 +608,7 @@ function Update(event) {
 // Draw
 // ------------------------------------------------------------------------
 function Draw() {
-}
+};
 
 
 
@@ -627,22 +627,25 @@ function createDotMask(count, pt) {
 	}
 	clipGroup[count].clipped = true;
 	clipGroup[count].opacity = 0.99;
-}
+};
 
 
 
 // ------------------------------------------------------------------------
 // Events
 // ------------------------------------------------------------------------
+function onResize(event) {
+};
+
 function onMouseUp(event) {
-}
+};
 
 // ------------------------------------------------------------------------
 function onMouseDown(event) {
 	hitPath = null;
 	var hitResult = project.hitTest(event.point, hitOptions);
 
-	if (hitResult) {	
+	if (hitResult) {
 		hitPath = hitResult.item;
 		var hexCol = new f.FColor().ColorToHex(hitPath.fillColor);
 		if( hexCol == EikeDots[ hitPath.id-2 ].color1 ) {
@@ -656,11 +659,11 @@ function onMouseDown(event) {
 			hitPath.fillColor = EikeDots[ hitPath.id-2 ].color1;
 		}
 	}
-}
+};
 
 // ------------------------------------------------------------------------
 function onMouseMove(event) {
-}
+};
 
 // ------------------------------------------------------------------------
 function onMouseDrag(event) {
@@ -671,11 +674,11 @@ function onMouseDrag(event) {
 		hitPath = hitResult.item;
 		hitPath.fillColor = EikeDots[ hitPath.id-2 ].color2;
 	}
-}
+};
 
 // ------------------------------------------------------------------------
 function onKeyDown(event) {
-}
+};
 
 function onKeyUp(event) {
-}
+};

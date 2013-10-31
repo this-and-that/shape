@@ -77,7 +77,7 @@
 //
 //	Transition/Animation definitions
 //
-@timing-ms: 400ms;
+@timing-ms: 300ms;
 
 
 
@@ -90,6 +90,7 @@
 //	white(s)
 .white {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @white;
 	// }
 	a& {
@@ -100,15 +101,14 @@
 		color: @white;
 		border-color: @white;
 	}
-	div&, .page&, .article& {
-		background-color: @white;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @white;
 	}
 }
 .white-light-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @white-light-gray;
 	// }
 	a& {
@@ -119,15 +119,14 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @white-light-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @white-light-gray;
 	}
 }
 .white-dark-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @white-dark-gray;
 	// }
 	a& {
@@ -138,10 +137,8 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @white-dark-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @white-dark-gray;
 	}
 }
@@ -149,17 +146,17 @@
 //	black(s)
 .black {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @black;
 	// }
-	div&, .page&, .article& {
-		background-color: @black;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @black;
 	}
 }
 .black-light-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @black-light-gray;
 	// }
 	a& {
@@ -170,15 +167,14 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @black-light-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @black-light-gray;
 	}
 }
 .black-dark-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @black-dark-gray;
 	// }
 	a& {
@@ -189,10 +185,8 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @black-dark-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @black-dark-gray;
 	}
 }
@@ -200,6 +194,7 @@
 //	grays
 .light-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @light-gray;
 	// }
 	&-link {
@@ -210,15 +205,14 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @light-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @light-gray;
 	}
 }
 .dark-gray {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @dark-gray;
 	// }
 	&-link {
@@ -229,10 +223,8 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article& {
-		background-color: @dark-gray;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @dark-gray;
 	}
 }
@@ -240,6 +232,7 @@
 //	primary colors
 .red {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @red;
 	// }
 	&-link {
@@ -250,15 +243,14 @@
 		color: @red;
 		border-color: @red;
 	}
-	div&, .page&, .article& {
-		background-color: @red;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @red;
 	}
 }
 .yellow {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @yellow;
 	// }
 	&-link {
@@ -269,15 +261,14 @@
 		color: @yellow;
 		border-color: @yellow;
 	}
-	div&, .page&, .article& {
-		background-color: @yellow;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @yellow;
 	}
 }
 .blue {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @blue;
 	// }
 	&-link {
@@ -288,10 +279,8 @@
 		color: @blue;
 		border-color: @blue;
 	}
-	div&, .page&, .article& {
-		background-color: @blue;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @blue;
 	}
 }
@@ -299,6 +288,7 @@
 //	secondary colors
 .orange {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @orange;
 	// }
 	&-link {
@@ -309,15 +299,14 @@
 		color: @orange;
 		border-color: @orange;
 	}
-	div&, .page&, .article& {
-		background-color: @orange;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @orange;
 	}
 }
 .green {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @green;
 	// }
 	&-link {
@@ -328,15 +317,14 @@
 		color: @green;
 		border-color: @green;
 	}
-	div&, .page&, .article& {
-		background-color: @green;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @green;
 	}
 }
 .purple {
 	// p&, h1&, h2&, h3&, h4&, h5&, h6& {
+		.trans-color (@scalar: 1.0);
 		color: @purple;
 	// }
 	&-link {
@@ -347,10 +335,8 @@
 		color: @purple;
 		border-color: @purple;
 	}
-	div&, .page&, .article& {
-		background-color: @purple;
-	}
-	canvas& {
+	div&, .page&, .article&, canvas& {
+		.trans-background-color(1.0);
 		background: @purple;
 	}
 }
@@ -358,9 +344,9 @@
 
 
 //	------------------------------------------------------------------------
-//	
+//
 //	Z-Indexes
-//	
+//
 //	------------------------------------------------------------------------
 
 //
@@ -369,9 +355,9 @@
 //	software can quickly understand and implement
 //
 @layer-0:	-200;	// more-bottom layer
-// .page
 
 @layer-1:	0;		// bottom layer
+// .page
 
 @layer-2:	200;
 
@@ -504,7 +490,7 @@ p {
 h1 {
 	//
 	//	Display
-	//	
+	//
 	font-family: @type-base-family-bold;
 	font-weight: normal;
 	.alpha;
@@ -525,9 +511,9 @@ h2 {
 	}
 }
 h3 {
-	//	
+	//
 	//	Title
-	//	
+	//
 	font-family: @type-base-family-bold;
 	font-weight: normal;
 	.gamma;
@@ -548,7 +534,7 @@ h4 {
 	}
 }
 h5 {
-	//	
+	//
 	//	Body Copy
 	//
 	font-family: @type-base-family;
@@ -561,7 +547,7 @@ h5 {
 	}
 }
 h6 {
-	//	
+	//
 	//	Caption
 	//
 	.hN;
@@ -631,16 +617,9 @@ a:hover {
 //	Images
 //
 img, object {
-	&.scale {
-		width: 100%;
-	}
-
-	& a {
-		.underline-none;
-	}
-	& a:hover {
-		.underline-solid;
-	}
+	// &.fit {
+	// 	width: 100%;
+	// }
 }
 
 
@@ -653,7 +632,7 @@ iframe {
 	border: none;
 	overflow: hidden;
 
-	&.scale {
+	&.fit {
 		width: 100%;
 		height: 100%;
 	}
@@ -802,7 +781,7 @@ iframe {
 
 
 //
-//	proportional vertical grid 
+//	proportional vertical grid
 //
 //	TODO: rename vertical-grid-fluid (?)
 //
@@ -899,6 +878,8 @@ iframe {
 
 	// border: none;
 	z-index: @layer-0;
+
+	.trans-background-color(1.0);
 }
 
 
@@ -916,12 +897,7 @@ iframe {
 
 #subject-container {
 	// .invisible;
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
-
+	.trans-opacity(1.0);
 	-webkit-opacity: 1.0;
 	-moz-opacity: 1.0;
 	opacity: 1.0;
@@ -929,12 +905,7 @@ iframe {
 
 .article-author-container {
 	// .invisible;
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
-
+	.trans-opacity(1.0);
 	-webkit-opacity: 1.0;
 	-moz-opacity: 1.0;
 	opacity: 1.0;
@@ -942,12 +913,7 @@ iframe {
 
 .article-interview-container {
 	// .invisible;
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
-
+	.trans-opacity(1.0);
 	-webkit-opacity: 0.0;
 	-moz-opacity: 0.0;
 	opacity: 0.0;
@@ -960,20 +926,16 @@ iframe {
 //
 .gallery {
 	.article;
-	position: fixed;
-	width: 100%;
-	height: 100%;
+	// position: fixed;
+	// width: 100%;
+	// height: 100%;
 	top: 0px;
 	left: 0px;
 
 	z-index: @layer-4;
 
-	// .invisible;
-	-webkit-transition: opacity (@timing-ms*0.5) ease-in-out;
-	-moz-transition: opacity (@timing-ms*0.5) ease-in-out;
-	-ms-transition: opacity (@timing-ms*0.5) ease-in-out;
-	-o-transition: opacity (@timing-ms*0.5) ease-in-out;
-	transition: opacity (@timing-ms*0.5) ease-in-out;
+	// // .invisible;
+	// .trans-color(0.5);
 
 	-webkit-opacity: 0.0;
 	-moz-opacity: 0.0;
@@ -982,19 +944,14 @@ iframe {
 	pointer-events: none;
 
 	// force the pages within the gallery to be full-height
-	& .page {
+	& .image {
 		height: 100%;
 	}
 }
 
 .gallery-navigation {
 	// .invisible;
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	-moz-transition: opacity @timing-ms ease-in-out;
-	-ms-transition: opacity @timing-ms ease-in-out;
-	-o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
-
+	.trans-opacity(1.0);
 	-webkit-opacity: 0.0;
 	-moz-opacity: 0.0;
 	opacity: 0.0;
@@ -1024,7 +981,7 @@ iframe {
 	background-color: @black-light-gray;
 	position: fixed;
 	height: 100%;
-	width: (@scaffolding-margins*3);
+	width: 64px; //(@scaffolding-margins*3);
 	// top: 50%;
 	left: 0px;
 
@@ -1034,9 +991,9 @@ iframe {
 	background-color: @black-light-gray;
 	position: fixed;
 	height: 100%;
-	width: (@scaffolding-margins*3);
+	width: 64px; //(@scaffolding-margins*3);
 	// top: 50%;
-	right: 0px; 
+	right: 0px;
 
 	z-index: @layer-5;
 }
@@ -1085,7 +1042,7 @@ iframe {
 .circle {
 	border-radius: 50%;
 	width: 100%;
-	height: 100%; 
+	height: 100%;
 }
 .square {
 	// TODO
@@ -1124,13 +1081,33 @@ iframe {
 //
 //	------------------------------------------------------------------------
 
+.trans-opacity (@scalar: 1.0) {
+	-webkit-transition: opacity (@timing-ms*@scalar) ease-in-out;
+	// -moz-transition: opacity (@timing-ms*@scalar) ease-in-out;
+	// -ms-transition: opacity (@timing-ms*@scalar) ease-in-out;
+	// -o-transition: opacity (@timing-ms*@scalar) ease-in-out;
+	transition: opacity (@timing-ms*@scalar) ease-in-out;
+}
+
+.trans-color (@scalar: 1.0) {
+	-webkit-transition: color (@timing-ms*@scalar) ease-in-out;
+	// -moz-transition: color (@timing-ms*@scalar) ease-in-out;
+	// -ms-transition: color (@timing-ms*@scalar) ease-in-out;
+	// -o-transition: color (@timing-ms*@scalar) ease-in-out;
+	transition: color (@timing-ms*@scalar) ease-in-out;
+}
+.trans-background-color (@scalar: 1.0) {
+	-webkit-transition: background (@timing-ms*@scalar) ease-in-out;
+	// -moz-transition: background (@timing-ms*@scalar) ease-in-out;
+	// -ms-transition: background (@timing-ms*@scalar) ease-in-out;
+	// -o-transition: background (@timing-ms*@scalar) ease-in-out;
+	transition: background (@timing-ms*@scalar) ease-in-out;
+}
+
+
 // TODO: consider using http://h5bp.github.io/Effeckt.css/dist/ instead
 .fade-out {
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	// -moz-transition: opacity @timing-ms ease-in-out;
-	// -ms-transition: opacity @timing-ms ease-in-out;
-	// -o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
+	.trans-opacity(1.0);
 
 	// starting value
 	-webkit-opacity: 0.0;
@@ -1140,11 +1117,7 @@ iframe {
 	// pointer-events: none;
 }
 .fade-in {
-	-webkit-transition: opacity @timing-ms ease-in-out;
-	// -moz-transition: opacity @timing-ms ease-in-out;
-	// -ms-transition: opacity @timing-ms ease-in-out;
-	// -o-transition: opacity @timing-ms ease-in-out;
-	transition: opacity @timing-ms ease-in-out;
+	.trans-opacity(1.0);
 
 	// starting value
 	-webkit-opacity: 1.0;
@@ -1193,11 +1166,7 @@ iframe {
 // from 10% - 90%
 .fade-in-overLoop (@index) when (@index > 0) {
 	.fade-in-over-@{index} {
-		-webkit-transition: opacity @timing-ms ease-in-out;
-		// -moz-transition: opacity @timing-ms ease-in-out;
-		// -ms-transition: opacity @timing-ms ease-in-out;
-		// -o-transition: opacity @timing-ms ease-in-out;
-		transition: opacity @timing-ms ease-in-out;
+		.trans-opacity(1.0);
 
 		-webkit-opacity: (@index*0.1);
 		// -moz-opacity: (@index*0.1);

@@ -1,27 +1,27 @@
 {
-	"hpub": 1,
-	"title": "1024x768",
-	"author": ["Multiple"],
-	"creator": ["Ken Frederick"],
-	"date": "2012-08-22",
-	"url": "book://",
+    "hpub": 1,
+    "title": "This&That",
+    "author": ["Multiple"],
+    "creator": ["Ken Frederick"],
+    "date": "2013-10-17",
+    "url": "book://",
 
-	"orientation": "both",
-	"zoomable": false,
+    "orientation": "portrait",
+    "zoomable": false,
 
-	"-baker-background": "#000000",
-	"-baker-vertical-bounce": false,
-	"-baker-media-autoplay": true,
-	"-baker-background-image-portrait": "assets/background-portrait.png",
-	"-baker-background-image-landscape": "assets/background-landscape.png",
-	"-baker-page-numbers-color": "#000000",
-
+    "-baker-background": "#1E140F",
+    "-baker-vertical-bounce": false,
+    "-baker-media-autoplay": true,
+    "-baker-page-numbers": false,
+    "-baker-page-numbers-color": "#1E140F",
+    "-baker-page-title": false,
 	"contents": [
 		"cover.html",
+		"index.html",
 		"triangle.html",
-		"content.html",
+        "_template.html",
 		"eike_koenig.html",
-		"symbiotic_relationships.html",
-        "shape.html"
+		"peter_nencini.html",
+		"symbiotic_relationships.html"
 	]
 }

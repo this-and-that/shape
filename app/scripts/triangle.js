@@ -1,14 +1,14 @@
-console.log( 'triangle' );
+console.log( 'Triangle Porn' );
 /**
  *	FTriangle Example
  *
  *	Ken Frederick
  *	ken.frederick@gmx.de
  *
- *	http://cargocollective.com/kenfrederick/
+ *	http://kennethfrederick.de/
  *	http://blog.kennethfrederick.de/
  *
- *	
+ *
  *	An example of FTriangle
  *
  */
@@ -18,20 +18,23 @@ console.log( 'triangle' );
 // ------------------------------------------------------------------------
 // Properties
 // ------------------------------------------------------------------------
-// the core frederickkPaper namespace
-var f = frederickkPaper;
+// the core folio namespace
+var f = folio;
 
 // ftime
 var ft = f.FTime;
-
-// background
-var canvas = document.getElementById('canvas');
-canvas.setAttribute('class', 'shaping');
 
 // triangles
 var points;
 var triangulation;
 var triangles;
+
+var rgbColors = [
+	[ 255/255, 68/255, 100/255 ],
+	[ 242/255, 204/255, 68/255 ],
+	[ 144/255, 39/255, 142/255 ]
+];
+var shaping;
 
 // hatching density
 var compareArea;
@@ -44,7 +47,7 @@ var density = {
 	// clipmask: true
 };
 
-// reflection markers 
+// reflection markers
 var reflectMarkers;
 
 // hit paths
@@ -63,6 +66,8 @@ var hitOptions = {
 // Setup
 // ------------------------------------------------------------------------
 function Setup() {
+	shaping = new Color(233/255,  52/255,  21/255 );
+
 	// create initial points
 	points = [
 		new Point( view.bounds.width/2,140 ), // top
@@ -79,7 +84,7 @@ function Setup() {
 
 
 	// create triangulation
-	triangulation = new Triangulate( points );
+	triangulation = new f.FTriangulate( points );
 	compareArea = triangulation.getTriangles(0).getArea(); //view.bounds.width*view.bounds.height;
 
 	// Setup our holder group
@@ -92,11 +97,15 @@ function Setup() {
 	face.add( triangulation.getTriangles(0).p2 );
 	face.add( triangulation.getTriangles(0).p3 );
 	face.closed = true;
-	face.fillColor = 'white';
-	face.data = 'white';
-	triangles.appendTop( face );
 
-	// DrawTriangles();
+	triangles.appendTop(
+		hatchFill(
+			face,
+			{ value: 0.5 }
+		)
+	);
+
+	// Draw();
 
 };
 
@@ -106,8 +115,6 @@ function Setup() {
 // Update
 // ------------------------------------------------------------------------
 function Update(event) {
-
-	UpdateTriangles(event);
 };
 
 
@@ -116,16 +123,7 @@ function Update(event) {
 // Draw
 // ------------------------------------------------------------------------
 function Draw() {
-	// // workaround for clearing redraws	
-	// triangles.removeChildren();
-};
-
-
-
-// ------------------------------------------------------------------------
-// Methods
-// ------------------------------------------------------------------------
-function DrawTriangles() {
+	// workaround for clearing redraws
 	triangles.removeChildren();
 
 	var total = triangulation.getTriangles().length;
@@ -141,118 +139,31 @@ function DrawTriangles() {
 		face.add( triangle.p3 );
 		face.closed = true;
 
-		console.log( '------' );
-		console.log( 'p1', triangle.p1.name );
-		console.log( 'p2', triangle.p2.name );
-		console.log( 'p3', triangle.p3.name );
-
-
-		if( triangle.p1.name === '__new' ) {
-			var a = new Path.Circle( triangle.p1, 10 );
-			a.fillColor = 'green';
-			triangles.appendTop( a );
-		}
-		if( triangle.p2.name === '__new' ) {
-			var b = new Path.Circle( triangle.p2, 10 );
-			b.fillColor = 'blue';
-			triangles.appendTop( b );
-		}
-		if( triangle.p3.name === '__new' ) {
-			var c = new Path.Circle( triangle.p3, 10 );
-			c.fillColor = 'yellow';
-			triangles.appendTop( c );
-		}
-
-
 		var ratio = ((i+1)/total);
 		var max = density.max * (triArea/compareArea);
 		var pmax = max;
 		var pstrokeWidth = 100 * (triArea/compareArea);
 
-		// TODO: read CSS color
-		// var col = new Color( 
-		// 	clamp( ratio*(233/255), 0.33, 1.0 ),
-		// 	clamp( ratio*(52/255),  0.1,  1.0 ),
-		// 	clamp( ratio*(21/255),  0.05, 1.0 )
-		// );
-		// face.strokeColor = col;
+		density.interpolate = 1.0;
+		density.value = ratio;
+		density.max = max;
+		density.strokeWidth = 2;
+		var r = paper.randomInt( 0,rgbColors.length );
+		if( i%3 == 0) {
+			density.strokeColor = new Color( rgbColors[r] );
+			density.fillColor = null;
+		}
+		else {
+			density.strokeColor = shaping;
+			density.fillColor = new Color( rgbColors[r] );
+		}
 
-		// if( face.data === 'white' ) {
-		// 	face.fillColor = 'white';
-		// 	triangles.appendTop( face );
-		// }
-		// else {
-			var stepper = new ft.FStepper();
-			stepper.setMillis( 250 );
-			stepper.setDelta( 0 );
-			face.data = {
-				stepper: stepper
-			};
-
-			density.lerp = 0.9;
-			density.value = ratio;
-			density.max = max;
-			density.strokeWidth = 
-
-			triangles.appendTop( hatchFill(face, density) );
-			density.max = pmax;
-			density.strokeWidth = pstrokeWidth;
-		// }
+		triangles.appendTop( hatchFill(face, density) );
+		density.max = pmax;
+		density.strokeWidth = pstrokeWidth;
 
 	}
 	triangles.moveBelow( reflectMarkers );
-};
-
-
-function UpdateTriangles(event) {
-
-	// var total = triangles.children.length;
-	// for( var i=0; i<total; i++ ) {
-	// 	var triangle = triangles.children[i];
-
-
-	// 	if( triangle.hasChildren() ) {
-	// 		var stepper;
-
-	// 		for( var j=0; j<triangle.children.length; j++ ) {
-	// 			var trianglette = triangle.children[j];
-
-	// 			if( trianglette.name == '__background' || trianglette.name == '__mask' ) {
-	// 			// 	stepper = trianglette.data.stepper;
-	// 			// 	stepper.update(event.time);
-
-	// 			// 	if( !stepper.isDone ) {
-	// 			// 		stepper.toggle();
-	// 			// 	}
-	// 			// 	else {
-	// 			// 		stepper.stop();
-	// 			// 		console.log( event.time + ' x' );
-	// 			// 	}
-
-	// 			}
-	// 			else {
-	// 				trianglette.strokeColor = 'blue';
-	// 				var point1 = trianglette.segments[0].point;
-	// 				var point2 = trianglette.segments[1].point;
-	// 				var lerped = point1.lerp( point2, stepper.delta );
-
-
-
-	// 			}
-
-
-
-	// 		}
-
-	// 	}
-	// 	// if( triangle.children['__background'] != undefined ) {
-	// 	// 	
-	// 	// 	
-
-	// 	// }
-
-	// }
-
 };
 
 
@@ -266,12 +177,7 @@ function UpdateTriangles(event) {
  */
 function addPoint(point) {
 	triangulation.add( point );
-
-	// clear triangle group
-	triangles.removeChildren();
-
-	// re-draw faces
-	DrawTriangles();
+	Draw();
 };
 
 // ------------------------------------------------------------------------
@@ -312,7 +218,7 @@ function reflectPoint(point, axis) {
  *			  min: 10,				// minimum no. of lines)
  *			  value: 0.1,			// density 0.0 - 1.0
  *
- *			  lerp: 0.5,			// lerp value 0.0 - 1.0
+ *			  interpolate: 0.5,		// interpolate value 0.0 - 1.0
  *			  strokeWidth: 2,		// width of stroke
  *			  strokeColor: 'white',	// color of stroke
  *
@@ -323,7 +229,7 @@ function reflectPoint(point, axis) {
  *			}
  */
 function hatchFill(path, options) {
-	var density = (options == undefined) 
+	var density = (options == undefined)
 		? Math.round(100 * 0.5)
 		: Math.round(options.max * options.value) < options.min
 			? options.min
@@ -342,7 +248,7 @@ function hatchFill(path, options) {
 	// distances
 	var distances = [];
 	for( var i=0,j=points.length-1; i<points.length; i++,j--) {
-		distances.push( 
+		distances.push(
 			// first point v. last point
 			points[i].getDistance( points[j] )
 		);
@@ -376,25 +282,24 @@ function hatchFill(path, options) {
 				break;
 		}
 
-		// if( options.lerp != undefined ) {
-		// 	linePt2 = linePt1.lerp( linePt2, options.lerp );
+		// if( options.interpolate != undefined ) {
+			// linePt2 = linePt1.interpolateTo( linePt2, options.interpolate );
 		// }
-
-		var line = new Path.Line( 
+		var line = new Path.Line(
 			linePt1,
-			// linePt2
-			( options.lerp != undefined ) 
-				? linePt1.lerp( linePt2, options.lerp )
-				: linePt2
+			linePt2
+			// ( options.interpolate != undefined )
+			// 	? linePt1.interpolateTo( linePt2, options.interpolate )
+			// 	: linePt2
 		);
-		line.strokeWidth = (options.strokeWidth != null) 
+		line.strokeWidth = (options.strokeWidth != null)
 			? options.strokeWidth
 			: 1;
 
 		line.strokeColor = (options.strokeColor != undefined)
 			? options.strokeColor
 			: (options.background)
-				? 'white'
+				? null
 				: path.strokeColor;
 
 		line.strokeCap = 'square';
@@ -403,33 +308,25 @@ function hatchFill(path, options) {
 		groupHatch.appendTop( line );
 	}
 
-	// // create background
-	// if( options.background ) {
-	// 	var background = path.clone();
-	// 	background.name = '__background';
-	// 	// ensure any internal data is copied over as well
-	// 	background.data = path.data;
-
-	// 	background.fillColor = (options.fillColor != undefined)
-	// 		? options.fillColor
-	// 		: path.strokeColor;
-	// 	background.strokeColor = (options.fillColor != undefined)
-	// 		? options.fillColor
-	// 		: path.strokeColor;
-	// 	groupHatch.appendBottom( background );
-	// }
-
 	// create mask
 	// if( options.clipMask ) {
 		var mask = path.clone();
 		mask.name = '__mask';
-		// ensure any internal data is copied over as well
-		mask.data = path.data;
-
-		mask.fillColor = 'white';
-		mask.strokeColor = path.strokeColor; //null;
-		mask.clipMask = true;
-		groupHatch.appendTop( mask );
+		mask.fillColor = (options.fillColor != undefined)
+			? options.fillColor
+			: (options.background)
+				? null
+				: path.fillColor;
+		mask.strokeColor = (options.strokeColor != undefined)
+			? options.strokeColor
+			: (options.background)
+				? null
+				: path.strokeColor;
+		mask.strokeWidth = (options.strokeWidth != null)
+			? options.strokeWidth
+			: 1;
+		// mask.clipMask = true;
+		groupHatch.appendBottom( mask );
 		// groupHatch.clipped = true;
 	// }
 
@@ -456,7 +353,7 @@ function onMouseUp(event) {
 
 	var hitResult = project.hitTest(event.point, hitOptions);
 
-	// check hit 
+	// check hit
 	if (hitResult) {
 		hitPath = hitResult.item;
 		if (hitResult.type == 'segment' && hitPath.name == 'triangle') {
@@ -515,3 +412,4 @@ function onKeyDown(event) {
 
 function onKeyUp(event) {
 };
+

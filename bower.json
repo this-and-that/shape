@@ -2,16 +2,17 @@
   "name": "this-and-that",
   "version": "0.0.0",
   "dependencies": {
-    "require-less": "~0.0.6",
     "bootstrap": "~3.0.0",
+    "folio.js": "git@github.com:frederickk/folio.js.git",
+    "font-awesome": "~3.2.1",
     "jquery": "~1.9.1",
-    "retina.js-js": "~1.0.2",
+    "jQuery-Retina-Display-Plugin": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git",
+    "kerning.js": "git@github.com:endtwist/kerning.js.git",
     "Lettering.js": "~0.6.1",
-    "hammerjs": "https://github.com/EightMedia/hammer.js.git#~1.0.5",
     "onepage-scroll": "git@github.com:frederickk/onepage-scroll.git",
     "orientation-listener": "git@github.com:component/orientation-listener.git#~1.0.4",
-    "jQuery-Retina-Display-Plugin": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git",
-    "font-awesome": "~3.2.1"
+    "paper.js": "git@github.com:paperjs/paper.js.git#~0.9.10",
+    "Snap.svg": "git@github.com:adobe-webplatform/Snap.svg.git#~0.1.0"
   },
   "devDependencies": {},
   "ignore": [
