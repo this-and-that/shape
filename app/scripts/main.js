@@ -87,6 +87,7 @@ $(document).load(function() {
     angle = 0; // orienation angle
     isRotated = false;
 
+    // check device type
     ios = navigator.userAgent.match(/(iPhone)|(iPod)|(iPad)/);
     device.isiPad   = (navigator.userAgent.match(/iPad/i) != null);
     device.isiPhone  = (navigator.userAgent.match(/iPhone/i) != null);
@@ -140,11 +141,11 @@ $(document).ready(function() {
     // serve up retina images
     $('img').retina('@2x');
 
-    // set carousel globally
-    // $('.carousel').carousel({
-    //     interval: 5000,
-    //     pause: 'false'
-    // });
+    // set bootstrap carousel globally
+    $('.carousel').carousel({
+        interval: 5000,
+        pause: 'false'
+    });
 
 
     /*
@@ -191,11 +192,10 @@ $(document).ready(function() {
 //    });
 
     var clicked = false;
-    $('#scroll-back').bind('click', function() {
-        alert('click');
-        if(!clicked) return !(clicked = true);
-    });
-
+    // $('#scroll-back').bind('click', function() {
+    //     alert('click');
+    //     if(!clicked) return !(clicked = true);
+    // });
     $('div').each(function() {
         var clicked = false;
         $(this).bind('click', function() {
@@ -208,14 +208,12 @@ $(document).ready(function() {
         $('.baseline-grid-view').toggleOpacity();
     });
 
-    // if the link is a gallery link, then it should
-    // not only open the gallery, but to the right page
     // $('.gallery-link').click(function() {
     $('.gallery-link').bind('click touchstart', function() {
-        toggleGallery( $(this) );
+        toggleGallery( $(this).data('index') );
     });
     $('#gallery-close').bind('click touchstart', function() {
-        toggleGallery( $(this) );
+        toggleGallery();
     });
 
 
@@ -281,6 +279,7 @@ function orientationChange() {
 // ------------------------------------------------------------------------
 function paginate() {
 
+    // set up article for pagination
     $('.article').onepage_scroll({
         sectionContainer: '.page-marker',
         easing: 'cubic-bezier(.02, .01, .47, 1)',
@@ -301,12 +300,13 @@ function paginate() {
         }
     });
 
+    // set up gallery for pagination
     $('.gallery').onepage_scroll({
         sectionContainer: '.image-marker',
         easing: 'cubic-bezier(.02, .01, .47, 1)',
         animationTime: 500,
         pagination: false,
-        // updateURL: true,
+        updateURL: true,
         direction: 'horizontal',
         touchTarget: '#navigation',
         // loop: true,
@@ -321,32 +321,27 @@ function paginate() {
          onAfterGalleryPage(pageIndex);
         }
     });
-    // toggle image class, so that it doesn't scroll
+    // toggle gallery class, so that it doesn't scroll
 	$('.gallery').find('.image').toggleClass('image-marker');
 
 };
 
 // ------------------------------------------------------------------------
 function scrollBack(element) {
+	var element = ( $('.gallery').css('opacity') != 0 )
+		? '.gallery'
+		: '.article';
     $(element).moveUp();
 };
 function scrollForward(element) {
+	var element = ( $('.gallery').css('opacity') != 0 )
+		? '.gallery'
+		: '.article';
     $(element).moveDown();
 };
-function scrollTo(element) {
-    // var index = $(element).data('index');
-    // var delta = index - ($('.page-marker .active').data('index') - 1);
-    // if( delta > 0 ) {
-    //     $(scrollContainer).moveDown(Math.abs(delta)-1);
-    // }
-    // else {
-    //     $(scrollContainer).moveUp(Math.abs(delta)+1);
-    // }
-};
-
 
 // ------------------------------------------------------------------------
-function toggleGallery(element) {
+function toggleGallery(pageIndex) {
 	// fade in the actual gallery
     $('.gallery').toggleOpacity();
     // fade in gallery navigation
@@ -359,6 +354,10 @@ function toggleGallery(element) {
     // toggle page class to ensure swipe gestures only paginate gallery
 	$('.article').find('.page').toggleClass('page-marker');
 
+    // not only open the gallery, but to the right page
+	if( pageIndex != undefined ) {
+		$('.gallery').moveTo(pageIndex);
+	}
 };
 
 // ------------------------------------------------------------------------
@@ -424,8 +423,8 @@ $.fn.fadeToBlack = function(toggleClass, onPage, currentPage, nextPage) {
 // load the article as a from a .json file
 // the idea is to make editing and updating easier
 // a pseudo-cms
-// TODO: eventually like to use markdown, but unsure
-// where to start
+// TODO: eventually i would like to use markdown,
+// but unsure where to start
 function loadArticle(structure) {
     structure = (structure != undefined)
         ? structure
@@ -471,6 +470,8 @@ function loadArticle(structure) {
 
 // might be worth doing this without jquery
 // http://stackoverflow.com/questions/327047/what-is-the-most-efficient-way-to-create-html-elements-using-jquery
+// TODO: eventually i would like to use markdown,
+// but unsure where to start
 function jsonToHtml(arr, idName) {
     var i = 0;
     var id = '';

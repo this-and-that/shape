@@ -49,7 +49,7 @@
 		//
 		// Properties
 		//
-		var settings = $.extend({}, defaults, options),
+		var settings = options, //$.extend({}, defaults, options),
 			sections = $(settings.sectionContainer),
 			total = sections.length,
 			status = "off",
@@ -91,14 +91,14 @@
 
 		var moveDown = function(el, increment) {
 			increment = (increment != undefined) ? increment : 1;
-			index = $(settings.sectionContainer +".active").data("index");
-			current = $(settings.sectionContainer + "[data-index='" + index + "']");
-			next = $(settings.sectionContainer + "[data-index='" + (index + increment) + "']");
+			index = $(el.data('sectionContainer') +".active").data("index");
+			current = $(el.data('sectionContainer') + "[data-index='" + index + "']");
+			next = $(el.data('sectionContainer') + "[data-index='" + (index + increment) + "']");
 
 			if(next.length < 1) {
 				if (settings.loop === true) {
 					pos = 0;
-					next = $(settings.sectionContainer + "[data-index='1']");
+					next = $(el.data('sectionContainer') + "[data-index='1']");
 				} else {
 					return
 				}
@@ -128,14 +128,14 @@
 
 		var moveUp = function(el, increment) {
 			increment = (increment != undefined) ? increment : 1;
-			index = $(settings.sectionContainer +".active").data("index");
-			current = $(settings.sectionContainer + "[data-index='" + index + "']");
-			next = $(settings.sectionContainer + "[data-index='" + (index - increment) + "']");
+			index = $(el.data('sectionContainer') +".active").data("index");
+			current = $(el.data('sectionContainer') + "[data-index='" + index + "']");
+			next = $(el.data('sectionContainer') + "[data-index='" + (index - increment) + "']");
 
 			if(next.length < 1) {
 				if (settings.loop === true) {
 					pos = ((total - 1) * 100) * -1;
-					next = $(settings.sectionContainer + "[data-index='"+total+"']");
+					next = $(el.data('sectionContainer') + "[data-index='"+total+"']");
 				}
 				else {
 					return
@@ -162,10 +162,10 @@
 		};
 
 		var moveTo = function(el, slideIndex) {
-			index = $(settings.sectionContainer +".active").data("index");
+			index = $(el.data('sectionContainer') +".active").data("index");
 
-			current = $(settings.sectionContainer + "[data-index='" + index + "']");
-			next = $(settings.sectionContainer + "[data-index='" + slideIndex + "']");
+			current = $(el.data('sectionContainer') + "[data-index='" + index + "']");
+			next = $(el.data('sectionContainer') + "[data-index='" + slideIndex + "']");
 			if (next) {
 				current.removeClass("active");
 				next.addClass("active");
@@ -194,9 +194,13 @@
 			} else {
 				moveUp(el);
 			}
-			// el.trigger("swiped", [(parseInt($(settings.sectionContainer +".active").data("index")) - 1)]);
+			// el.trigger("swiped", [(parseInt($(el.data('sectionContainer') +".active").data("index")) - 1)]);
 			lastAnimation = timeNow;
 		};
+
+		// push the sectionContainer information to the data of the element
+		// this helps keep things organized when having multiple instances
+		el.data("sectionContainer",settings.sectionContainer);
 
 		// Prepare everything before binding wheel scroll
 		// el.addClass("onepage-wrapper").css("position","relative");
@@ -269,13 +273,13 @@
 		// Check URL for slide index
 		if(window.location.hash != "" && window.location.hash != "#1") {
 			init_index =  window.location.hash.replace("#", "")
-			$(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active")
+			$(el.data('sectionContainer') + "[data-index='" + init_index + "']").addClass("active")
 			$("body").addClass("viewing-page-"+ init_index)
 			if(settings.pagination === true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
 
 			if (typeof settings.onPageJump === "function") settings.onPageJump(0, init_index);
 
-			next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
+			next = $(el.data('sectionContainer') + "[data-index='" + (init_index) + "']");
 			if(next) {
 				next.addClass("active")
 				if(settings.pagination === true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
@@ -290,7 +294,7 @@
 			transformPage(el, settings, pos, init_index);
 		}
 		else {
-			$(settings.sectionContainer + "[data-index='1']").addClass("active")
+			$(el.data('sectionContainer') + "[data-index='1']").addClass("active")
 			$("body").addClass("viewing-page-1")
 			if(settings.pagination === true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
 		}
@@ -298,8 +302,8 @@
 			$(".onepage-pagination li a").click(function (){
 				var page_index = $(this).data("index");
 				if (!$(this).hasClass("active")) {
-					current = $(settings.sectionContainer + ".active")
-					next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
+					current = $(el.data('sectionContainer') + ".active")
+					next = $(el.data('sectionContainer') + "[data-index='" + (page_index) + "']");
 
 					if (typeof settings.onPageJump === "function") settings.onPageJump(current, page_index);
 
@@ -341,11 +345,13 @@
 			});
 		}
 
-		if (typeof settings.onLoad === "function") settings.onLoad( $(settings.sectionContainer +".active").data("index") );
+		if (typeof settings.onLoad === "function") settings.onLoad( $(el.data('sectionContainer') +".active").data("index") );
 		// return false;
 
 
 		return {
+			settings:	settings,
+
 			moveDown:	moveDown,
 			moveUp:		moveUp,
 			moveTo:		moveTo
@@ -362,19 +368,22 @@
 	// ------------------------------------------------------------------------
 
 	$.fn.onepage_scroll = function(options) {
+		var settings = $.extend({}, defaults, options);
+
 		return this.each(function () {
-			var ops = new onepageScrollClass( $(this), options );
+			var instance = new onepageScrollClass( $(this), settings );
 
 			// push methods public
 			$.fn.moveDown = function(increment) {
-				ops.moveDown($(this), increment);
+				instance.moveDown($(this), increment);
 			};
 			$.fn.moveUp = function(increment) {
-				ops.moveUp($(this), increment);
+				instance.moveUp($(this), increment);
 			};
 			$.fn.moveTo = function(increment) {
-				ops.moveTo($(this), increment);
+				instance.moveTo($(this), increment);
 			};
+
         });
 	};
 
