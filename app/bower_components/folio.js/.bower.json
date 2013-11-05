@@ -1,0 +1,57 @@
+{
+  "name": "folio.js",
+  "filename": "folio",
+  "author": {
+    "name": "Ken Frederick",
+    "url": "http://blog.kennethfrederick.de/"
+  },
+  "homepage": "https://github.com/frederickk/folio.js/",
+  "main": "./distribution/paper.folio.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/frederickk/folio.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "paper.js": "git://github.com/paperjs/paper.js.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Ken Frederick"
+  ],
+  "description": "A library for use with Paper.js (http://paperjs.org/) and Scriptographer (http://scriptographer.org/)",
+  "keywords": [
+    "\"paperjs\"",
+    "\"scriptographer\"",
+    "\"javascript\"",
+    "\"library\"",
+    "\"generative\"",
+    "\"tools\"",
+    "\"design\"",
+    "\"svg\"",
+    "\"html\""
+  ],
+  "license": "MIT",
+  "private": true,
+  "_release": "d7ba17e965",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d7ba17e965e99d63448a5d60042d19894f99cdb0"
+  },
+  "_source": "git@github.com:frederickk/folio.js.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:frederickk/folio.js.git"
+}

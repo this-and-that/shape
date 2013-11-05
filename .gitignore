@@ -24,9 +24,7 @@ Icon
 
 
 # Directories
-app/bower_components
 dist/
-node_modules/
 test/
 
 

@@ -26,7 +26,7 @@ console.log( 'Script Loaded' );
 *	the HTML can be accessed here and visa versa.
 *
 *	Feel free to rename this file and HTML template file,
-*	but be sure to uppdate the HTML in FolioTemplate.html	
+*	but be sure to uppdate the HTML in FolioTemplate.html
 *
 */
 
@@ -47,7 +47,7 @@ var circle;
 // ------------------------------------------------------------------------
 /*
  *	Just like in Processing or OpenFrameworks, the
- *	Setup() is called once upon initial loading
+ *	Setup() is called once, upon initial loading
  */
 function Setup() {
 
@@ -55,7 +55,7 @@ function Setup() {
 		new Point(0,0),
 		100
 	);
-	circle.fillColor = new Color( Math.random(),Math.random(),Math.random() );
+	circle.fillColor = new Color().random();
 
 };
 
@@ -76,7 +76,7 @@ function Update(event) {
 // Draw
 // ------------------------------------------------------------------------
 /*
- *	Draw() is the main method which is called to Draw 
+ *	Draw() is the main method which is called to Draw
  *	elements to the screen, similar to Processing's Draw()
  */
 function Draw() {
@@ -88,7 +88,7 @@ function Draw() {
 // Methods
 // ------------------------------------------------------------------------
 /*
- *	Any additional Methods/Functions needed for this 
+ *	Any additional Methods/Functions needed for this
  *	script can be added here
  */
 

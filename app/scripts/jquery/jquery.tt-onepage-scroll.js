@@ -373,7 +373,6 @@
 		return this.each(function () {
 			var instance = new onepageScrollClass( $(this), settings );
 
-			// push methods public
 			$.fn.moveDown = function(increment) {
 				instance.moveDown($(this), increment);
 			};

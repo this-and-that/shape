@@ -1,0 +1,14 @@
+{
+  "name": "jQuery-Retina-Display-Plugin",
+  "homepage": "https://github.com/mcilvena/jQuery-Retina-Display-Plugin",
+  "_release": "63f7e6a802",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "63f7e6a802a0699906f086409c601d1b1adfd68d"
+  },
+  "_source": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:mcilvena/jQuery-Retina-Display-Plugin.git",
+  "_direct": true
+}

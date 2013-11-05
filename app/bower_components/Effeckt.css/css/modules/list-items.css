@@ -1,0 +1,120 @@
+.effeckt-list[data-type='pop-in'] {
+  overflow: hidden; }
+
+.effeckt-list[data-type='pop-in'] .new-item {
+  max-height: 0;
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: openSpace 500ms ease forwards, moveIn 750ms 500ms ease forwards; }
+
+.effeckt-list[data-type='pop-in'] .remove-item {
+  max-height: 50px;
+  opacity: 1;
+  animation: moveOut 750ms 500ms ease forwards, closeSpace 500ms ease forwards 750ms; }
+
+@keyframes openSpace {
+  to {
+    max-height: 50px; } }
+
+@keyframes moveIn {
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveOut {
+  to {
+    opacity: 0;
+    transform: translateX(-300px); } }
+
+@keyframes closeSpace {
+  to {
+    max-height: 0px; }
+
+  from {
+    max-height: 50px; } }
+
+.effeckt-list[data-type='expand-in'] .new-item {
+  max-height: 0;
+  opacity: 0;
+  transform: scale(0);
+  animation: growHeight 500ms ease forwards; }
+
+.effeckt-list[data-type='expand-in'] .remove-item {
+  animation: shrinkHeight 500ms ease forwards; }
+
+@keyframes growHeight {
+  to {
+    max-height: 50px;
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes shrinkHeight {
+  to {
+    max-height: 0;
+    opacity: 1;
+    transform: scale(0); }
+
+  from {
+    max-height: 50px;
+    opacity: 1;
+    transform: scale(1); } }
+
+.effeckt-list[data-type='wobble-in'] .new-item {
+  backface-visibility: visible;
+  animation: WobbleInX 2500ms both 500ms, openSpace 500ms ease forwards; }
+
+.effeckt-list[data-type='wobble-in'] .remove-item {
+  backface-visibility: visible;
+  animation: WobbleOutX 2500ms both 500ms, closeSpace 1000ms ease forwards 1500ms; }
+
+@keyframes WobbleInX {
+  0% {
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(250px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(250px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes WobbleOutX {
+  0% {
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0; } }
+
+.effeckt-list[data-type='flip-in'] .new-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: FlipIn 2500ms both 500ms, openSpace 500ms ease forwards; }
+
+.effeckt-list[data-type='flip-in'] .remove-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: FlipOut 2500ms both 500ms, closeSpace 1000ms ease forwards 1000ms; }
+
+@keyframes FlipIn {
+  0% {
+    transform: perspective(300px) rotateX(90deg);
+    opacity: 0; }
+
+  100% {
+    transform: perspective(300px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes FlipOut {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
