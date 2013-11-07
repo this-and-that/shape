@@ -70,91 +70,6 @@
 
 
 
-
-		<!-- JAVASCRIPT -->
-		<!-- build:js scripts/vendor/jquery.js -->
-		<!-- JQUERY -->
-		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
-		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
-		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- build:js scripts/vendor/bootstrap.js -->
-		<!-- BOOTSTRAP -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
-		<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
-		<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
-		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
-		<!-- endbuild -->
-
-
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script type="text/javascript" src="scripts/main.js"></script>
-		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- page specific -->
-		<script type="text/javascript">
-			// TODO: implement dynamic loading of article
-			filename = null;
-
-
-			// Baker callbacks
-			function onLeftTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onRightTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onUpTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onDownTap(articleIndex) {
-				// alert( articleIndex );
-			};
-
-
-			/*
-			 *	There must be a cleaner way to deal with
-			 *	visibility states for onLoad... onPage... etc.
-			 */
-			// initial state
-			function onReady(pageIndex) {
-			};
-
-
-			// onepage-scroll callbacks
-			// Article
-			function onArticleLoad(pageIndex) {
-			};
-			function onBeforeArticlePage(pageIndex, nextIndex) {
-			};
-			function onAfterArticlePage(pageIndex) {
-			};
-
-			// Gallery
-			function onGalleryLoad(pageIndex) {
-			};
-			function onBeforeGalleryPage(pageIndex, nextIndex) {
-			};
-			function onAfterGalleryPage(pageIndex) {
-			};
-
-		</script>
-
-
-
 	</head>
 	<body>
 
@@ -199,14 +114,14 @@
 		<div id="scroll-back" class="fade-in-over">
 			<div class="align-middle">
 				<div class="middle">
-					<a href="javascript:scrollBack();" class="black-dark-gray underline-none"><i class="icon-angle-left icon-large"></i></a>
+					<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-left icon-large"></i></a>
 				</div>
 			</div>
 		</div>
 		<div id="scroll-forward" class="fade-in-over">
 			<div class="align-middle">
 				<div class="middle">
-					<a href="javascript:scrollForward();" class="black-dark-gray underline-none"><i class="icon-angle-right icon-large"></i></a>
+					<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-right icon-large"></i></a>
 				</div>
 			</div>
 		</div>
@@ -278,7 +193,7 @@
 		 	<!-- AUTHOR CONTENT BEGIN -->
 			<div class="baseline-grid-24">
 			<!-- <div class="baseline-grid-48"> -->
-				<div class="article-author-container">
+				<div id="article-author-container">
 					<div class="col-sm-2 col-sm-offset-2 align-center">
 				 		<p id="author-1" class="black-dark-gray">
 							Max Mustermann
@@ -294,7 +209,7 @@
 
 		 	<!-- INTERVIEWER -EE CONTENT BEGIN -->
 			<div class="row baseline-grid-6">
-				<div class="article-interview-container"> <!-- class="invisible" -->
+				<div id="article-interview-container"> <!-- class="invisible" -->
 					<div class="col-sm-2 col-sm-offset-1">
 						<p id="interviewer" class="black align-left">
 							This <!-- &amp; That -->
@@ -321,7 +236,7 @@
 		 - ------------------------------------------------------------------------ -->
 
 		<!-- ARTICLE CONTENT BEGIN -->
-		<div class="article">
+		<div id="article">
 
 			<!-------------------------------------------------------------------------
 			 -
@@ -334,7 +249,7 @@
 					<div class="middle">
 						<div class="row">
 							<div class="col-sm-3 col-sm-offset-3">
-								<h1 class="black"><a class="gallery-link" href="javascript:void(0);" data-index="3">pa&ndash;</a></h1>
+								<h1 class="black"><a class="gallery-link" href="javascript:void(0);">pa&ndash;</a></h1>
 							</div>
 						</div>
 						<div class="row">
@@ -378,7 +293,7 @@
 					<div class="middle">
 						<div class="row">
 							<div class="col-sm-3 col-sm-offset-1">
-								<h1 class="black"><a class="gallery-link" href="javascript:void(0);" data-index="1">pa&ndash;</a></h1>
+								<h1 class="black"><a class="gallery-link" href="javascript:void(0);">pa&ndash;</a></h1>
 							</div>
 						</div>
 						<div class="row">
@@ -401,7 +316,7 @@
 
 
 		<!-- GALLERY CONTENT BEGIN -->
-		<div class="gallery">
+		<div id="gallery">
 
 
 			<!-------------------------------------------------------------------------
@@ -413,15 +328,11 @@
 
 				<div class="align-middle">
 					<div class="middle">
-						<div class="row">
-							<div class="col-sm-9 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-shoe-drop-poster.jpg" />
-							</div>
-						</div>
+						<img src="images/eike-koenig/this-and-that_eike-koenig_nike_lebron-portrait-poster.jpg" />
 					</div>
 				</div>
 
-			</div> <!-- end page -->
+			</div> <!-- end image -->
 
 
 
@@ -434,35 +345,94 @@
 
 				<div class="align-middle">
 					<div class="middle">
-						<div class="row">
-							<div class="col-sm-4 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_00.jpg" class="fit" />
-							</div>
-							<div class="col-sm-4 col-sm-offset-1 align-center">
-								<img src="images/eike-koenig/this-and-that_eike-koenig_jazzanova_of-all-the-things_01.jpg" class="fit" />
-							</div>
-						</div>
+						<img src="images/eike-koenig/this-and-that_eike-koenig_stiftung-bauhaus_flyer.jpg" />
 					</div>
 				</div>
 
-			</div> <!-- end page -->
-
-
-
-			<!-------------------------------------------------------------------------
-			 -
-			 -  Image 3
-			 -
-			 - ------------------------------------------------------------------------ -->
-			<div id="image3" class="image image-marker warm-gray">
-				image 3
-			</div> <!-- end page -->
-
+			</div> <!-- end image -->
 
 		</div> <!-- end gallery -->
 
 
 
+		<!-- JAVASCRIPT -->
+		<!-- build:js scripts/vendor/jquery.js -->
+		<!-- JQUERY -->
+		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script> -->
+		<!-- endbuild -->
+
+
+		<!-- build:js scripts/vendor/bootstrap.js -->
+		<!-- BOOTSTRAP -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
+		<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
+		<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
+		<!-- endbuild -->
+
+
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
+		<!-- endbuild -->
+
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			// TODO: implement dynamic loading of article
+			filename = null;
+
+
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+			};
+			function onRightTap(articleIndex) {
+			};
+			function onUpTap(articleIndex) {
+			};
+			function onDownTap(articleIndex) {
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+			};
+
+
+			// onepage-scroll callbacks
+			// Article
+			function onArticleLoad(pageIndex) {
+			};
+			function onBeforeArticlePage(pageIndex, nextIndex) {
+			};
+			function onAfterArticlePage(pageIndex) {
+			};
+
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+			};
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
+			};
+			function onAfterGalleryPage(pageIndex) {
+			};
+
+		</script>
 
 
 

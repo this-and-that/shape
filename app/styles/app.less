@@ -32,7 +32,7 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shaping;
 	}
-	div&, .page&, .article&, .gallery&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @shaping;
 	}
@@ -42,7 +42,7 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shaper;
 	}
-	div&, .page&, .article&, .gallery&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @shaper;
 	}
@@ -52,14 +52,14 @@
 	p&, span&, h1&, h2&, h3&, h4&, h5&, h6& {
 		color: @shape;
 	}
-	div&, .page&, .article&, .gallery&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @shape;
 	}
 }
 
 .warm-gray {
-	div&, .page&, .article&, .gallery&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @warm-gray;
 	}
@@ -148,7 +148,7 @@ div {
 //	wrapper for anything non-interactive that should be "fixed"
 //
 #header {
-	.article;
+	.webkit-anti-flicker();
 	position: fixed;
 	width: 100%;
 	height: 100%;

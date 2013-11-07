@@ -5901,7 +5901,6 @@ a:hover.white {
 }
 div.white,
 .page.white,
-.article.white,
 canvas.white {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -5922,7 +5921,6 @@ a:hover.white-light-gray {
 }
 div.white-light-gray,
 .page.white-light-gray,
-.article.white-light-gray,
 canvas.white-light-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -5943,7 +5941,6 @@ a:hover.white-dark-gray {
 }
 div.white-dark-gray,
 .page.white-dark-gray,
-.article.white-dark-gray,
 canvas.white-dark-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -5956,7 +5953,6 @@ canvas.white-dark-gray {
 }
 div.black,
 .page.black,
-.article.black,
 canvas.black {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -5977,7 +5973,6 @@ a:hover.black-light-gray {
 }
 div.black-light-gray,
 .page.black-light-gray,
-.article.black-light-gray,
 canvas.black-light-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -5998,7 +5993,6 @@ a:hover.black-dark-gray {
 }
 div.black-dark-gray,
 .page.black-dark-gray,
-.article.black-dark-gray,
 canvas.black-dark-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6019,7 +6013,6 @@ a:hover.light-gray {
 }
 div.light-gray,
 .page.light-gray,
-.article.light-gray,
 canvas.light-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6040,7 +6033,6 @@ a:hover.dark-gray {
 }
 div.dark-gray,
 .page.dark-gray,
-.article.dark-gray,
 canvas.dark-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6061,7 +6053,6 @@ a:hover.red {
 }
 div.red,
 .page.red,
-.article.red,
 canvas.red {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6082,7 +6073,6 @@ a:hover.yellow {
 }
 div.yellow,
 .page.yellow,
-.article.yellow,
 canvas.yellow {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6103,7 +6093,6 @@ a:hover.blue {
 }
 div.blue,
 .page.blue,
-.article.blue,
 canvas.blue {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6124,7 +6113,6 @@ a:hover.orange {
 }
 div.orange,
 .page.orange,
-.article.orange,
 canvas.orange {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6145,7 +6133,6 @@ a:hover.green {
 }
 div.green,
 .page.green,
-.article.green,
 canvas.green {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -6166,7 +6153,6 @@ a:hover.purple {
 }
 div.purple,
 .page.purple,
-.article.purple,
 canvas.purple {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -7201,10 +7187,6 @@ iframe.fit {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
 }
-.article {
-  -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-}
 #subject-container {
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
@@ -7212,21 +7194,21 @@ iframe.fit {
   -moz-opacity: 1.0;
   opacity: 1.0;
 }
-.article-author-container {
+#article-author-container {
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
   -webkit-opacity: 1.0;
   -moz-opacity: 1.0;
   opacity: 1.0;
 }
-.article-interview-container {
+#article-interview-container {
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
   -webkit-opacity: 0.0;
   -moz-opacity: 0.0;
   opacity: 0.0;
 }
-.gallery {
+#gallery {
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   top: 0px;
@@ -7237,7 +7219,7 @@ iframe.fit {
   opacity: 0.0;
   pointer-events: none;
 }
-.gallery .image {
+#gallery .image {
   height: 100%;
 }
 .gallery-navigation {
@@ -7297,128 +7279,107 @@ iframe.fit {
   height: 100%;
 }
 div.trans-20,
-.page.trans-20,
-.article.trans-20 {
+.page.trans-20 {
   opacity: 1;
   z-index: 400;
 }
 div.trans-19,
-.page.trans-19,
-.article.trans-19 {
+.page.trans-19 {
   opacity: 0.9500000000000001;
   z-index: 400;
 }
 div.trans-18,
-.page.trans-18,
-.article.trans-18 {
+.page.trans-18 {
   opacity: 0.9;
   z-index: 400;
 }
 div.trans-17,
-.page.trans-17,
-.article.trans-17 {
+.page.trans-17 {
   opacity: 0.8500000000000001;
   z-index: 400;
 }
 div.trans-16,
-.page.trans-16,
-.article.trans-16 {
+.page.trans-16 {
   opacity: 0.8;
   z-index: 400;
 }
 div.trans-15,
-.page.trans-15,
-.article.trans-15 {
+.page.trans-15 {
   opacity: 0.75;
   z-index: 400;
 }
 div.trans-14,
-.page.trans-14,
-.article.trans-14 {
+.page.trans-14 {
   opacity: 0.7000000000000001;
   z-index: 400;
 }
 div.trans-13,
-.page.trans-13,
-.article.trans-13 {
+.page.trans-13 {
   opacity: 0.65;
   z-index: 400;
 }
 div.trans-12,
-.page.trans-12,
-.article.trans-12 {
+.page.trans-12 {
   opacity: 0.6000000000000001;
   z-index: 400;
 }
 div.trans-11,
-.page.trans-11,
-.article.trans-11 {
+.page.trans-11 {
   opacity: 0.55;
   z-index: 400;
 }
 div.trans-10,
-.page.trans-10,
-.article.trans-10 {
+.page.trans-10 {
   opacity: 0.5;
   z-index: 400;
 }
 div.trans-9,
-.page.trans-9,
-.article.trans-9 {
+.page.trans-9 {
   opacity: 0.45;
   z-index: 400;
 }
 div.trans-8,
-.page.trans-8,
-.article.trans-8 {
+.page.trans-8 {
   opacity: 0.4;
   z-index: 400;
 }
 div.trans-7,
-.page.trans-7,
-.article.trans-7 {
+.page.trans-7 {
   opacity: 0.35000000000000003;
   z-index: 400;
 }
 div.trans-6,
-.page.trans-6,
-.article.trans-6 {
+.page.trans-6 {
   opacity: 0.30000000000000004;
   z-index: 400;
 }
 div.trans-5,
-.page.trans-5,
-.article.trans-5 {
+.page.trans-5 {
   opacity: 0.25;
   z-index: 400;
 }
 div.trans-4,
-.page.trans-4,
-.article.trans-4 {
+.page.trans-4 {
   opacity: 0.2;
   z-index: 400;
 }
 div.trans-3,
-.page.trans-3,
-.article.trans-3 {
+.page.trans-3 {
   opacity: 0.15000000000000002;
   z-index: 400;
 }
 div.trans-2,
-.page.trans-2,
-.article.trans-2 {
+.page.trans-2 {
   opacity: 0.1;
   z-index: 400;
 }
 div.trans-1,
-.page.trans-1,
-.article.trans-1 {
+.page.trans-1 {
   opacity: 0.05;
   z-index: 400;
 }
 div.trans-0,
-.page.trans-0,
-.article.trans-0 {
+.page.trans-0 {
   opacity: 0;
   z-index: 400;
 }
@@ -9454,8 +9415,6 @@ h6.shaping {
 }
 div.shaping,
 .page.shaping,
-.article.shaping,
-.gallery.shaping,
 canvas.shaping {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -9473,8 +9432,6 @@ h6.shaper {
 }
 div.shaper,
 .page.shaper,
-.article.shaper,
-.gallery.shaper,
 canvas.shaper {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -9492,8 +9449,6 @@ h6.shape {
 }
 div.shape,
 .page.shape,
-.article.shape,
-.gallery.shape,
 canvas.shape {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
@@ -9501,8 +9456,6 @@ canvas.shape {
 }
 div.warm-gray,
 .page.warm-gray,
-.article.warm-gray,
-.gallery.warm-gray,
 canvas.warm-gray {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;

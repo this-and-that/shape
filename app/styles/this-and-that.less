@@ -101,7 +101,7 @@
 		color: @white;
 		border-color: @white;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @white;
 	}
@@ -119,7 +119,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @white-light-gray;
 	}
@@ -137,7 +137,7 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @white-dark-gray;
 	}
@@ -149,7 +149,7 @@
 		.trans-color (@scalar: 1.0);
 		color: @black;
 	// }
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @black;
 	}
@@ -167,7 +167,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @black-light-gray;
 	}
@@ -185,7 +185,7 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @black-dark-gray;
 	}
@@ -205,7 +205,7 @@
 		color: @light-gray;
 		border-color: @light-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @light-gray;
 	}
@@ -223,7 +223,7 @@
 		color: @dark-gray;
 		border-color: @dark-gray;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @dark-gray;
 	}
@@ -243,7 +243,7 @@
 		color: @red;
 		border-color: @red;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @red;
 	}
@@ -261,7 +261,7 @@
 		color: @yellow;
 		border-color: @yellow;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @yellow;
 	}
@@ -279,7 +279,7 @@
 		color: @blue;
 		border-color: @blue;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @blue;
 	}
@@ -299,7 +299,7 @@
 		color: @orange;
 		border-color: @orange;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @orange;
 	}
@@ -317,7 +317,7 @@
 		color: @green;
 		border-color: @green;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @green;
 	}
@@ -335,7 +335,7 @@
 		color: @purple;
 		border-color: @purple;
 	}
-	div&, .page&, .article&, canvas& {
+	div&, .page&, canvas& {
 		.trans-background-color(1.0);
 		background: @purple;
 	}
@@ -862,11 +862,19 @@ iframe {
 //
 //	------------------------------------------------------------------------
 
+.webkit-anti-flicker() {
+	// prevents flickering in safari
+	// http://stackoverflow.com/questions/15751012/css-transform-causes-flicker-in-safari-but-only-when-the-browser-is-2000px-w
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+}
+
+
 //
 //	Pages
 //
 .page {
-	.article;
+	.webkit-anti-flicker();
 	position: relative;
 	// top: 0px
 	// left: 0px;
@@ -888,13 +896,6 @@ iframe {
 //
 //	wrapper for all pages within an article
 //
-.article {
-	// prevents flickering in safari
-	// http://stackoverflow.com/questions/15751012/css-transform-causes-flicker-in-safari-but-only-when-the-browser-is-2000px-w
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
-}
-
 #subject-container {
 	// .invisible;
 	.trans-opacity(1.0);
@@ -903,7 +904,7 @@ iframe {
 	opacity: 1.0;
 }
 
-.article-author-container {
+#article-author-container {
 	// .invisible;
 	.trans-opacity(1.0);
 	-webkit-opacity: 1.0;
@@ -911,7 +912,7 @@ iframe {
 	opacity: 1.0;
 }
 
-.article-interview-container {
+#article-interview-container {
 	// .invisible;
 	.trans-opacity(1.0);
 	-webkit-opacity: 0.0;
@@ -924,8 +925,8 @@ iframe {
 //
 //	wrapper for all pages with a gallery (lightbox)
 //
-.gallery {
-	.article;
+#gallery {
+	.webkit-anti-flicker();
 	// position: fixed;
 	// width: 100%;
 	// height: 100%;
@@ -1006,7 +1007,7 @@ iframe {
 //	wrapper for anything non-interactive that should be "fixed"
 //
 #header {
-	.article;
+	.webkit-anti-flicker();
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -1059,7 +1060,7 @@ iframe {
 .transLoop (@index) when (@index > -1) {
 	.trans-@{index} {
 		// p&, h1&, h2&, h3&, h4&, h5&, h6&, div& {
-		div&, .page&, .article& {
+		div&, .page& {
 			// background-color: @black;
 			opacity: (@index*0.05);
 			z-index: @layer-3;
