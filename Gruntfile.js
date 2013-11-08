@@ -24,7 +24,6 @@ var phpGateway = function (dir){
 module.exports = function (grunt) {
 	// load all grunt tasks
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-	grunt.loadNpmTasks('assemble');
 
 	// configurable paths
 	var yeomanConfig = {
@@ -150,18 +149,6 @@ module.exports = function (grunt) {
 				src:	'main.less',
 				dest:   '<%= yeoman.app %>/styles',
 				ext:	'.css'
-			}
-		},
-		assemble: {
-			markdown: {
-				options: {
-					ext: '.md',
-					engine: 'handlebars',
-					layout: 'markdown-1.hbs'
-				},
-				files: {
-					'dest/': ['src/content/*.md']
-				}
 			}
 		},
 		// not used since Uglify task does concat,
@@ -308,8 +295,7 @@ module.exports = function (grunt) {
 			'livereload-start',
 			'connect:livereload',
 			'open',
-			'watch',
-			'assemble'
+			'watch'
 		]);
 	});
 
@@ -323,7 +309,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dist',
-		'assemble',
 		'copy:server',
 		'useminPrepare',
 		'concurrent',
