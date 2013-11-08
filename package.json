@@ -25,7 +25,8 @@
     "grunt-concurrent": "~0.1.0",
     "matchdep": "~0.1.1",
     "gateway": "~0.1.1",
-    "grunt-contrib-less": "~0.7.0"
+    "grunt-contrib-less": "~0.7.0",
+    "assemble": "~0.4.20"
   },
   "engines": {
     "node": ">=0.8.0"

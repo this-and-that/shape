@@ -313,6 +313,7 @@ $.fn.fadeToBlack = function(toggleClass, onPage, currentPage, nextPage) {
 // TODO: i would like to use markdown,
 // https://github.com/evilstreak/markdown-js
 // https://github.com/treasonx/grunt-markdown
+// http://assemble.io/docs/Markdown.html
 //
 function loadArticle(structure) {
 	structure = (structure != undefined)
