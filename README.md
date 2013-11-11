@@ -3,7 +3,7 @@ This & That
 
 *This & That* is a zine to explore topics and in general a framework with which ideas can be explored and “thrown against the wall, to see what sticks.” Ideas/explorations can manifest themselves visually, written, etc. The name reflects this ideology.
 
-> “[this, that, and the other” Various miscellaneous items, one thing and another, as in “He said this and that about the budget, but nothing new or of great substance,” or “We spent all evening chatting about this, that, and the other.]”(http://idioms.yourdictionary.com/this-and-that)
+> [“this, that, and the other” Various miscellaneous items, one thing and another, as in “He said this and that about the budget, but nothing new or of great substance,” or “We spent all evening chatting about this, that, and the other.”](http://idioms.yourdictionary.com/this-and-that)
 > The first idiom was first recorded in 1581; the variant dates from the early 1900s.
 
 
