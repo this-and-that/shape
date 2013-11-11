@@ -48,8 +48,11 @@ Contributors
 ------
 
 Ken Frederick
+
 Rosie Isbell
+
 Gaston Yagmourian
+
 Brenden Donovan
 
 
