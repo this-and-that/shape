@@ -26,5 +26,9 @@ Icon
 # Directories
 dist/
 test/
+app/typefaces/*/
+!app/typefaces/bootstrap/
+!app/typefaces/BLOKK/
+!app/typefaces/font-awesome/
 
 
