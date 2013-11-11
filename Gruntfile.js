@@ -1,4 +1,13 @@
-// Generated on 2013-07-13 using generator-bootstrap-less 2.0.3
+/**
+ *	Gruntfile.js
+ *	generator-this-and-that v0.1
+ *	Generated on 2013-07-13
+ *
+ *	https://github.com/this-and-that/
+ *
+ *	Licensed under the MIT license.
+ *
+ */
 'use strict';
 
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
@@ -10,9 +19,9 @@ var mountFolder = function (connect, dir) {
 // https://github.com/revathskumar/yeoman-php/
 var gateway = require('gateway');
 var phpGateway = function (dir){
-	return gateway(require('path').resolve(dir), {
-		'.php': 'php-cgi'
-	});
+    return gateway(require('path').resolve(dir), {
+        '.php': 'php-cgi'
+    });
 };
 
 // # Globbing
@@ -24,6 +33,7 @@ var phpGateway = function (dir){
 module.exports = function (grunt) {
 	// load all grunt tasks
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	grunt.loadNpmTasks('assemble');
 
 	// configurable paths
 	var yeomanConfig = {
@@ -34,6 +44,11 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		yeoman: yeomanConfig,
 		watch: {
+			assemble: {
+				// TODO: rename this structure?
+				files: ['<%= yeoman.app %>/templates/{content,layouts,partials}/{,*/}*.{md,hbs,yml}'],
+				tasks: ['assemble']
+			},
 			less: {
 				options: {
 					paths: ['<%= yeoman.app %>/styles']
@@ -136,6 +151,19 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		assemble: {
+			options: {
+				flatten: true,
+				layout:       '<%= yeoman.app %>/templates/layouts/template.hbs',
+				partials:    ['<%= yeoman.app %>/templates/partials/*.hbs'],
+				helpers:     ['<%= yeoman.app %>/scripts/helpers.js']
+			},
+			dist: {
+				files: {
+					'<%= yeoman.app %>/': ['<%= yeoman.app %>/templates/content/*.hbs']
+				}
+			}
+		},
 		less: {
 			options: {
 				paths: ['<%= yeoman.app %>/styles'],
@@ -145,23 +173,12 @@ module.exports = function (grunt) {
 			// http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			src: {
 				expand: true,
-				cwd:	'<%= yeoman.app %>/styles',
-				src:	'main.less',
+				cwd:    '<%= yeoman.app %>/styles',
+				src:    'main.less',
 				dest:   '<%= yeoman.app %>/styles',
-				ext:	'.css'
+				ext:    '.css'
 			}
 		},
-		// not used since Uglify task does concat,
-		// but still available if needed
-		/*concat: {
-			dist: {}
-		},*/
-		// not enabled since usemin task does concat and uglify
-		// check index.html to edit your build targets
-		// enable this task if you prefer defining your build targets here
-		/*uglify: {
-			dist: {}
-		},*/
 		rev: {
 			dist: {
 				files: {
@@ -178,7 +195,6 @@ module.exports = function (grunt) {
 			}
 		},
 		useminPrepare: {
-			// html: '<%= yeoman.app %>/index.html',
 			// build:js for all .html files
 			html: '<%= yeoman.app %>/{,*/}*.html',
 			options: {
@@ -290,6 +306,7 @@ module.exports = function (grunt) {
 
 		grunt.task.run([
 			'clean:server',
+		    'assemble',
 			'less',
 			'copy:server',
 			'livereload-start',
@@ -309,6 +326,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dist',
+	    'assemble',
 		'copy:server',
 		'useminPrepare',
 		'concurrent',

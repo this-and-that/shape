@@ -1,0 +1,78 @@
+{{> html-head}}
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Article
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="article">
+
+			<!-- PAGE 1 -->
+			<div id="page1" class="page page-marker green">
+
+				<div class="align-middle">
+					<div class="middle">
+						<div class="row">
+							{{> body}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /PAGE -->
+
+
+
+		</div>
+
+
+
+		{{> javascript-core}}
+
+
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+			};
+			function onRightTap(articleIndex) {
+			};
+			function onUpTap(articleIndex) {
+			};
+			function onDownTap(articleIndex) {
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+			};
+
+
+			// onepage-scroll callbacks
+			// Article
+			function onArticleLoad(pageIndex) {
+			};
+			function onBeforeArticlePage(pageIndex, nextIndex) {
+			};
+			function onAfterArticlePage(pageIndex) {
+			};
+
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+			};
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
+			};
+			function onAfterGalleryPage(pageIndex) {
+			};
+
+		</script>
+
+
+
+	</body>
+</html>

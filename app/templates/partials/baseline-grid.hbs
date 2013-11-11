@@ -1,0 +1,17 @@
+<div class="baseline-grid-view">
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="row baseline-grid">
+			<h6 class="black-dark-gray monospaced">0  &nbsp;_____________________________________ X _____________________________________ 0</h6>
+		</div>
+		<script type="text/javascript">
+			for( var i=1; i<57; i++ ) {
+				var num = (i <= 9)
+					? i + '&nbsp;'
+					: i;
+				window.document.write(	'<div class="row baseline-grid-' + i + '">\n');
+				window.document.write(		'<h6 class="black-dark-gray monospaced">' + num + ' _____________________________________ X _____________________________________ ' + num + '</h6>\n');
+				window.document.write(	'</div>\n');
+			}
+		</script>
+	</div>
+</div>

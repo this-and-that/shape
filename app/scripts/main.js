@@ -93,9 +93,6 @@ $(window).load(function() {
 	/*
 	 *	Initialization
 	 */
-	// load article
-	loadArticle();
-
 	// set placement of pages
 	paginate();
 
@@ -138,6 +135,8 @@ $(window).load(function() {
 	});
 
 
+	// TODO: circumvent ios "sticky"-hover
+	// by resetting events back to "onBlur" (up)
 	var clicked = false;
 	var $div = $('div');
 	for( var i=$div.length-1; i>=0; i-- ) {
@@ -299,63 +298,6 @@ $.fn.fadeToBlack = function(toggleClass, onPage, currentPage, nextPage) {
 						.removeClass( 'black-dark-gray' );
 	}
 	return $(this);
-};
-
-
-// ------------------------------------------------------------------------
-/*
- *	Article
- */
-// load the article as a from a .json file
-// the idea is to make editing and updating easier
-// a pseudo-cms
-//
-// TODO: i would like to use markdown,
-// https://github.com/evilstreak/markdown-js
-// https://github.com/treasonx/grunt-markdown
-// http://assemble.io/docs/Markdown.html
-//
-function loadArticle(structure) {
-	structure = (structure != undefined)
-		? structure
-		: {};
-
-	console.log( 'loadArticle( ' + structure + ' )' );
-
-	// load article json
-	if(filename === undefined || filename === null) {
-		console.log( 'filename: ' + typeof filename );
-		return;
-	}
-	else {
-		console.log( 'loadArticle() getJSON( ' + filename + ' )' );
-		$.getJSON('copy/'+filename, function(data) {
-			// info block
-			subject = data.article.info.subject;
-			title = data.article.info.title;
-			author = data.article.info.author;
-			// introduction paragraphs
-			intro = data.article.intro.text;
-			// content
-			main = data.article.main.text;
-			interview = data.article.interview.text;
-			// images
-			images = data.article.captions.text;
-
-			structure = {
-				subject:	jsonToHtml( subject, 'subject' ),
-				title:		jsonToHtml( title, 'title' ),
-				author:	 jsonToHtml( author, 'author' ),
-				intro:		jsonToHtml( intro, 'intro' ),
-				main:		 jsonToHtml( main, 'main' ),
-				interview:	jsonToHtml( interview, 'interview' ),
-				images:	 jsonToHtml( images, 'captions' )
-			};
-
-		});
-	}
-
-	return structure;
 };
 
 

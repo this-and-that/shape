@@ -1,0 +1,69 @@
+<div id="header">
+
+	{{#if subject}}
+	<!-- SUBJECT CONTENT BEGIN -->
+	<div class="baseline-grid-5">
+		<div id="subject-container" class="col-sm-3 col-sm-offset-3 align-center">
+			<p id="subject" class="black-dark-gray bold">
+				{{subject}}
+			</p>
+		</div>
+	</div>
+	{{/if}}
+
+	{{#if gallery}}
+	<!-- GALLERY PAGE NUMBERING BEGIN -->
+	<div class="baseline-grid-6">
+		<div class="gallery-navigation"> <!-- class="invisible" -->
+			<div class="col-sm-2 col-sm-offset-5 align-center">
+				<p class="black-dark-gray">
+					<span id="gallery-pages-index">1</span> &mdash; <span id="gallery-pages-total">10</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+
+	{{#if authors}}
+	<!-- AUTHOR CONTENT BEGIN -->
+	<div class="baseline-grid-24">
+	<!-- <div class="baseline-grid-48"> -->
+		<div id="article-author-container">
+			{{#lengthEqual authors 2}}
+				{{#each authors}}
+				<div class="col-sm-2 col-sm-offset-2 align-center">
+					<p id="author-{{@index}}" class="black-dark-gray">
+						{{.}}
+					</p>
+				</div>
+				{{/each}}
+			{{else}}
+				<div class="col-sm-3 col-sm-offset-3 align-center">
+					<p id="author-{{@index}}" class="black-dark-gray">
+						{{authors}}
+					</p>
+				</div>
+			{{/lengthEqual}}
+		</div>
+	</div>
+	{{/if}}
+
+	{{#is type "interview"}}
+	<!-- INTERVIEWER -EE CONTENT BEGIN -->
+	<div class="row baseline-grid-6">
+		<div id="article-interview-container"> <!-- class="invisible" -->
+			<div class="col-sm-2 col-sm-offset-1">
+				<p id="interviewer" class="black align-left">
+					This <!-- &amp; That -->
+				</p>
+			</div>
+			<div class="col-sm-2 col-sm-offset-1">
+				<p id="interviewee" class="black align-left">
+					{{subject}}
+				</p>
+			</div>
+		</div>
+	</div>
+	{{/is}}
+
+</div>

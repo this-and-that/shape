@@ -1,0 +1,150 @@
+{{> html-head}}
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Article
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="article">
+
+			<!-- PAGE 1 -->
+			<div id="page1" class="page page-marker red">
+
+				<div class="align-middle">
+					<div class="middle">
+						<div class="row">
+							<div class="col-sm-3 col-sm-offset-3">
+								{{md-p article 0}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3 col-sm-offset-6">
+								{{md-p article 1}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">
+								{{md-p article 2}}
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /PAGE -->
+
+
+
+			<!-- PAGE 2 -->
+			<div id="page2" class="page page-marker">
+			</div>
+			<!-- /PAGE -->
+
+
+
+			<!-- PAGE 3 -->
+			<div id="page3" class="page page-marker blue">
+
+				<div class="align-middle">
+					<div class="middle">
+						<div class="row">
+							<div class="col-sm-3 col-sm-offset-1">
+								{{md-p article 3}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3 col-sm-offset-1">
+								{{md-p article 4}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3 col-sm-offset-2">
+								{{md-p article 5}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /PAGE -->
+
+
+		</div>
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Gallery
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="gallery">
+
+
+			<!-- IMAGE 1 -->
+			<div id="image1" class="image image-marker warm-gray">
+
+				<div class="align-middle">
+					<div class="middle">
+					</div>
+				</div>
+
+			</div>
+			<!-- /IMAGE -->
+
+
+		</div>
+
+
+
+		{{> javascript-core}}
+
+
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+			};
+			function onRightTap(articleIndex) {
+			};
+			function onUpTap(articleIndex) {
+			};
+			function onDownTap(articleIndex) {
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+			};
+
+
+			// onepage-scroll callbacks
+			// Article
+			function onArticleLoad(pageIndex) {
+			};
+			function onBeforeArticlePage(pageIndex, nextIndex) {
+			};
+			function onAfterArticlePage(pageIndex) {
+			};
+
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+			};
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
+			};
+			function onAfterGalleryPage(pageIndex) {
+			};
+
+		</script>
+
+
+
+	</body>
+</html>
