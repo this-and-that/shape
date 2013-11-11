@@ -27,21 +27,21 @@ Contents
 ------
 
 * Eike König
-http:// hort.org.uk/
+(http:// hort.org.uk/)
 
 * Peter Nencini
-http://peternencini.blogspot.com/
+(http://peternencini.blogspot.com/)
 
 * Field.io
-http://field.io/
+(http://field.io/)
 
 * OnFormative
-http://www.onformative.com/
+(http://www.onformative.com/)
 
 * Symbolic Relationships
 
 * Flatland stories
-(based on http://en.wikipedia.org/wiki/Flatland)
+based on (http://en.wikipedia.org/wiki/Flatland)
 
 
 
