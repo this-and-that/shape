@@ -14,12 +14,12 @@ No. 1
 Shape
 ======
 
-This first issue focuses on visual arts (but not limited to) design, architecture, printmaking, etc. all around the theme "Shape" 
+This first issue focuses on visual arts (but not limited to) design, architecture, printmaking, etc. all around the theme "Shape"
 
 “shaping” as verb
 “shapeable” as adjective
 “shaper” as a noun (person)
-“shape” as a noun (visual forms) 
+“shape” as a noun (visual forms)
 
 
 
@@ -35,8 +35,8 @@ http://peternencini.blogspot.com/
 * Field.io
 http://field.io/
 
-* Realität
-http://www.realitat.com/
+* OnFormative
+http://www.onformative.com/
 
 * Symbolic Relationships
 
@@ -50,7 +50,6 @@ Contributors
 
 Ken Frederick
 Rosie Isbell
-Jenna Frederick
 Gaston Yagmourian
 Brenden Donovan
 
@@ -68,6 +67,9 @@ https://github.com/Simbul/baker
 * Bootstrap
 http://twitter.github.io/bootstrap/
 
+* Assemble
+http://assemble.io/
+
 * LESS
 http://lesscss.org/
 
@@ -83,11 +85,8 @@ https://github.com/flipstewart/dapper
 * Paper.js
 http://paperjs.org/
 
-* Lettering.js
-http://letteringjs.com/
-
-* Retina.js
-https://github.com/imulus/retinajs
+* Kerning.js
+http://kerningjs.com/
 
 * JQuery
 http://jquery.com/
