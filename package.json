@@ -1,9 +1,7 @@
 {
   "name": "this-and-that",
   "version": "0.0.0",
-  "dependencies": {
-    "grunt-contrib-less": "~0.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",

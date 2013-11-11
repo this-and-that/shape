@@ -1,14 +1,14 @@
 <!--
- -	This & That
- -	No. 1
- -	Shape
+ -  This & That
+ -  No. 1
+ -  Shape
  -
  -
- -	Ken Frederick
- -	ken.frederick@gmx.de
+ -  Ken Frederick
+ -  ken.frederick@gmx.de
  -
- -	http://kennethfrederick.de/
- -	http://blog.kennethfrederick.de/
+ -  http://kennethfrederick.de/
+ -  http://blog.kennethfrederick.de/
  -
  -->
 
@@ -29,7 +29,7 @@
 		<!-- MOBILE -->
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-title" content="This &amp; That">
 
@@ -43,22 +43,9 @@
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/application-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/application-icon-144x144.png" />
 
-		<!-- iOS DEVICE STARTUP IMAGES -->
-		<!-- iPhone/iPod Touch Portrait	-->
-		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup.png" media="screen and (max-device-width: 320px)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> -->
-
-		<!-- iPad -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape.png" sizes="1024x748" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait.png" sizes="768x1004" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/> -->
-
-		<!-- iPad (Retina) -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" /> -->
 
 
-
-		<title>This &amp; That - Styles</title>
+		<title>This &amp; That</title>
 
 
 
@@ -69,335 +56,435 @@
 
 
 
-
-		<!-- JAVASCRIPT -->
-		<!-- build:js scripts/vendor/jquery.js -->
-		<!-- JQUERY -->
-		<script src="bower_components/jquery/jquery.js"></script>
-		<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
-		<script src="bower_components/kerning.js/kerning.js"></script>
-		<!-- endbuild -->
-
-		<!-- page specific -->
-		<script type="text/javascript">
-		</script>
-
-
-
 	</head>
 	<body>
 
-		<!--
+
+
+		<!-- ------------------------------------------------------------------------
 		 -
-		 -	Typography
+		 -	Navigation
 		 -
-		-->
-		<div class="container">
-			Typography
+		 - ------------------------------------------------------------------------ -->
+	    <div id="navigation">
+
+	<!-- TOP -->
+	<div class="row">
+		<div class="align-top">
+			<div class="col-sm-3 align-left">
+				<a id="main-menu" href="javascript:void(0);" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
+			</div>
+			<div class="col-sm-3 align-center">
+				&nbsp;
+			</div>
+			<div class="col-sm-3 align-right">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+
+	<!-- GALLERY NAVIGATION BEGIN -->
+	<div class="row">
+		<div class="baseline-grid-6">
+			<div class="gallery-navigation"> <!-- class="invisible" -->
+				<div class="col-sm-2 col-sm-offset-7 align-center">
+					<a id="gallery-close" href="javascript:void(0);" class="black-dark-gray underline-none">close</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- PAGING ARROWS -->
+<div id="scroll-back" class="fade-in-over">
+	<div class="align-middle">
+		<div class="middle">
+			<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-left icon-large"></i></a>
+		</div>
+	</div>
+</div>
+<div id="scroll-forward" class="fade-in-over">
+	<div class="align-middle">
+		<div class="middle">
+			<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-right icon-large"></i></a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Debug Baseline-Grid
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div class="baseline-grid-view">
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="row baseline-grid">
+			<h6 class="black-dark-gray monospaced">0  &nbsp;_____________________________________ X _____________________________________ 0</h6>
+		</div>
+		<script type="text/javascript">
+			for( var i=1; i<57; i++ ) {
+				var num = (i <= 9)
+					? i + '&nbsp;'
+					: i;
+				window.document.write(	'<div class="row baseline-grid-' + i + '">\n');
+				window.document.write(		'<h6 class="black-dark-gray monospaced">' + num + ' _____________________________________ X _____________________________________ ' + num + '</h6>\n');
+				window.document.write(	'</div>\n');
+			}
+		</script>
+	</div>
+</div>
+
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Header
+		 -	Non-Interactive Content
+		 -
+		 - ------------------------------------------------------------------------ -->
+		 <div id="header">
+
+	
+
+	
+
+	
+
+	
+
+</div>
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Article
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div id="article">
+
+
+			<p>Typography</p>
+<p><strong>Typeface</strong></p>
+<p>Neutral <a href="http://carvalho-bernau.com/retailfonts/neutral/">Kai Bernau</a></p>
+<h1 id="-">#</h1>
+<p>ABCDEFGHIJKLMN</p>
+<p>OPQRSTUVWXYZ</p>
+<p>abcdefghijklmnop</p>
+<p>qrstuvwxyz</p>
+<p>012345679</p>
+<p>!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]</p>
+<p>(-&ndash;&mdash;)#*/&euro;$%™</p>
+<h1 id="-">#</h1>
+<p>ABCDEFGHIJKLMN</p>
+<p>OPQRSTUVWXYZ</p>
+<p>abcdefghijklmnop</p>
+<p>qrstuvwxyz</p>
+<p>012345679</p>
+<p>!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]</p>
+<p>(-&ndash;&mdash;)#*/&euro;$%™</p>
+<p><a href="http://blokkfont.com/">BLOKK</a> <a href="http://www.dinamo.no/">dinamo</a></p>
+<h1 id="-">#</h1>
+<p>ABCDEFGHIJKLMN</p>
+<p>OPQRSTUVWXYZ</p>
+<p>abcdefghijklmnop</p>
+<p>qrstuvwxyz</p>
+<p>012345679</p>
+<p>!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]</p>
+<p>(-&ndash;&mdash;)#*/&euro;$%™</p>
+<h1 id="-">#</h1>
+<p>ABCDEFGHIJKLMN</p>
+<p>OPQRSTUVWXYZ</p>
+<p>abcdefghijklmnop</p>
+<p>qrstuvwxyz</p>
+<p>012345679</p>
+<p>!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]</p>
+<p>(-&ndash;&mdash;)#*/&euro;$%™</p>
+<p><strong>Hierarchy</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">size</th>
+<th style="text-align:left">body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">h1 Display</td>
+<td style="text-align:left"># 66px beta</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">:-----------</td>
+<td style="text-align:left">:-----------</td>
+</tr>
+<tr>
+<td style="text-align:left">h2 Title</td>
+<td style="text-align:left">## 54px gamma</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">:-----------</td>
+<td style="text-align:left">:-----------</td>
+</tr>
+<tr>
+<td style="text-align:left">h3</td>
+<td style="text-align:left">### 24px delta</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">:-----------</td>
+<td style="text-align:left">:-----------</td>
+</tr>
+<tr>
+<td style="text-align:left">h4 Body</td>
+<td style="text-align:left">#### 13px epsilon</td>
+</tr>
+</tbody>
+</table>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.
+|            |
+|:-----------|:-----------
+| h5 Caption | ##### 11px zeta
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+
+
+
+			<!-- COLORS -->
+			<div class="container">
+				Colors<br />
+				Core<br />
+				<br /><br />
+
+				<!-- White -->
+				<div class="row">
+					<div class="span7 black-light-gray">
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle white" style="height: 150px;">white</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle white-light-gray" style="height: 150px;">white-light-gray</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle white-dark-gray" style="height: 150px;">white-dark-gray</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Black -->
+				<div class="row">
+					<div class="span7">
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle black" style="height: 150px;"><p class="white">black</p></div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle black-light-gray" style="height: 150px;">black-light-gray</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle black-dark-gray" style="height: 150px;">black-dark-gray</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gray -->
+				<div class="row">
+					<div class="span7">
+						<div class="span2">
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle light-gray" style="height: 150px;">light-gray</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle dark-gray" style="height: 150px;">dark-gray</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Rainbow -->
+				<div class="row">
+					<div class="span7">
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle red" style="height: 150px;">red</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle orange" style="height: 150px;">orange</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle yellow" style="height: 150px;">yellow</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span7">
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle green" style="height: 150px;">green</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle blue" style="height: 150px;">blue</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle purple" style="height: 150px;">purple</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
 			<br /><br />
 
-			<!--
-			 -
-			 -	Specimen
-			 -
-			-->
-			<div class="row">
-				<div class="span2">
-					<b>Typeface</b><br />
-					Neutral <a href="http://carvalho-bernau.com/retailfonts/neutral/">Kai Bernau</a><br />
-					<br />
-				</div>
-			</div>
-			<div class="row">
-				<div class="span6">
-					<h2 class="neutral">
-						ABCDEFGHIJKLMN<br />
-						OPQRSTUVWXYZ<br />
-						abcdefghijklmnop<br />
-						qrstuvwxyz<br />
-						012345679<br />
-						<br />
-						!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]<br />
-						(-&ndash;&mdash;)#*/&euro;$%™
-					</h2>
-				</div>
-				<div class="span6">
-					<h2 class="neutral-bold">
-						ABCDEFGHIJKLMN<br />
-						OPQRSTUVWXYZ<br />
-						abcdefghijklmnop<br />
-						qrstuvwxyz<br />
-						012345679<br />
-						<br />
-						!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]<br />
-						(-&ndash;&mdash;)#*/&euro;$%™
-					</h2>
-				</div>
-			</div>
+			<div class="container">
+				Shape<br />
+				<br /><br />
 
-			<br /><br />
-
-			<div class="row">
-				<div class="span2">
-					<a href="http://blokkfont.com/">BLOKK</a> <a href="http://www.dinamo.no/">dinamo</a><br />
-					<br />
+				<!-- White -->
+				<div class="row">
+					<div class="span7">
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle shaping" style="height: 150px;">shaping</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle shaper" style="height: 150px;">shaper</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="align-middle" style="width: 150px;">
+								<div class="circle middle shape" style="height: 150px;">shape</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
 			</div>
-			<div class="row">
-				<div class="span6">
-					<h2 class="blokk">
-						ABCDEFGHIJKLMN<br />
-						OPQRSTUVWXYZ<br />
-						abcdefghijklmnop<br />
-						qrstuvwxyz<br />
-						012345679<br />
-						<br />
-						!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]<br />
-						(-&ndash;&mdash;)#*/&euro;$%™
-					</h2>
-				</div>
-				<div class="span6">
-					<h2 class="blokk-neue">
-						ABCDEFGHIJKLMN<br />
-						OPQRSTUVWXYZ<br />
-						abcdefghijklmnop<br />
-						qrstuvwxyz<br />
-						012345679<br />
-						<br />
-						!?@&amp;&szlig;&hellip;&laquo;&lsaquo;&rsaquo;&raquo;&ldquo;&rdquo;[.,:;]<br />
-						(-&ndash;&mdash;)#*/&euro;$%™
-					</h2>
-				</div>
-			</div>
-
-			<br /><br />
-
-
-			<!--
-			 -
-			 -	Hierarchy
-			 -
-			-->
-			<div class="row">
-				<div class="span2">
-					<b>Hierarchy</b>
-				</div>
-			</div>
-			<table class="table span12">
-				<thead>
-					<tr>
-						<th class="span2">size</th>
-						<th class="span4">body</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>h1 Display</th>
-						<th><h1>66px beta</h1></th>
-					</tr>
-					<tr>
-						<th>h2 Title</th>
-						<th><h2>54px gamma</h2></th>
-					</tr>
-					<tr>
-						<th>h3</th>
-						<th><h3>24px delta</h3></th>
-					</tr>
-					<tr>
-						<th>h4 Body</th>
-						<th><h4>13px epsilon<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.</h4></th>
-					</tr>
-					<tr>
-						<th>h5 Caption</th>
-						<th><h5>11px zeta<br />Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</h5></th>
-					</tr>
-				</tbody>
-			</table>
 
 		</div>
 
 
 
-		<!--
-		 -
-		 -	Colors
-		 -
-		-->
-		<div class="container">
-			Colors<br />
-			Core<br />
-			<br /><br />
-
-			<!-- White -->
-			<div class="row">
-				<div class="span7 black-light-gray">
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle white" style="height: 150px;">white</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle white-light-gray" style="height: 150px;">white-light-gray</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle white-dark-gray" style="height: 150px;">white-dark-gray</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Black -->
-			<div class="row">
-				<div class="span7">
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle black" style="height: 150px;"><p class="white">black</p></div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle black-light-gray" style="height: 150px;">black-light-gray</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle black-dark-gray" style="height: 150px;">black-dark-gray</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Gray -->
-			<div class="row">
-				<div class="span7">
-					<div class="span2">
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle light-gray" style="height: 150px;">light-gray</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle dark-gray" style="height: 150px;">dark-gray</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Rainbow -->
-			<div class="row">
-				<div class="span7">
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle red" style="height: 150px;">red</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle orange" style="height: 150px;">orange</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle yellow" style="height: 150px;">yellow</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span7">
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle green" style="height: 150px;">green</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle blue" style="height: 150px;">blue</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle purple" style="height: 150px;">purple</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<br /><br />
-
-		<div class="container">
-			Shape<br />
-			<br /><br />
-
-			<!-- White -->
-			<div class="row">
-				<div class="span7">
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle shaping" style="height: 150px;">shaping</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle shaper" style="height: 150px;">shaper</div>
-						</div>
-					</div>
-					<div class="span2">
-						<div class="align-middle" style="width: 150px;">
-							<div class="circle middle shape" style="height: 150px;">shape</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
+		<!-- JAVASCRIPT -->
+<!-- build:js scripts/vendor/jquery.js -->
+<!-- JQUERY -->
+<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script> -->
+<!-- endbuild -->
 
 
-		<!--[if lt IE 7]>
-			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		<![endif]-->
+<!-- build:js scripts/vendor/bootstrap.js -->
+<!-- BOOTSTRAP -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
+<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
+<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
+<!-- endbuild -->
 
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-			g.src='//www.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g,s)}(document,'script'));
+
+<!-- build:js scripts/main.js -->
+<!-- MAIN -->
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
+<!-- endbuild -->
+
+
+
+
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+			};
+			function onRightTap(articleIndex) {
+			};
+			function onUpTap(articleIndex) {
+			};
+			function onDownTap(articleIndex) {
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+			};
+
+
+			// onepage-scroll callbacks
+			// Article
+			function onArticleLoad(pageIndex) {
+			};
+			function onBeforeArticlePage(pageIndex, nextIndex) {
+			};
+			function onAfterArticlePage(pageIndex) {
+			};
+
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+			};
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
+			};
+			function onAfterGalleryPage(pageIndex) {
+			};
+
 		</script>
 
-
-
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<script src="bower_components/Swipe/swipe.js"></script>
-		<script src="scripts/main.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- build:js scripts/vendor/bootstrap.js -->
-		<!-- BOOTSTRAP -->
-		<script src="bower_components/bootstrap/js/bootstrap-affix.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-alert.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-dropdown.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tooltip.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-modal.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-transition.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-button.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-popover.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-typeahead.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-carousel.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-scrollspy.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-collapse.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tab.js"></script>
-		<!-- endbuild -->
 
 
 	</body>

@@ -6,8 +6,8 @@ tech
 ------
 
 * page scrolling
-- [ ] interaction model logic flip (navigate section: up-to-down - navigate content: left-to-right) 
-- [ ] page navigation left-to-right #1
+- [x] interaction model logic flip (navigate section: up-to-down - navigate content: left-to-right)
+- [x] page navigation left-to-right #1
 
 
 * cms
@@ -15,7 +15,7 @@ tech
 
 
 * typeface
-- [ ] weird "glitch" looks like it's too bold #3
+- [x] weird "glitch" looks like it's too bold #3
 
 * structure
 - [x] vertical grid is there a better way than style="top: XX;"? #4
@@ -27,12 +27,12 @@ design
 
 * interaction
 - [ ] (three line menu) in top left? what's in it?
-- [ ] view all articles preview bottom or left? (default is bottom)
-- [ ] custom play controls #8 
+- [x] view all articles preview bottom or left? (default is bottom)
+- [ ] custom play controls #8
 
 * structure
-- [ ] left-right page tschichold grid may have to go away #7
-- [ ] image galleries pseudo shadow-box?
+- [x] left-right page tschichold grid may have to go away #7
+- [x] image galleries pseudo shadow-box?
 
 * typography
 - [ ] akzidenz-grotesk will not be possible #6

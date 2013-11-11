@@ -1,14 +1,14 @@
 <!--
- -	This & That
- -	No. 1
- -	Shape
+ -  This & That
+ -  No. 1
+ -  Shape
  -
  -
- -	Ken Frederick
- -	ken.frederick@gmx.de
+ -  Ken Frederick
+ -  ken.frederick@gmx.de
  -
- -	http://kennethfrederick.de/
- -	http://blog.kennethfrederick.de/
+ -  http://kennethfrederick.de/
+ -  http://blog.kennethfrederick.de/
  -
  -->
 
@@ -29,7 +29,7 @@
 		<!-- MOBILE -->
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-title" content="This &amp; That">
 
@@ -42,19 +42,6 @@
 		<!-- Retina (Universal) -->
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/application-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/application-icon-144x144.png" />
-
-		<!-- iOS DEVICE STARTUP IMAGES -->
-		<!-- iPhone/iPod Touch Portrait	-->
-		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup.png" media="screen and (max-device-width: 320px)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/iphone_startup@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> -->
-
-		<!-- iPad -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape.png" sizes="1024x748" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait.png" sizes="768x1004" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/> -->
-
-		<!-- iPad (Retina) -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_landscape@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" /> -->
-		<!-- <link rel="apple-touch-startup-image" href="images/ipad_startup_portrait@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" /> -->
 
 
 
@@ -69,104 +56,213 @@
 
 
 
-
-		<!-- JAVASCRIPT -->
-		<!-- build:js scripts/vendor/jquery.js -->
-		<!-- JQUERY -->
-		<script src="bower_components/jquery/jquery.js"></script>
-		<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
-		<script src="bower_components/kerning.js/kerning.js"></script>
-		<!-- endbuild -->
-
-		<!-- page specific -->
-		<script type="text/javascript">
-		</script>
-
-
-
 	</head>
 	<body>
 
 
-		<!-- ARTICLE CONTENT BEGIN -->
-		<!-- SWIPE/PAGE TRANSITION CONTAINER BEGIN -->
-		<div id="article-slider" class="article">
-			<div class="swipe-wrap pages">
 
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Navigation
+		 -
+		 - ------------------------------------------------------------------------ -->
+	    <div id="navigation">
 
-				<!-------------------------------------------------------------------------
-				 -
-				 -	Page 1
-				 -
-				 - ------------------------------------------------------------------------ -->
-				<div class="page shaper">
-
-					<canvas resize="true" id="canvas"></canvas>
-
-				</div> <!-- end page -->
-
-
-			</div> <!-- end swipe-wrap/pages -->
-		</div> <!-- end article/slider -->
-
-
-
-
-
-
-		<!-- TOUCH TARGET -->
-		<!-- <div id="touch-target">&nbsp;</div> -->
-
-
-
-
-
-
-		<!-- PAPER.js -->
-		<!-- RASTERS -->
-		<div id="paperjsRasters">
+	<!-- TOP -->
+	<div class="row">
+		<div class="align-top">
+			<div class="col-sm-3 align-left">
+				<a id="main-menu" href="javascript:void(0);" class="black-dark-gray underline-none" data-index="1"><i class="icon-reorder icon-large"></i></a>
+			</div>
+			<div class="col-sm-3 align-center">
+				&nbsp;
+			</div>
+			<div class="col-sm-3 align-right">
+				&nbsp;
+			</div>
 		</div>
+	</div>
+
+	<!-- GALLERY NAVIGATION BEGIN -->
+	<div class="row">
+		<div class="baseline-grid-6">
+			<div class="gallery-navigation"> <!-- class="invisible" -->
+				<div class="col-sm-2 col-sm-offset-7 align-center">
+					<a id="gallery-close" href="javascript:void(0);" class="black-dark-gray underline-none">close</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- PAGING ARROWS -->
+<div id="scroll-back" class="fade-in-over">
+	<div class="align-middle">
+		<div class="middle">
+			<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-left icon-large"></i></a>
+		</div>
+	</div>
+</div>
+<div id="scroll-forward" class="fade-in-over">
+	<div class="align-middle">
+		<div class="middle">
+			<a href="javascript:void(0);" class="black-dark-gray underline-none"><i class="icon-angle-right icon-large"></i></a>
+		</div>
+	</div>
+</div>
 
 
 
 
 
 
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<script src="bower_components/Swipe/swipe.js"></script>
-		<script src="scripts/main.js"></script>
-		<!-- endbuild -->
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Debug Baseline-Grid
+		 -
+		 - ------------------------------------------------------------------------ -->
+		<div class="baseline-grid-view">
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="row baseline-grid">
+			<h6 class="black-dark-gray monospaced">0  &nbsp;_____________________________________ X _____________________________________ 0</h6>
+		</div>
+		<script type="text/javascript">
+			for( var i=1; i<57; i++ ) {
+				var num = (i <= 9)
+					? i + '&nbsp;'
+					: i;
+				window.document.write(	'<div class="row baseline-grid-' + i + '">\n');
+				window.document.write(		'<h6 class="black-dark-gray monospaced">' + num + ' _____________________________________ X _____________________________________ ' + num + '</h6>\n');
+				window.document.write(	'</div>\n');
+			}
+		</script>
+	</div>
+</div>
 
 
-		<!-- build:js scripts/vendor/paper.js -->
-		<!-- PAPER.JS -->
-		<script src="bower_components/paper.js/dist/paper-core.js"></script>
-		<script src="scripts/frederickk/frederickkPaper.js"></script>
-		<!-- endbuild -->
-
-		<!-- build:js scripts/test.js -->
-		<!-- // <script src="scripts/test/test.js"></script> -->
-		<!-- endbuild -->
 
 
-		<!-- build:js scripts/vendor/bootstrap.js -->
-		<!-- BOOTSTRAP -->
-		<script src="bower_components/bootstrap/js/bootstrap-affix.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-alert.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-dropdown.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tooltip.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-modal.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-transition.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-button.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-popover.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-typeahead.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-carousel.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-scrollspy.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-collapse.js"></script>
-		<script src="bower_components/bootstrap/js/bootstrap-tab.js"></script>
-		<!-- endbuild -->
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Header
+		 -	Non-Interactive Content
+		 -
+		 - ------------------------------------------------------------------------ -->
+		 <div id="header">
+
+	
+
+	
+
+	
+
+	
+
+</div>
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Article
+		 -
+		 - ------------------------------------------------------------------------ -->
+		
+
+
+
+
+
+		<!-- ------------------------------------------------------------------------
+		 -
+		 -	Gallery
+		 -
+		 - ------------------------------------------------------------------------ -->
+		
+
+
+
+		<!-- JAVASCRIPT -->
+<!-- build:js scripts/vendor/jquery.js -->
+<!-- JQUERY -->
+<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script> -->
+<!-- endbuild -->
+
+
+<!-- build:js scripts/vendor/bootstrap.js -->
+<!-- BOOTSTRAP -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
+<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
+<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
+<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
+<!-- endbuild -->
+
+
+<!-- build:js scripts/main.js -->
+<!-- MAIN -->
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
+<!-- endbuild -->
+
+
+
+
+
+		<!-- page specific -->
+		<script type="text/javascript">
+			// Baker callbacks
+			function onLeftTap(articleIndex) {
+			};
+			function onRightTap(articleIndex) {
+			};
+			function onUpTap(articleIndex) {
+			};
+			function onDownTap(articleIndex) {
+			};
+
+
+			/*
+			 *	There must be a cleaner way to deal with
+			 *	visibility states for onLoad... onPage... etc.
+			 */
+			// initial state
+			function onReady(pageIndex) {
+			};
+
+
+			// onepage-scroll callbacks
+			// Article
+			function onArticleLoad(pageIndex) {
+			};
+			function onBeforeArticlePage(pageIndex, nextIndex) {
+			};
+			function onAfterArticlePage(pageIndex) {
+			};
+
+			// Gallery
+			function onGalleryLoad(pageIndex) {
+			};
+			function onBeforeGalleryPage(pageIndex, nextIndex) {
+			};
+			function onAfterGalleryPage(pageIndex) {
+			};
+
+		</script>
+
 
 
 	</body>

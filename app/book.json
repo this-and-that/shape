@@ -16,6 +16,14 @@
     "-baker-page-numbers-color": "#1E140F",
     "-baker-page-title": false,
 	"contents": [
-		"index.html"
+        "cover.html",
+		"index.html",
+        "circle.html",
+        "triangle.html",
+        "eike_koenig.html",
+        "peter_nencini.html",
+        "onformative.html",
+        "symbiotic_relationships.html",
+        "field.html"
 	]
 }

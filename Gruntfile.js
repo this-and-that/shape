@@ -8,7 +8,9 @@
  *	Licensed under the MIT license.
  *
  */
+
 'use strict';
+
 
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
@@ -33,6 +35,7 @@ var phpGateway = function (dir){
 module.exports = function (grunt) {
 	// load all grunt tasks
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	// load assemble
 	grunt.loadNpmTasks('assemble');
 
 	// configurable paths
