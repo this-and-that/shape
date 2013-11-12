@@ -70,86 +70,14 @@
 
 
 
-
-		<!-- JAVASCRIPT -->
-		<!-- build:js scripts/vendor/jquery.js -->
-		<!-- JQUERY -->
-		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
-		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
-		<script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- build:js scripts/main.js -->
-		<!-- MAIN -->
-		<script type="text/javascript" src="scripts/main.js"></script>
-		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
-		<!-- endbuild -->
-
-
-		<!-- page specific -->
-		<script type="text/javascript">
-			// TODO: implement dynamic loading of article
-			filename = null;
-
-
-			// Baker callbacks
-			function onLeftTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onRightTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onUpTap(articleIndex) {
-				// alert( articleIndex );
-			};
-			function onDownTap(articleIndex) {
-				// alert( articleIndex );
-			};
-
-
-			/*
-			 *	There must be a cleaner way to deal with
-			 *	visibility states for onLoad... onPage... etc.
-			 */
-			// initial state
-			function onReady(pageIndex) {
-			};
-
-
-			// onepage-scroll callbacks
-			// Article
-			function onArticleLoad(pageIndex) {
-			};
-			function onBeforeArticlePage(pageIndex, nextIndex) {
-			};
-			function onAfterArticlePage(pageIndex) {
-			};
-
-			// Gallery
-			function onGalleryLoad(pageIndex) {
-			};
-			function onBeforeGalleryPage(pageIndex, nextIndex) {
-			};
-			function onAfterGalleryPage(pageIndex) {
-			};
-
-		</script>
-
-
-
 	</head>
 	<body>
 
 
 		<!-- ARTICLE CONTENT BEGIN -->
-		<div class="article">
+		<div id="article">
 
-			<!-------------------------------------------------------------------------
-			-
-			-	Page 1
-			-
-			- ------------------------------------------------------------------------ -->
+			<!-- PAGE 1 -->
 			<div class="page">
 
 				<div class="row">
@@ -190,33 +118,50 @@
 					</div>
 				</div>
 
-			</div> <!-- end page -->
+			</div>
+			<!-- /PAGE -->
 
-		</div> <!-- end article -->
-
-
-
-
+		</div>
+		<!-- /ARTICLE -->
 
 
 
+
+
+
+		<!-- JAVASCRIPT -->
+		<!-- build:js scripts/vendor/jquery.js -->
+		<!-- JQUERY -->
+		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+		<script type="text/javascript" src="scripts/jquery/jquery.tt-onepage-scroll.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/onepage-scroll/jquery.onepage-scroll.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/jQuery-Retina-Display-Plugin/jquery.retina.js"></script> -->
+		<!-- endbuild -->
 
 
 		<!-- build:js scripts/vendor/bootstrap.js -->
 		<!-- BOOTSTRAP -->
-		<script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/affix.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/alert.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/button.js"></script> -->
 		<script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/collapse.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/dropdown.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/scrollspy.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tab.js"></script> -->
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/tooltip.js"></script> -->
 		<script type="text/javascript" src="bower_components/bootstrap/js/transition.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script>
+		<!-- // <script type="text/javascript" src="bower_components/bootstrap/js/popover.js"></script> -->
 		<!-- endbuild -->
+
+
+		<!-- build:js scripts/main.js -->
+		<!-- MAIN -->
+		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript" src="bower_components/kerning.js/kerning.js"></script>
+		<!-- endbuild -->
+
 
 
 	</body>

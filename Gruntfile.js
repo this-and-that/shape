@@ -17,7 +17,7 @@ var mountFolder = function (connect, dir) {
 	return connect.static(require('path').resolve(dir));
 };
 
-// php
+// # PHP
 // https://github.com/revathskumar/yeoman-php/
 var gateway = require('gateway');
 var phpGateway = function (dir){
@@ -48,8 +48,7 @@ module.exports = function (grunt) {
 		yeoman: yeomanConfig,
 		watch: {
 			assemble: {
-				// TODO: rename this structure?
-				files: ['<%= yeoman.app %>/templates/{content,layouts,partials}/{,*/}*.{md,hbs,yml}'],
+				files: ['<%= yeoman.app %>/templates/{build,copy,layouts,partials}/{,*/}*.{md,hbs,yml}'],
 				tasks: ['assemble']
 			},
 			less: {
@@ -163,7 +162,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'<%= yeoman.app %>/': ['<%= yeoman.app %>/templates/content/*.hbs']
+					'<%= yeoman.app %>/': ['<%= yeoman.app %>/templates/build/*.hbs']
 				}
 			}
 		},
