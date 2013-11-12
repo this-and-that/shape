@@ -40,7 +40,7 @@ module.exports.register = function(Handlebars, options) {
 	// });
 
 	/**
-	 * {{index}}
+	 * {{atIndex}}
 	 *
 	 * Return the collection element at the given index
 	 *
@@ -49,12 +49,34 @@ module.exports.register = function(Handlebars, options) {
 	 * @return {[type]}       [description]
 	 * @example:
 	 *   {{index arr 0}}
-	//  */
+	 */
  	Handlebars.registerHelper("atIndex", function (arr,index) {
 		var a = [].concat(arr);
 		return (index != undefined)
 			? a[index]
 			: a[0];
+	});
+
+
+	/**
+	 * {{split}}
+	 *
+	 * Return part of string based on the split token,
+	 * at the given index
+	 *
+	 * @param  {[type]} str   [description]
+	 * @param  {[type]} token [description]
+	 * @param  {[type]} index [description]
+	 * @return {[type]}       [description]
+	 * @example:
+	 *   {{index arr 0}}
+	 */
+ 	Handlebars.registerHelper("split", function (str,token,index) {
+ 		index = (index != undefined) ? index : 0;
+ 		token = (token && typeof token === "string") ? token : " ";
+		if(str && typeof str === "string") {
+			return str.split(token)[index];
+		}
 	});
 
 };

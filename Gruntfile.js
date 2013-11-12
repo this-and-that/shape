@@ -156,7 +156,7 @@ module.exports = function (grunt) {
 		assemble: {
 			options: {
 				flatten: true,
-				layout:       '<%= yeoman.app %>/templates/layouts/template.hbs',
+				layout:       '<%= yeoman.app %>/templates/layouts/template_layout.hbs',
 				partials:    ['<%= yeoman.app %>/templates/partials/*.hbs'],
 				helpers:     ['<%= yeoman.app %>/scripts/helpers.js']
 			},
