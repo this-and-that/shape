@@ -59,9 +59,16 @@ module.exports = function (grunt) {
 				tasks: ['less']
 			},
 			livereload: {
+				options: {
+					livereload: '<%= connect.options.livereload %>'
+				},
 				files: [
-					'<%= yeoman.app %>/*.html',
-					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+					// # Assemble Specific
+					// copy,layouts
+					'<%= yeoman.app %>/templates/{build,copy,layouts,partials}/{,*/}*.{md,hbs,yml}',
+					// '<%= yeoman.app %>/*.html',
+					'<%= yeoman.app %>/styles/{,*/}*.less',
+					// '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
 					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
 					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 					// # This-and-That/Baker Specific
@@ -69,17 +76,16 @@ module.exports = function (grunt) {
 					// https://github.com/Simbul/baker
 					// typefaces
 					'<%= yeoman.app %>/typefaces/{,*/}*.{ttf,svg,otf,eot,woff}',
-					// copy (article text)
-					'<%= yeoman.app %>/copy/{,*/}*.{json,md}',
 					// php
 					'<%= yeoman.app %>/*.php'
 				],
-				tasks: ['livereload']
+				tasks: ['livereload','less','assemble']
 			}
 		},
 		connect: {
 			options: {
 				port: 9000,
+				livereload: 35729,
 				// change this to '0.0.0.0' to access the server from outside
 				hostname: '0.0.0.0'
 				// hostname: 'localhost'
@@ -243,15 +249,16 @@ module.exports = function (grunt) {
 		htmlmin: {
 			dist: {
 				options: {
-					/*removeCommentsFromCDATA: true,
 					// https://github.com/yeoman/grunt-usemin/issues/44
-					//collapseWhitespace: true,
+					collapseWhitespace: true,
 					collapseBooleanAttributes: true,
 					removeAttributeQuotes: true,
 					removeRedundantAttributes: true,
-					useShortDoctype: true,
 					removeEmptyAttributes: true,
-					removeOptionalTags: true*/
+					removeOptionalTags: true,
+					removeCommentsFromCDATA: true,
+					removeComments: true,
+					useShortDoctype: true
 				},
 				files: [{
 					expand: true,
@@ -293,8 +300,8 @@ module.exports = function (grunt) {
 			dist: [
 				'less',
 				'imagemin',
-				'svgmin',
-				'htmlmin'
+				'svgmin'
+				// 'htmlmin'
 			]
 		}
 	});
@@ -308,7 +315,6 @@ module.exports = function (grunt) {
 
 		grunt.task.run([
 			'clean:server',
-		    'assemble',
 			'less',
 			'copy:server',
 			'livereload-start',
@@ -334,14 +340,14 @@ module.exports = function (grunt) {
 		'concurrent',
 		'cssmin',
 		'concat',
-		'uglify',
 		'copy',
 		'rev',
-		'usemin'
+		'usemin',
+		'htmlmin'
 	]);
 
 	grunt.registerTask('default', [
-		'jshint',
+		// 'jshint',
 		'test',
 		'build'
 	]);

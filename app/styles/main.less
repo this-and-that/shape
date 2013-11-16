@@ -123,6 +123,19 @@
 	font-family: 'blokk-neue';
 }
 
+
+@font-face {
+	font-family: 'peter-nencini-make-do-type';
+	src:	url('../typefaces/make-do-type/peter-nencini-make-do-type.eot');
+	src:	url('../typefaces/make-do-type/peter-nencini-make-do-type.eot?#iefix') format('embedded-opentype'),
+			url('../typefaces/make-do-type/peter-nencini-make-do-type.woff') format('woff'),
+			url('../typefaces/make-do-type/peter-nencini-make-do-type.ttf') format('truetype'),
+			url('../typefaces/make-do-type/peter-nencini-make-do-type.svg?#peter-nencini-make-do-type') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 //
 // Setup up typography (typeplate)
 //
@@ -153,6 +166,15 @@
 // - @FontAwesomePath:    "../typefaces/font-awesome";
 //
 @import "../bower_components/font-awesome/less/font-awesome.less";
+
+/*
+ * Make-Do-Type
+ */
+//
+// importing additional typefaces (webfonts) after Font Awesome
+// allows them to utilize Font Awesome classes
+//
+@import (less) "../typefaces/make-do-type/peter-nencini-make-do-type.css";
 
 /*
  * Effeckt.css

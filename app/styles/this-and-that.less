@@ -766,6 +766,7 @@ iframe {
 .baseline-gridLoop (@index) when (@index > 0) {
 	.baseline-grid-@{index} {
 		.align-top;
+		padding: 0 @scaffolding-margins 0 0;
 		// margin-top: 0px + ((@index+1) * @type-base-line-height);
 		margin-top: 0px + (@index * @type-base-line-height);
 	}
@@ -776,6 +777,7 @@ iframe {
 
 .baseline-grid {
 	.align-top;
+	padding: 0 @scaffolding-margins 0 0;
 	margin-top: 0px; // (0px + @type-base-line-height);
 }
 
@@ -808,13 +810,25 @@ iframe {
 		@col-width-pct: (@index);
 		width: ~"@{col-width-pct}%";
 	}
-	.col-widthLoop(@index - 2);
+	.col-widthLoop(@index - 1);
 }
 .col-widthLoop (0) {}
 .col-widthLoop (@col-width-iterations);
 
 
-
+//
+//	simple columned table
+//
+@table-column-iterations: 12;
+.table-columnLoop (@index) when (@index > 0) {
+	.table-column-@{index} {
+		-webkit-column-count: (@index);
+		column-count: (@index);
+	}
+	.table-columnLoop(@index - 1);
+}
+.table-columnLoop (0) {}
+.table-columnLoop (@table-column-iterations);
 
 
 
@@ -1073,9 +1087,6 @@ iframe {
 
 
 
-
-
-
 //	------------------------------------------------------------------------
 //
 //	Transition/Animation Classes
@@ -1103,6 +1114,14 @@ iframe {
 	// -ms-transition: background (@timing-ms*@scalar) ease-in-out;
 	// -o-transition: background (@timing-ms*@scalar) ease-in-out;
 	transition: background (@timing-ms*@scalar) ease-in-out;
+}
+
+.trans-rotate (@scalar: 1.0) {
+	// -webkit-transition: all (@timing-ms*@scalar) ease-in-out;
+	// -moz-transition: all (@timing-ms*@scalar) ease-in-out;
+	// -ms-transition: all (@timing-ms*@scalar) ease-in-out;
+	// -o-transition: all (@timing-ms*@scalar) ease-in-out;
+	// transition: all (@timing-ms*@scalar) ease-in-out;
 }
 
 
@@ -1181,6 +1200,43 @@ iframe {
 }
 .fade-in-overLoop (0) {}
 .fade-in-overLoop (@fade-iterations);
+
+
+//
+//	Rotations
+//
+.rotate-0:before {
+	.trans-rotate(1.0);
+
+	-webkit-transform: rotate(0);
+	// -moz-transform: rotate(0);
+	// -ms-transform: rotate(0);
+	// -o-transform: rotate(0);
+	transform: rotate(0);
+}
+
+@rotate-iterations: 360;
+.rotateLoop (@index) when (@index >= 15) {
+	.rotate-@{index}:before {
+		.trans-rotate(1.0);
+
+		-webkit-transform: rotate(~"-@{index}deg");
+		// -moz-transform: rotate(~"-@{index}deg");
+		// -ms-transform: rotate(~"-@{index}deg");
+		// -o-transform: rotate(~"-@{index}deg");
+		// transform: rotate(~"-@{index}deg");
+	}
+	.rotate-@{index}:hover {
+		-webkit-transform: rotate(0);
+		// -moz-transform: rotate(0);
+		// -ms-transform: rotate(0);
+		// -o-transform: rotate(0);
+		transform: rotate(0);
+	}
+	.rotateLoop(@index - 15);
+}
+.rotateLoop (15) {}
+.rotateLoop (@rotate-iterations);
 
 
 

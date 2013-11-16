@@ -965,20 +965,20 @@
 			function onReady(pageIndex) {
 				// author
 				if( pageIndex >= 2 ) {
-					$('.article-author-container').toggleOpacity(false); // fade out
+					$('#article-author-container').toggleOpacity(false); // fade out
 				}
 				else {
-					$('.article-author-container').toggleOpacity(true); // fade out
+					$('#article-author-container').toggleOpacity(true); // fade out
 				}
 
 				// interview
 				if( pageIndex >= 6 ) {
 					$('#subject-container').toggleOpacity(false);  // fade out
-					$('.article-interview-container').toggleOpacity(true); // fade in
+					$('#article-interview-container').toggleOpacity(true); // fade in
 				}
 				else {
 					$('#subject-container').toggleOpacity(true);    // fade in
-					$('.article-interview-container').toggleOpacity(false); // fade out
+					$('#article-interview-container').toggleOpacity(false); // fade out
 				}
 
 				// gallery
@@ -999,20 +999,20 @@
 			function onBeforeArticlePage(pageIndex, nextIndex) {
 				// author
 				if( pageIndex == 2 && nextIndex == 3 ) {
-					$('.article-author-container').toggleOpacity(false); // fade out
+					$('#article-author-container').toggleOpacity(false); // fade out
 				}
 				else if( pageIndex == 3 && nextIndex == 2 ) {
-					$('.article-author-container').toggleOpacity(true); // fade in
+					$('#article-author-container').toggleOpacity(true); // fade in
 				}
 
 				// interview
 				if( pageIndex == 6 && nextIndex == 5 ) {
 					$('#subject-container').toggleOpacity(true);    // fade in
-					$('.article-interview-container').toggleOpacity(false); // fade out
+					$('#article-interview-container').toggleOpacity(false); // fade out
 				}
 				else if( pageIndex == 5 && nextIndex == 6 ) {
 					$('#subject-container').toggleOpacity(false);  // fade out
-					$('.article-interview-container').toggleOpacity(true); // fade in
+					$('#article-interview-container').toggleOpacity(true); // fade in
 				}
 			};
 			function onAfterArticlePage(pageIndex) {

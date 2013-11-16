@@ -28,6 +28,7 @@ module.exports.register = function(Handlebars, options) {
 	// 	var content = Glob.globFiles(path);
 	// 	var tmpl = Handlebars.compile(content);
 	// 	var md = tmpl(this);
+    //  md = md.replace('\¶', '\n\n');
 
 	// 	if (index != undefined) {
 	// 		var p = md.split('\n\n')[index];

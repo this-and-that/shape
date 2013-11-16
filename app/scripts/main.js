@@ -97,7 +97,14 @@ $(window).load(function() {
 	paginate();
 
 	// get active page
-	onReady( $('#article .page-marker .active').data('index') );
+	onReady(
+		// wow! because the current page number (on-load) is
+		// stored within the body tag - via 'onepage-scroll'
+		document.getElementsByTagName('body')[0]
+			.className
+			.split(/\s+/)[0]
+			.split('-')[2]
+	);
 
 	// serve up retina images
 	// $('img').retina('@2x');
@@ -179,28 +186,28 @@ function paginate() {
 	});
 
 	// set up gallery for pagination
-	$gallery.onepage_scroll({
-		sectionContainer: '.image-marker',
-		easing: 'cubic-bezier(.02, .01, .47, 1)',
-		animationTime: 500,
-		pagination: false,
-		// updateURL: true,
-		direction: 'horizontal',
-		touchTarget: '#navigation',
-		// loop: true,
+	// $gallery.onepage_scroll({
+	// 	sectionContainer: '.image-marker',
+	// 	easing: 'cubic-bezier(.02, .01, .47, 1)',
+	// 	animationTime: 500,
+	// 	pagination: false,
+	// 	// updateURL: true,
+	// 	direction: 'horizontal',
+	// 	touchTarget: '#navigation',
+	// 	// loop: true,
 
-		onLoad: function(pageIndex) {
-			onGalleryLoad(pageIndex);
-		},
-		beforeMove: function(pageIndex, nextIndex) {
-			onBeforeGalleryPage(pageIndex, nextIndex);
-		},
-		afterMove: function(pageIndex) {
-			onAfterGalleryPage(pageIndex);
-		}
-	});
-	// toggle gallery class, so that it doesn't scroll
-	$gallery.find('.image').toggleClass('image-marker');
+	// 	onLoad: function(pageIndex) {
+	// 		onGalleryLoad(pageIndex);
+	// 	},
+	// 	beforeMove: function(pageIndex, nextIndex) {
+	// 		onBeforeGalleryPage(pageIndex, nextIndex);
+	// 	},
+	// 	afterMove: function(pageIndex) {
+	// 		onAfterGalleryPage(pageIndex);
+	// 	}
+	// });
+	// // toggle gallery class, so that it doesn't scroll
+	// $gallery.find('.image').toggleClass('image-marker');
 
 };
 
